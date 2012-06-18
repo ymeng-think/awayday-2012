@@ -13,6 +13,7 @@
 		6F98785E158F3DBE00030835 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F98785C158F3DBE00030835 /* InfoPlist.strings */; };
 		6F987873158F3EDE00030835 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F987870158F3EDE00030835 /* main.m */; };
 		6F987874158F3EDE00030835 /* MEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F987872158F3EDE00030835 /* MEAppDelegate.m */; };
+		6F98787A158F404E00030835 /* MEAwayDayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F987879158F404E00030835 /* MEAwayDayController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		6F987870158F3EDE00030835 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F987871158F3EDE00030835 /* MEAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAppDelegate.h; sourceTree = "<group>"; };
 		6F987872158F3EDE00030835 /* MEAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAppDelegate.m; sourceTree = "<group>"; };
+		6F987878158F404E00030835 /* MEAwayDayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAwayDayController.h; sourceTree = "<group>"; };
+		6F987879158F404E00030835 /* MEAwayDayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAwayDayController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 		6F987875158F3EE800030835 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6F987878158F404E00030835 /* MEAwayDayController.h */,
+				6F987879158F404E00030835 /* MEAwayDayController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			files = (
 				6F987873158F3EDE00030835 /* main.m in Sources */,
 				6F987874158F3EDE00030835 /* MEAppDelegate.m in Sources */,
+				6F98787A158F404E00030835 /* MEAwayDayController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

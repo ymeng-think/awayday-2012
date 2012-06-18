@@ -7,6 +7,7 @@
 //
 
 #import "MEAppDelegate.h"
+#import "MEAwayDayController.h"
 
 @implementation MEAppDelegate
 
@@ -23,6 +24,11 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    MEAwayDayController *rootController = [[MEAwayDayController alloc] init];
+    self.window.rootViewController = rootController;
+    [rootController release];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
