@@ -11,8 +11,8 @@
 		6F987856158F3DBE00030835 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987855158F3DBE00030835 /* Foundation.framework */; };
 		6F987858158F3DBE00030835 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987857158F3DBE00030835 /* CoreGraphics.framework */; };
 		6F98785E158F3DBE00030835 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F98785C158F3DBE00030835 /* InfoPlist.strings */; };
-		6F987860158F3DBE00030835 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F98785F158F3DBE00030835 /* main.m */; };
-		6F987864158F3DBE00030835 /* MEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F987863158F3DBE00030835 /* MEAppDelegate.m */; };
+		6F987873158F3EDE00030835 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F987870158F3EDE00030835 /* main.m */; };
+		6F987874158F3EDE00030835 /* MEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F987872158F3EDE00030835 /* MEAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +22,10 @@
 		6F987857158F3DBE00030835 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6F98785B158F3DBE00030835 /* AwayDay2012-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AwayDay2012-Info.plist"; sourceTree = "<group>"; };
 		6F98785D158F3DBE00030835 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6F98785F158F3DBE00030835 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F987861158F3DBE00030835 /* AwayDay2012-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AwayDay2012-Prefix.pch"; sourceTree = "<group>"; };
-		6F987862158F3DBE00030835 /* MEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MEAppDelegate.h; sourceTree = "<group>"; };
-		6F987863158F3DBE00030835 /* MEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MEAppDelegate.m; sourceTree = "<group>"; };
+		6F987870158F3EDE00030835 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6F987871158F3EDE00030835 /* MEAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAppDelegate.h; sourceTree = "<group>"; };
+		6F987872158F3EDE00030835 /* MEAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +72,7 @@
 		6F987859158F3DBE00030835 /* AwayDay2012 */ = {
 			isa = PBXGroup;
 			children = (
-				6F987862158F3DBE00030835 /* MEAppDelegate.h */,
-				6F987863158F3DBE00030835 /* MEAppDelegate.m */,
+				6F98786F158F3EDE00030835 /* Classes */,
 				6F98785A158F3DBE00030835 /* Supporting Files */,
 			);
 			path = AwayDay2012;
@@ -84,10 +83,43 @@
 			children = (
 				6F98785B158F3DBE00030835 /* AwayDay2012-Info.plist */,
 				6F98785C158F3DBE00030835 /* InfoPlist.strings */,
-				6F98785F158F3DBE00030835 /* main.m */,
 				6F987861158F3DBE00030835 /* AwayDay2012-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6F98786F158F3EDE00030835 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6F987875158F3EE800030835 /* Controllers */,
+				6F987877158F3EFC00030835 /* Models */,
+				6F987876158F3EF300030835 /* Views */,
+				6F987870158F3EDE00030835 /* main.m */,
+				6F987871158F3EDE00030835 /* MEAppDelegate.h */,
+				6F987872158F3EDE00030835 /* MEAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6F987875158F3EE800030835 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6F987876158F3EF300030835 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6F987877158F3EFC00030835 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,8 +185,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F987860158F3DBE00030835 /* main.m in Sources */,
-				6F987864158F3DBE00030835 /* MEAppDelegate.m in Sources */,
+				6F987873158F3EDE00030835 /* main.m in Sources */,
+				6F987874158F3EDE00030835 /* MEAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +288,7 @@
 				6F987869158F3DBE00030835 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
