@@ -1,0 +1,6 @@
+## Mac meta-file to ignore
+.DS_Store
+
+## Xcode project files
+AwayDay2012/AwayDay2012.xcodeproj/project.xcworkspace
+AwayDay2012/AwayDay2012.xcodeproj/xcuserdata

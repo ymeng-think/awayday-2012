@@ -1,0 +1,263 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F987854158F3DBE00030835 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987853158F3DBE00030835 /* UIKit.framework */; };
+		6F987856158F3DBE00030835 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987855158F3DBE00030835 /* Foundation.framework */; };
+		6F987858158F3DBE00030835 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987857158F3DBE00030835 /* CoreGraphics.framework */; };
+		6F98785E158F3DBE00030835 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F98785C158F3DBE00030835 /* InfoPlist.strings */; };
+		6F987860158F3DBE00030835 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F98785F158F3DBE00030835 /* main.m */; };
+		6F987864158F3DBE00030835 /* MEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F987863158F3DBE00030835 /* MEAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6F98784F158F3DBE00030835 /* AwayDay2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwayDay2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F987853158F3DBE00030835 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6F987855158F3DBE00030835 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6F987857158F3DBE00030835 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6F98785B158F3DBE00030835 /* AwayDay2012-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AwayDay2012-Info.plist"; sourceTree = "<group>"; };
+		6F98785D158F3DBE00030835 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6F98785F158F3DBE00030835 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6F987861158F3DBE00030835 /* AwayDay2012-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AwayDay2012-Prefix.pch"; sourceTree = "<group>"; };
+		6F987862158F3DBE00030835 /* MEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MEAppDelegate.h; sourceTree = "<group>"; };
+		6F987863158F3DBE00030835 /* MEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MEAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6F98784C158F3DBE00030835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F987854158F3DBE00030835 /* UIKit.framework in Frameworks */,
+				6F987856158F3DBE00030835 /* Foundation.framework in Frameworks */,
+				6F987858158F3DBE00030835 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F987844158F3DBE00030835 = {
+			isa = PBXGroup;
+			children = (
+				6F987859158F3DBE00030835 /* AwayDay2012 */,
+				6F987852158F3DBE00030835 /* Frameworks */,
+				6F987850158F3DBE00030835 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6F987850158F3DBE00030835 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F98784F158F3DBE00030835 /* AwayDay2012.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F987852158F3DBE00030835 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F987853158F3DBE00030835 /* UIKit.framework */,
+				6F987855158F3DBE00030835 /* Foundation.framework */,
+				6F987857158F3DBE00030835 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F987859158F3DBE00030835 /* AwayDay2012 */ = {
+			isa = PBXGroup;
+			children = (
+				6F987862158F3DBE00030835 /* MEAppDelegate.h */,
+				6F987863158F3DBE00030835 /* MEAppDelegate.m */,
+				6F98785A158F3DBE00030835 /* Supporting Files */,
+			);
+			path = AwayDay2012;
+			sourceTree = "<group>";
+		};
+		6F98785A158F3DBE00030835 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6F98785B158F3DBE00030835 /* AwayDay2012-Info.plist */,
+				6F98785C158F3DBE00030835 /* InfoPlist.strings */,
+				6F98785F158F3DBE00030835 /* main.m */,
+				6F987861158F3DBE00030835 /* AwayDay2012-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6F98784E158F3DBE00030835 /* AwayDay2012 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F987867158F3DBE00030835 /* Build configuration list for PBXNativeTarget "AwayDay2012" */;
+			buildPhases = (
+				6F98784B158F3DBE00030835 /* Sources */,
+				6F98784C158F3DBE00030835 /* Frameworks */,
+				6F98784D158F3DBE00030835 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AwayDay2012;
+			productName = AwayDay2012;
+			productReference = 6F98784F158F3DBE00030835 /* AwayDay2012.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6F987846158F3DBE00030835 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ME;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = ThoughtWorks;
+			};
+			buildConfigurationList = 6F987849158F3DBE00030835 /* Build configuration list for PBXProject "AwayDay2012" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6F987844158F3DBE00030835;
+			productRefGroup = 6F987850158F3DBE00030835 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6F98784E158F3DBE00030835 /* AwayDay2012 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6F98784D158F3DBE00030835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F98785E158F3DBE00030835 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6F98784B158F3DBE00030835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F987860158F3DBE00030835 /* main.m in Sources */,
+				6F987864158F3DBE00030835 /* MEAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6F98785C158F3DBE00030835 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F98785D158F3DBE00030835 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6F987865158F3DBE00030835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6F987866158F3DBE00030835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6F987868158F3DBE00030835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AwayDay2012/AwayDay2012-Prefix.pch";
+				INFOPLIST_FILE = "AwayDay2012/AwayDay2012-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6F987869158F3DBE00030835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AwayDay2012/AwayDay2012-Prefix.pch";
+				INFOPLIST_FILE = "AwayDay2012/AwayDay2012-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6F987849158F3DBE00030835 /* Build configuration list for PBXProject "AwayDay2012" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F987865158F3DBE00030835 /* Debug */,
+				6F987866158F3DBE00030835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F987867158F3DBE00030835 /* Build configuration list for PBXNativeTarget "AwayDay2012" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F987868158F3DBE00030835 /* Debug */,
+				6F987869158F3DBE00030835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6F987846158F3DBE00030835 /* Project object */;
+}
