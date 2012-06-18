@@ -8,6 +8,8 @@
 
 #import "MELocationController.h"
 
+#define TAB_NAME @"LOCATIONS"
+
 @interface MELocationController ()
 
 @end
@@ -17,7 +19,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.tabBarItem.title = TAB_NAME;
     }
     return self;
 }
