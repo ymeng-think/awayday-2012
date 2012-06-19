@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F682F0E15900EF300B24AAE /* MEAgendaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F0D15900EF300B24AAE /* MEAgendaView.m */; };
 		6F987854158F3DBE00030835 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987853158F3DBE00030835 /* UIKit.framework */; };
 		6F987856158F3DBE00030835 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987855158F3DBE00030835 /* Foundation.framework */; };
 		6F987858158F3DBE00030835 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987857158F3DBE00030835 /* CoreGraphics.framework */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F682F0C15900EF300B24AAE /* MEAgendaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaView.h; sourceTree = "<group>"; };
+		6F682F0D15900EF300B24AAE /* MEAgendaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaView.m; sourceTree = "<group>"; };
 		6F98784F158F3DBE00030835 /* AwayDay2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwayDay2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F987853158F3DBE00030835 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6F987855158F3DBE00030835 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 		6F987876158F3EF300030835 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6F682F0C15900EF300B24AAE /* MEAgendaView.h */,
+				6F682F0D15900EF300B24AAE /* MEAgendaView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				6F987889158F44D500030835 /* MEAgendaController.m in Sources */,
 				6F98788C158F44E800030835 /* MEHotelController.m in Sources */,
 				6F98788F158F450A00030835 /* MELocationController.m in Sources */,
+				6F682F0E15900EF300B24AAE /* MEAgendaView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

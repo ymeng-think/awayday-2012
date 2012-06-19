@@ -7,6 +7,7 @@
 //
 
 #import "MEAgendaController.h"
+#import "MEAgendaView.h"
 
 #define TAB_NAME @"AGENDA"
 
@@ -24,10 +25,16 @@
     return self;
 }
 
+- (void)loadView {
+    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    MEAgendaView *agendaView = [[MEAgendaView alloc] initWithFrame:frame];
+    self.view = agendaView;
+    [agendaView release];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor redColor];
 }
 
 - (void)viewDidUnload {
