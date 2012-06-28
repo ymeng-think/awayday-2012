@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MEAgendaView.h"
 
+@class MEAgendaList;
+
 @interface MEAgendaController : UIViewController <MEAgendaDelegate> {
-    NSArray *agendaList;
+    MEAgendaList *agendaList;
 }
 
 @end

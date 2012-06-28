@@ -11,8 +11,6 @@
 
 @interface MEAgenda ()
 
-+ (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
-
 @end
 
 @implementation MEAgenda
@@ -20,7 +18,7 @@
 - (id)initOnYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
     self = [super init];
     if (self) {
-        self->date = [MEAgenda dateWithYear:year month:month day:day];
+        self->date = MEDateMake(year, month, day);
         self->scheduleList = [[NSMutableArray alloc] init];
     }
     
@@ -42,23 +40,16 @@
     return [scheduleList objectAtIndex:index];
 }
 
+- (BOOL)onSameDate:(MEDate)d {
+    return self->date.year == d.year && 
+           self->date.month == d.month && 
+           self->date.day == d.day;
+}
+
 - (void)dealloc {
     [self->scheduleList release];
     
     [super dealloc];
-}
-
-+ (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setYear:year];
-    [components setMonth:month];
-    [components setDay:day];
-    NSDate *date = [calendar dateFromComponents:components];
-    [components release];
-    
-    return date;
 }
 
 @end

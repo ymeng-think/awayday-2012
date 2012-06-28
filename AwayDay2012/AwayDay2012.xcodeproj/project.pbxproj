@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F6150CD159C2A3300F77E80 /* MEAgendaList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6150CC159C2A3300F77E80 /* MEAgendaList.m */; };
 		6F682F0E15900EF300B24AAE /* MEAgendaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F0D15900EF300B24AAE /* MEAgendaView.m */; };
 		6F682F1715903FE800B24AAE /* MEAgenda.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F1615903FE800B24AAE /* MEAgenda.m */; };
 		6F682F1F1590972700B24AAE /* MESchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F1E1590972700B24AAE /* MESchedule.m */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F6150CB159C2A3300F77E80 /* MEAgendaList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaList.h; sourceTree = "<group>"; };
+		6F6150CC159C2A3300F77E80 /* MEAgendaList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaList.m; sourceTree = "<group>"; };
+		6F6150CF159C2C5C00F77E80 /* MEDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEDate.h; sourceTree = "<group>"; };
 		6F682F0C15900EF300B24AAE /* MEAgendaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaView.h; sourceTree = "<group>"; };
 		6F682F0D15900EF300B24AAE /* MEAgendaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaView.m; sourceTree = "<group>"; };
 		6F682F1515903FE800B24AAE /* MEAgenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgenda.h; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				6F987870158F3EDE00030835 /* main.m */,
 				6F987871158F3EDE00030835 /* MEAppDelegate.h */,
 				6F987872158F3EDE00030835 /* MEAppDelegate.m */,
+				6F6150CF159C2C5C00F77E80 /* MEDate.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -151,6 +156,8 @@
 			children = (
 				6F682F1515903FE800B24AAE /* MEAgenda.h */,
 				6F682F1615903FE800B24AAE /* MEAgenda.m */,
+				6F6150CB159C2A3300F77E80 /* MEAgendaList.h */,
+				6F6150CC159C2A3300F77E80 /* MEAgendaList.m */,
 				6F682F1D1590972700B24AAE /* MESchedule.h */,
 				6F682F1E1590972700B24AAE /* MESchedule.m */,
 			);
@@ -229,6 +236,7 @@
 				6F682F0E15900EF300B24AAE /* MEAgendaView.m in Sources */,
 				6F682F1715903FE800B24AAE /* MEAgenda.m in Sources */,
 				6F682F1F1590972700B24AAE /* MESchedule.m in Sources */,
+				6F6150CD159C2A3300F77E80 /* MEAgendaList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

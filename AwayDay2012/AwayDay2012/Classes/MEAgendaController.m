@@ -8,6 +8,7 @@
 
 #import "MEAgendaController.h"
 #import "MEAgenda.h"
+#import "MEAgendaList.h"
 #import "MESchedule.h"
 
 #define TAB_NAME @"AGENDA"
@@ -25,7 +26,8 @@
     if (self) {
         self.tabBarItem.title = TAB_NAME;
         
-        agendaList = [NSArray arrayWithObjects:[MEAgendaController agendaGenerator], nil];
+        agendaList = [[MEAgendaList alloc] init];
+        [agendaList add:[MEAgendaController agendaGenerator]];
     }
     return self;
 }
@@ -52,15 +54,28 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (NSInteger)agenda:(MEAgendaView *)agenda scheduleNumInDay:(MEDate)date {
-    MEAgenda *firstAgenda = (MEAgenda *)[agendaList objectAtIndex:0];
-    return [firstAgenda scheduleCount];
+- (NSInteger)agenda:(MEAgendaView *)agendaView scheduleNumInDay:(MEDate)date {
+    MEAgenda *agenda = [agendaList findByDate:date];
+    if (agenda) {
+        return [agenda scheduleCount];
+    }
+    return 0;
 }
 
-- (void)agenda:(MEAgendaView *)agenda cell:(UITableViewCell *)cell atIndex:(NSInteger)index inDay:(MEDate)date {
-    MEAgenda *firstAgenda = (MEAgenda *)[agendaList objectAtIndex:0];
-    MESchedule *schedule = [firstAgenda scheduleAt:index];
+- (void)agenda:(MEAgendaView *)agendaView cell:(UITableViewCell *)cell atIndex:(NSInteger)index inDay:(MEDate)date {
+    MEAgenda *agenda = [agendaList findByDate:date];
+    if (!agenda) {
+        return;
+    }
+    
+    MESchedule *schedule = [agenda scheduleAt:index];
     cell.textLabel.text = schedule.title;
+}
+
+- (void)dealloc {
+    [agendaList release];
+    
+    [super dealloc];
 }
 
 + (MEAgenda *)agendaGenerator {

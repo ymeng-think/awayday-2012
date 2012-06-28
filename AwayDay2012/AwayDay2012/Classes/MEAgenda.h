@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MEDate.h"
 
 @class MESchedule;
 
 @interface MEAgenda : NSObject {
-    NSDate *date;
+    MEDate date;
     NSMutableArray *scheduleList;
 }
 
@@ -19,5 +20,6 @@
 - (void)addSchedule:(MESchedule *)schedule;
 - (NSInteger)scheduleCount;
 - (MESchedule *)scheduleAt:(NSInteger)index;
+- (BOOL)onSameDate:(MEDate)date;
 
 @end
