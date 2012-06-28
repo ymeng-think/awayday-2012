@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MEAgendaView.h"
 
-@interface MEAgendaController : UIViewController
+@interface MEAgendaController : UIViewController <MEAgendaDelegate> {
+    NSArray *agendaList;
+}
 
 @end

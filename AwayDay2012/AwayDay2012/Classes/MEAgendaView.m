@@ -16,6 +16,8 @@
 
 @implementation MEAgendaView
 
+@synthesize delegate;
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -45,11 +47,14 @@
 #pragma mark TableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    if (delegate) {
+        return [delegate agenda:self scheduleNumInDay:MEDateMake(2012, 9, 15)];
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -60,7 +65,9 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellIdentifier] autorelease];
     }
     
-    cell.textLabel.text = @"hello";
+    if (delegate) {
+        [delegate agenda:self cell:cell atIndex:[indexPath row] inDay:MEDateMake(2012, 9, 15)];
+    }
     
     return cell;
 }

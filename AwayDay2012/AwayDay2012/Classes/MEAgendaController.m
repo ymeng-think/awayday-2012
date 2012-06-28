@@ -7,11 +7,14 @@
 //
 
 #import "MEAgendaController.h"
-#import "MEAgendaView.h"
+#import "MEAgenda.h"
+#import "MESchedule.h"
 
 #define TAB_NAME @"AGENDA"
 
 @interface MEAgendaController ()
+
++ (MEAgenda *)agendaGenerator;
 
 @end
 
@@ -21,13 +24,16 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.tabBarItem.title = TAB_NAME;
+        
+        agendaList = [NSArray arrayWithObjects:[MEAgendaController agendaGenerator], nil];
     }
     return self;
 }
 
 - (void)loadView {
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
-    MEAgendaView *agendaView = [[MEAgendaView alloc] initWithFrame:frame];
+    MEAgendaView *agendaView = [[MEAgendaView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    agendaView.delegate = self;
+    
     self.view = agendaView;
     [agendaView release];
 }
@@ -44,6 +50,24 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (NSInteger)agenda:(MEAgendaView *)agenda scheduleNumInDay:(MEDate)date {
+    MEAgenda *firstAgenda = (MEAgenda *)[agendaList objectAtIndex:0];
+    return [firstAgenda scheduleCount];
+}
+
+- (void)agenda:(MEAgendaView *)agenda cell:(UITableViewCell *)cell atIndex:(NSInteger)index inDay:(MEDate)date {
+    MEAgenda *firstAgenda = (MEAgenda *)[agendaList objectAtIndex:0];
+    MESchedule *schedule = [firstAgenda scheduleAt:index];
+    cell.textLabel.text = schedule.title;
+}
+
++ (MEAgenda *)agendaGenerator {
+    MEAgenda *agenda = [[[MEAgenda alloc] initOnYear:2012 month:9 day:15] autorelease];
+    [agenda addSchedule:[MESchedule schedule:@"OO Bootcamp" from:10 to:11.30]];
+    
+    return agenda;
 }
 
 @end
