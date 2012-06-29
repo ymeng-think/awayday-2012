@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MEDate.h"
 
-@class MEAgendaView;
+@class MEAgendaView, MEScheduleCell;
 
 @protocol MEAgendaDelegate
 
 - (NSInteger)agenda:(MEAgendaView *)agendaView scheduleNumInDay:(MEDate)date;
-- (void)agenda:(MEAgendaView *)agendaView cell:(UITableViewCell *)cell atIndex:(NSInteger)index inDay:(MEDate)date;
+- (void)agenda:(MEAgendaView *)agendaView cell:(MEScheduleCell *)cell atIndex:(NSInteger)index inDay:(MEDate)date;
 
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import "MEAgendaView.h"
+#import "MEScheduleCell.h"
 
 @interface MEAgendaView ()
 
@@ -60,9 +61,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *kCellIdentifier = @"AgendaCellIdentifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    MEScheduleCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellIdentifier] autorelease];
+        cell = [MEScheduleCell cellForTable:tableView withOwner:nil];
     }
     
     if (delegate) {

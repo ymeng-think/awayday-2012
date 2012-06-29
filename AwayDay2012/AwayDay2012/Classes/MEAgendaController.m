@@ -10,6 +10,7 @@
 #import "MEAgenda.h"
 #import "MEAgendaList.h"
 #import "MESchedule.h"
+#import "MEScheduleCell.h"
 
 #define TAB_NAME @"AGENDA"
 
@@ -62,14 +63,14 @@
     return 0;
 }
 
-- (void)agenda:(MEAgendaView *)agendaView cell:(UITableViewCell *)cell atIndex:(NSInteger)index inDay:(MEDate)date {
+- (void)agenda:(MEAgendaView *)agendaView cell:(MEScheduleCell *)cell atIndex:(NSInteger)index inDay:(MEDate)date {
     MEAgenda *agenda = [agendaList findByDate:date];
     if (!agenda) {
         return;
     }
     
     MESchedule *schedule = [agenda scheduleAt:index];
-    cell.textLabel.text = schedule.title;
+    cell.titleLabel.text = schedule.title;
 }
 
 - (void)dealloc {

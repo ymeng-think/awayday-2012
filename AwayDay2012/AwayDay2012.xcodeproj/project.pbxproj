@@ -21,6 +21,9 @@
 		6F987889158F44D500030835 /* MEAgendaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F987888158F44D500030835 /* MEAgendaController.m */; };
 		6F98788C158F44E800030835 /* MEHotelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F98788B158F44E800030835 /* MEHotelController.m */; };
 		6F98788F158F450A00030835 /* MELocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F98788E158F450A00030835 /* MELocationController.m */; };
+		6FD7AE6B159D63CD008B5347 /* schedule-cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FD7AE6A159D63CD008B5347 /* schedule-cell.xib */; };
+		6FD7AE6E159D63F4008B5347 /* MEScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD7AE6D159D63F4008B5347 /* MEScheduleCell.m */; };
+		6FD7AE75159D794E008B5347 /* MHNibTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD7AE74159D794E008B5347 /* MHNibTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,11 @@
 		6F98788B158F44E800030835 /* MEHotelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHotelController.m; sourceTree = "<group>"; };
 		6F98788D158F450A00030835 /* MELocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELocationController.h; sourceTree = "<group>"; };
 		6F98788E158F450A00030835 /* MELocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELocationController.m; sourceTree = "<group>"; };
+		6FD7AE6A159D63CD008B5347 /* schedule-cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "schedule-cell.xib"; sourceTree = "<group>"; };
+		6FD7AE6C159D63F4008B5347 /* MEScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEScheduleCell.h; sourceTree = "<group>"; };
+		6FD7AE6D159D63F4008B5347 /* MEScheduleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEScheduleCell.m; sourceTree = "<group>"; };
+		6FD7AE73159D794E008B5347 /* MHNibTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHNibTableViewCell.h; sourceTree = "<group>"; };
+		6FD7AE74159D794E008B5347 /* MHNibTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHNibTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				6F98786F158F3EDE00030835 /* Classes */,
+				6FD7AE63159D6282008B5347 /* Resources */,
 				6F98785A158F3DBE00030835 /* Supporting Files */,
 			);
 			path = AwayDay2012;
@@ -147,6 +156,10 @@
 			children = (
 				6F682F0C15900EF300B24AAE /* MEAgendaView.h */,
 				6F682F0D15900EF300B24AAE /* MEAgendaView.m */,
+				6FD7AE6C159D63F4008B5347 /* MEScheduleCell.h */,
+				6FD7AE6D159D63F4008B5347 /* MEScheduleCell.m */,
+				6FD7AE73159D794E008B5347 /* MHNibTableViewCell.h */,
+				6FD7AE74159D794E008B5347 /* MHNibTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -162,6 +175,22 @@
 				6F682F1E1590972700B24AAE /* MESchedule.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		6FD7AE63159D6282008B5347 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6FD7AE64159D62BF008B5347 /* Xibs */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6FD7AE64159D62BF008B5347 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				6FD7AE6A159D63CD008B5347 /* schedule-cell.xib */,
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F98785E158F3DBE00030835 /* InfoPlist.strings in Resources */,
+				6FD7AE6B159D63CD008B5347 /* schedule-cell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +267,8 @@
 				6F682F1715903FE800B24AAE /* MEAgenda.m in Sources */,
 				6F682F1F1590972700B24AAE /* MESchedule.m in Sources */,
 				6F6150CD159C2A3300F77E80 /* MEAgendaList.m in Sources */,
+				6FD7AE6E159D63F4008B5347 /* MEScheduleCell.m in Sources */,
+				6FD7AE75159D794E008B5347 /* MHNibTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
