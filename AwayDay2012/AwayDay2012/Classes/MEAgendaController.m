@@ -72,6 +72,8 @@
     MESchedule *schedule = [agenda scheduleAt:index];
     cell.titleLabel.text = schedule.title;
     cell.commentLabel.text = schedule.comment;
+    cell.fromLabel.text = [NSString stringWithFormat:@"%.2f", schedule.from];
+    cell.toLabel.text = [NSString stringWithFormat:@"%.2f", schedule.to];
 }
 
 - (void)dealloc {

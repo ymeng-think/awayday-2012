@@ -13,5 +13,7 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel *commentLabel;
+@property (nonatomic, retain) IBOutlet UILabel *fromLabel;
+@property (nonatomic, retain) IBOutlet UILabel *toLabel;
 
 @end
