@@ -12,5 +12,6 @@
 @interface MEScheduleCell : MHNibTableViewCell
 
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
+@property (nonatomic, retain) IBOutlet UILabel *commentLabel;
 
 @end

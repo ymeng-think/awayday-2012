@@ -10,7 +10,7 @@
 
 @implementation MEScheduleCell
 
-@synthesize titleLabel;
+@synthesize titleLabel, commentLabel;
 
 + (NSString *)nibName {
     return @"schedule-cell";

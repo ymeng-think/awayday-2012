@@ -71,6 +71,7 @@
     
     MESchedule *schedule = [agenda scheduleAt:index];
     cell.titleLabel.text = schedule.title;
+    cell.commentLabel.text = schedule.comment;
 }
 
 - (void)dealloc {
@@ -81,7 +82,11 @@
 
 + (MEAgenda *)agendaGenerator {
     MEAgenda *agenda = [[[MEAgenda alloc] initOnYear:2012 month:9 day:15] autorelease];
-    [agenda addSchedule:[MESchedule schedule:@"OO Bootcamp" from:10 to:11.30]];
+    
+    MESchedule *schedule1 = [MESchedule schedule:@"Heading to Airport" from:12 to:13.30];
+    schedule1.comment = @"Beijing, Xi'an, Shanghai group take bus to local airport";
+    [agenda addSchedule:schedule1];
+    [schedule1 release];
     
     return agenda;
 }
