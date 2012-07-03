@@ -52,10 +52,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (delegate) {
-        return [delegate agenda:self scheduleNumInDay:MEDateMake(2012, 9, 15)];
+    if (!delegate) {
+        return 0;
     }
-    return 0;
+    return [delegate agenda:self scheduleNumInAgenda:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

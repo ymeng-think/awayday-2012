@@ -17,6 +17,7 @@
 @interface MEAgendaController ()
 
 + (MEAgenda *)agendaGenerator;
+- (BOOL)isValidIndexOfAgendaList:(NSInteger)index;
 
 @end
 
@@ -55,12 +56,11 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (NSInteger)agenda:(MEAgendaView *)agendaView scheduleNumInDay:(MEDate)date {
-    MEAgenda *agenda = [agendaList findByDate:date];
-    if (agenda) {
-        return [agenda scheduleCount];
+- (NSInteger)agenda:(MEAgendaView *)agendaView scheduleNumInAgenda:(NSInteger)index {
+    if (![self isValidIndexOfAgendaList:index]) {
+        return 0;
     }
-    return 0;
+    return [agendaList agendaAtIndex:index].scheduleCount;
 }
 
 - (void)agenda:(MEAgendaView *)agendaView cell:(MEScheduleCell *)cell atIndex:(NSInteger)index inDay:(MEDate)date {
@@ -77,7 +77,7 @@
 }
 
 - (MEDate)agenda:(MEAgendaView *)agendaView dateAtIndex:(NSInteger)index {
-    if (index < 0 || index >= agendaList.count) {
+    if (![self isValidIndexOfAgendaList:index]) {
         return MEDATE_INVALID;
     }
     return [agendaList agendaAtIndex:index].date;
@@ -89,6 +89,10 @@
     [super dealloc];
 }
 
+- (BOOL)isValidIndexOfAgendaList:(NSInteger)index {
+    return index >= 0 && index < agendaList.count;
+}
+
 + (MEAgenda *)agendaGenerator {
     MEAgenda *agenda = [[[MEAgenda alloc] initOnYear:2012 month:9 day:15] autorelease];
     
@@ -96,6 +100,11 @@
     schedule1.comment = @"Beijing, Xi'an, Shanghai group take bus to local airport";
     [agenda addSchedule:schedule1];
     [schedule1 release];
+    
+    MESchedule *schedule2 = [MESchedule schedule:@"Fly to Chengdu" from:13.30 to:16];
+    schedule2.comment = @"Check in and fly to Chengdu, time may will be adjusted";
+    [agenda addSchedule:schedule2];
+    [schedule2 release];
     
     return agenda;
 }
