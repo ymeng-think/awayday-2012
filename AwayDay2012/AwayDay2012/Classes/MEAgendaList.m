@@ -24,15 +24,6 @@
     [list addObject:agenda];
 }
 
-- (MEAgenda *)findByDate:(MEDate)date {
-    for (MEAgenda *agenda in list) {
-        if ([agenda onSameDate:date]) {
-            return agenda;
-        }
-    }
-    return nil;
-}
-
 - (NSUInteger)count {
     return self->list.count;
 }

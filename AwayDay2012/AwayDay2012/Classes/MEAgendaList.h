@@ -18,7 +18,6 @@
 @property (nonatomic, readonly) NSUInteger count;
 
 - (void)add:(MEAgenda *)agenda;
-- (MEAgenda *)findByDate:(MEDate)date;
 - (MEAgenda *)agendaAtIndex:(NSInteger)index;
 
 @end

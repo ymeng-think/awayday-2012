@@ -67,7 +67,7 @@
     }
     
     if (delegate) {
-        [delegate agenda:self cell:cell atIndex:[indexPath row] inDay:MEDateMake(2012, 9, 15)];
+        [delegate agenda:self cell:cell atScheduleIndex:[indexPath row] inAgenda:[indexPath section]];
     }
     
     return cell;

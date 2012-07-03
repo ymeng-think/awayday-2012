@@ -63,13 +63,14 @@
     return [agendaList agendaAtIndex:index].scheduleCount;
 }
 
-- (void)agenda:(MEAgendaView *)agendaView cell:(MEScheduleCell *)cell atIndex:(NSInteger)index inDay:(MEDate)date {
-    MEAgenda *agenda = [agendaList findByDate:date];
-    if (!agenda) {
+- (void)agenda:(MEAgendaView *)agendaView cell:(MEScheduleCell *)cell atScheduleIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex {
+    if (![self isValidIndexOfAgendaList:agendaIndex]) {
         return;
     }
     
-    MESchedule *schedule = [agenda scheduleAt:index];
+    MEAgenda *agenda = [agendaList agendaAtIndex:agendaIndex];
+    MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
+    
     cell.title = schedule.title;
     cell.comment = schedule.comment;
     cell.from = schedule.from;
