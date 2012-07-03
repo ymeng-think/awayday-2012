@@ -15,6 +15,7 @@
 
 - (NSInteger)agenda:(MEAgendaView *)agendaView scheduleNumInDay:(MEDate)date;
 - (void)agenda:(MEAgendaView *)agendaView cell:(MEScheduleCell *)cell atIndex:(NSInteger)index inDay:(MEDate)date;
+- (MEDate)agenda:(MEAgendaView *)agendaView dateAtIndex:(NSInteger)index;
 
 @end
 

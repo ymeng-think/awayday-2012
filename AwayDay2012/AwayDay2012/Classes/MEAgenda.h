@@ -16,6 +16,8 @@
     NSMutableArray *scheduleList;
 }
 
+@property (nonatomic, readonly) MEDate date;
+
 - (id)initOnYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
 - (void)addSchedule:(MESchedule *)schedule;
 - (NSInteger)scheduleCount;

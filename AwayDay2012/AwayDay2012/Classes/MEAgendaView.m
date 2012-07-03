@@ -73,4 +73,17 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (!delegate) {
+        return nil;
+    }
+    
+    MEDate date = [delegate agenda:self dateAtIndex:section];
+    if (!MEDateIsValid(date)) {
+        return nil;
+    }
+    
+    return [NSString stringWithFormat:@"%i / %i / %i", date.year, date.month, date.day];
+}
+
 @end

@@ -20,3 +20,10 @@ MEDateMake(NSInteger year, NSInteger month, NSInteger day)
     MEDate date = { .year = year, .month = month, .day = day };
     return date;
 }
+
+#define MEDATE_INVALID MEDateMake(0, 0, 0)
+
+CG_INLINE BOOL
+MEDateIsValid(MEDate date) {
+    return date.year > 0 && date.month > 0 && date.day > 0;
+}

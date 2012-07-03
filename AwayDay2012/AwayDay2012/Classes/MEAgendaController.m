@@ -76,6 +76,13 @@
     cell.to = schedule.to;
 }
 
+- (MEDate)agenda:(MEAgendaView *)agendaView dateAtIndex:(NSInteger)index {
+    if (index < 0 || index >= agendaList.count) {
+        return MEDATE_INVALID;
+    }
+    return [agendaList agendaAtIndex:index].date;
+}
+
 - (void)dealloc {
     [agendaList release];
     

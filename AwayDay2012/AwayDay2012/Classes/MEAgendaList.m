@@ -33,6 +33,14 @@
     return nil;
 }
 
+- (NSUInteger)count {
+    return self->list.count;
+}
+
+- (MEAgenda *)agendaAtIndex:(NSInteger)index {
+    return [self->list objectAtIndex:index];
+}
+
 - (void)dealloc {
     [self->list release];
     

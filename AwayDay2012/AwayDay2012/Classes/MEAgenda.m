@@ -14,6 +14,7 @@
 @end
 
 @implementation MEAgenda
+@synthesize date;
 
 - (id)initOnYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
     self = [super init];
