@@ -42,6 +42,9 @@ typedef struct {
 - (MESchedule *)createScheduleAccordingTo:(NSDictionary *)info;
 - (MEKeyValue)breakLineToKeyValue:(NSString *)line;
 - (MEDate)parseToDate:(NSString *)line;
+- (void)parseAgendaFromString:(NSString *)line andAddToList:(MEAgendaList *)list;
+- (void)buildScheduleFromLastInfoAndAddToAgenda:(MEAgenda *)agenda;
+- (void)parseScheduleInfoFromString:(NSString *)line;
 
 @end
 
@@ -99,29 +102,13 @@ typedef struct {
 
 - (void)parse:(NSString *)line {
     if ([self shouldStartNewAgenda:line]) {
-        if (lastAgenda) {
-            [agendaList add:lastAgenda];
-            
-            [lastAgenda release];
-            lastAgenda = nil;
-        }
-        
-        lastAgenda = [[MEAgenda alloc] initOnDate:[self parseToDate:line]];
+        [self parseAgendaFromString:line andAddToList:agendaList];
         isParsingSchedule = NO;
     } else if ([self shouldStartNewSchedule:line]) {
-        if (lastScheduleInfo) {
-            [lastAgenda addSchedule:[self createScheduleAccordingTo:lastScheduleInfo]];
-            
-            [lastScheduleInfo release];
-            lastScheduleInfo = nil;
-        }
+        [self buildScheduleFromLastInfoAndAddToAgenda:lastAgenda];
         isParsingSchedule = YES;
     } else if (isParsingSchedule) {
-        if (!lastScheduleInfo) {
-            lastScheduleInfo = [[NSMutableDictionary alloc] initWithCapacity:4];
-        }
-        MEKeyValue parsed = [self breakLineToKeyValue:line];
-        [lastScheduleInfo setObject:parsed.value forKey:[parsed.key lowercaseString]];
+        [self parseScheduleInfoFromString:line];
     }
 }
 
@@ -174,6 +161,35 @@ typedef struct {
     NSString *day = [components objectAtIndex:2];
     
     return MEDateMake([year integerValue], [month integerValue], [day integerValue]);
+}
+
+- (void)parseAgendaFromString:(NSString *)line andAddToList:(MEAgendaList *)list {
+    if (lastAgenda) {
+        [self buildScheduleFromLastInfoAndAddToAgenda:lastAgenda];        
+        [list add:lastAgenda];
+        
+        [lastAgenda release];
+        lastAgenda = nil;
+    }
+    
+    lastAgenda = [[MEAgenda alloc] initOnDate:[self parseToDate:line]];
+}
+
+- (void)buildScheduleFromLastInfoAndAddToAgenda:(MEAgenda *)agenda {
+    if (lastScheduleInfo) {
+        [agenda addSchedule:[self createScheduleAccordingTo:lastScheduleInfo]];
+        
+        [lastScheduleInfo release];
+        lastScheduleInfo = nil;
+    }
+}
+
+- (void)parseScheduleInfoFromString:(NSString *)line {
+    if (!lastScheduleInfo) {
+        lastScheduleInfo = [[NSMutableDictionary alloc] initWithCapacity:4];
+    }
+    MEKeyValue parsed = [self breakLineToKeyValue:line];
+    [lastScheduleInfo setObject:parsed.value forKey:[parsed.key lowercaseString]];
 }
 
 - (void)dealloc {

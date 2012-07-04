@@ -48,7 +48,10 @@
 #pragma mark TableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    if (!delegate) {
+        return 1;
+    }
+    return [delegate numberOfAgenda:self];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

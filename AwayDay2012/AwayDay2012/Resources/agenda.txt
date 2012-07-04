@@ -12,3 +12,18 @@ Schedule
     From: 13.3
     To: 16
 
+
+Date: 2012/09/18
+#------------------------------------------------------------------------------------------------------------------
+Schedule
+    Title: Heading to Airport
+    Comment: Beijing, Xi'an, Shanghai group take bus to local airport
+    From: 12
+    To: 13.30
+    
+Schedule
+    Title: Fly to Chengdu
+    Comment: Check in and fly to Chengdu, time may will be adjusted
+    From: 13.3
+    To: 16
+

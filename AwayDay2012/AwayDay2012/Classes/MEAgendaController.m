@@ -57,6 +57,19 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)dealloc {
+    [agendaList release];
+    
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Delegation for Agenda View
+
+- (NSInteger)numberOfAgenda:(MEAgendaView *)agendaView {
+    return [agendaList count];
+}
+
 - (NSInteger)agenda:(MEAgendaView *)agendaView scheduleNumInAgenda:(NSInteger)index {
     if (![self isValidIndexOfAgendaList:index]) {
         return 0;
@@ -83,12 +96,6 @@
         return MEDATE_INVALID;
     }
     return [agendaList agendaAtIndex:index].date;
-}
-
-- (void)dealloc {
-    [agendaList release];
-    
-    [super dealloc];
 }
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index {

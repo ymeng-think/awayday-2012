@@ -13,6 +13,7 @@
 
 @protocol MEAgendaDelegate
 
+- (NSInteger)numberOfAgenda:(MEAgendaView *)agendaView;
 - (NSInteger)agenda:(MEAgendaView *)agendaView scheduleNumInAgenda:(NSInteger)index;
 - (void)agenda:(MEAgendaView *)agendaView cell:(MEScheduleCell *)cell atScheduleIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex;
 - (MEDate)agenda:(MEAgendaView *)agendaView dateAtIndex:(NSInteger)index;
