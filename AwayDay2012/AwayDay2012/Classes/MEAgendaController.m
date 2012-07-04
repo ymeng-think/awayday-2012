@@ -9,6 +9,7 @@
 #import "MEAgendaController.h"
 #import "MEAgenda.h"
 #import "MEAgendaList.h"
+#import "MEAgendaLoader.h"
 #import "MESchedule.h"
 #import "MEScheduleCell.h"
 
@@ -16,7 +17,6 @@
 
 @interface MEAgendaController ()
 
-+ (MEAgenda *)agendaGenerator;
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index;
 
 @end
@@ -28,8 +28,9 @@
     if (self) {
         self.tabBarItem.title = TAB_NAME;
         
-        agendaList = [[MEAgendaList alloc] init];
-        [agendaList add:[MEAgendaController agendaGenerator]];
+        MEAgendaLoader *agendaLoader = [[MEAgendaLoader alloc] init];
+        agendaList = [[agendaLoader loadFromFile:@"agenda"] retain];
+        [agendaLoader release];
     }
     return self;
 }
@@ -92,22 +93,6 @@
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index {
     return index >= 0 && index < agendaList.count;
-}
-
-+ (MEAgenda *)agendaGenerator {
-    MEAgenda *agenda = [[[MEAgenda alloc] initOnYear:2012 month:9 day:15] autorelease];
-    
-    MESchedule *schedule1 = [MESchedule schedule:@"Heading to Airport" from:12 to:13.30];
-    schedule1.comment = @"Beijing, Xi'an, Shanghai group take bus to local airport";
-    [agenda addSchedule:schedule1];
-    [schedule1 release];
-    
-    MESchedule *schedule2 = [MESchedule schedule:@"Fly to Chengdu" from:13.30 to:16];
-    schedule2.comment = @"Check in and fly to Chengdu, time may will be adjusted";
-    [agenda addSchedule:schedule2];
-    [schedule2 release];
-    
-    return agenda;
 }
 
 @end

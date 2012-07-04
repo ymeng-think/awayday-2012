@@ -11,6 +11,8 @@
 		6F682F0E15900EF300B24AAE /* MEAgendaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F0D15900EF300B24AAE /* MEAgendaView.m */; };
 		6F682F1715903FE800B24AAE /* MEAgenda.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F1615903FE800B24AAE /* MEAgenda.m */; };
 		6F682F1F1590972700B24AAE /* MESchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F1E1590972700B24AAE /* MESchedule.m */; };
+		6F70C60515A31036004AA6B1 /* MEAgendaLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F70C60415A31036004AA6B1 /* MEAgendaLoader.m */; };
+		6F70C60815A314F1004AA6B1 /* agenda.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F70C60715A314F1004AA6B1 /* agenda.txt */; };
 		6F987854158F3DBE00030835 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987853158F3DBE00030835 /* UIKit.framework */; };
 		6F987856158F3DBE00030835 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987855158F3DBE00030835 /* Foundation.framework */; };
 		6F987858158F3DBE00030835 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987857158F3DBE00030835 /* CoreGraphics.framework */; };
@@ -36,6 +38,9 @@
 		6F682F1615903FE800B24AAE /* MEAgenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgenda.m; sourceTree = "<group>"; };
 		6F682F1D1590972700B24AAE /* MESchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESchedule.h; sourceTree = "<group>"; };
 		6F682F1E1590972700B24AAE /* MESchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESchedule.m; sourceTree = "<group>"; };
+		6F70C60315A31036004AA6B1 /* MEAgendaLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaLoader.h; sourceTree = "<group>"; };
+		6F70C60415A31036004AA6B1 /* MEAgendaLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaLoader.m; sourceTree = "<group>"; };
+		6F70C60715A314F1004AA6B1 /* agenda.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agenda.txt; sourceTree = "<group>"; };
 		6F98784F158F3DBE00030835 /* AwayDay2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwayDay2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F987853158F3DBE00030835 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6F987855158F3DBE00030835 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,6 +152,8 @@
 				6F98788B158F44E800030835 /* MEHotelController.m */,
 				6F98788D158F450A00030835 /* MELocationController.h */,
 				6F98788E158F450A00030835 /* MELocationController.m */,
+				6F70C60315A31036004AA6B1 /* MEAgendaLoader.h */,
+				6F70C60415A31036004AA6B1 /* MEAgendaLoader.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				6FD7AE64159D62BF008B5347 /* Xibs */,
+				6F70C60715A314F1004AA6B1 /* agenda.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -247,6 +255,7 @@
 			files = (
 				6F98785E158F3DBE00030835 /* InfoPlist.strings in Resources */,
 				6FD7AE6B159D63CD008B5347 /* schedule-cell.xib in Resources */,
+				6F70C60815A314F1004AA6B1 /* agenda.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +278,7 @@
 				6F6150CD159C2A3300F77E80 /* MEAgendaList.m in Sources */,
 				6FD7AE6E159D63F4008B5347 /* MEScheduleCell.m in Sources */,
 				6FD7AE75159D794E008B5347 /* MHNibTableViewCell.m in Sources */,
+				6F70C60515A31036004AA6B1 /* MEAgendaLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

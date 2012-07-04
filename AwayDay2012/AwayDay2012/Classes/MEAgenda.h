@@ -18,7 +18,7 @@
 
 @property (nonatomic, readonly) MEDate date;
 
-- (id)initOnYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
+- (id)initOnDate:(MEDate)date;
 - (void)addSchedule:(MESchedule *)schedule;
 - (NSInteger)scheduleCount;
 - (MESchedule *)scheduleAt:(NSInteger)index;

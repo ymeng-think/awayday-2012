@@ -16,10 +16,10 @@
 @implementation MEAgenda
 @synthesize date;
 
-- (id)initOnYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
+- (id)initOnDate:(MEDate)_date {
     self = [super init];
     if (self) {
-        self->date = MEDateMake(year, month, day);
+        self->date = _date;
         self->scheduleList = [[NSMutableArray alloc] init];
     }
     
