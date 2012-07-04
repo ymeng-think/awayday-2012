@@ -62,7 +62,7 @@
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<float key="IBUIMinimumFontSize">10</float>
+								<float key="IBUIMinimumFontSize">15</float>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<string key="name">ChalkboardSE-Regular</string>
 									<string key="family">Chalkboard SE</string>
@@ -95,7 +95,7 @@
 								</object>
 								<reference key="IBUIHighlightedColor" ref="1035145461"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<float key="IBUIMinimumFontSize">10</float>
+								<float key="IBUIMinimumFontSize">13</float>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="157824058">
 									<string key="name">ChalkboardSE-Regular</string>
 									<string key="family">Chalkboard SE</string>

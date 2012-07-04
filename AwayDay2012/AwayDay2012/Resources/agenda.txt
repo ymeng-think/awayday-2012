@@ -9,8 +9,26 @@ Schedule
 Schedule
     Title: Fly to Chengdu
     Comment: Check in and fly to Chengdu, time may will be adjusted
-    From: 13.3
+    From: 13.30
     To: 16
+    
+Schedule
+    Title: Airport pick up
+    Comment: Check in and fly to Chengdu, time may will be adjusted
+    From: 16
+    To: 17
+    
+Schedule
+    Title: Heading to Qingcheng Mountain
+    Comment: Take bus to Qingcheng Mountain, at the same time ...
+    From: 17
+    To:18.30
+    
+Schedule
+    Title: Hotel Check in
+    Comment: Check in Conference Resort Chengdu
+    From: 18
+    To: 20.30
 
 
 Date: 2012/09/18
