@@ -13,6 +13,9 @@
 
 @interface MEAwayDayController ()
 
++ (MEAgendaController *)initAgendaController;
++ (MEAgendaController *)initHotelController;
+
 @end
 
 @implementation MEAwayDayController
@@ -20,8 +23,8 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        UIViewController *agendaController = [[MEAgendaController alloc] init];
-        UIViewController *hotelController = [[MEHotelController alloc] init];
+        UIViewController *agendaController = [[self class] initAgendaController];
+        UIViewController *hotelController = [[self class] initHotelController];
         UIViewController *locationController = [[MELocationController alloc] init];
         
         NSArray *controllers = [[NSArray alloc] initWithObjects:agendaController, hotelController, locationController, nil];
@@ -47,6 +50,16 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+}
+
++ (MEAgendaController *)initAgendaController {
+    MEAgendaController *controller = [[MEAgendaController alloc] init];
+    return controller;
+}
+
++ (MEHotelController *)initHotelController {
+    MEHotelController *controller = [[MEHotelController alloc] init];
+    return controller;
 }
 
 @end
