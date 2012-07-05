@@ -13,8 +13,6 @@
 #import "MESchedule.h"
 #import "MEScheduleCell.h"
 
-#define TAB_NAME @"AGENDA"
-
 @interface MEAgendaController ()
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index;
@@ -26,8 +24,6 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.tabBarItem.title = TAB_NAME;
-        
         MEAgendaLoader *agendaLoader = [[MEAgendaLoader alloc] init];
         agendaList = [[agendaLoader loadFromFile:@"agenda"] retain];
         [agendaLoader release];

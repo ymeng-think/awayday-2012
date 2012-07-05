@@ -8,8 +8,6 @@
 
 #import "MEHotelController.h"
 
-#define TAB_NAME @"HOTEL"
-
 @interface MEHotelController ()
 
 @end
@@ -19,7 +17,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.tabBarItem.title = TAB_NAME;
+
     }
     return self;
 }

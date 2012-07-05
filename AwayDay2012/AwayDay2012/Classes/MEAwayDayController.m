@@ -10,10 +10,13 @@
 #import "MEAgendaController.h"
 #import "MEHotelController.h"
 
+#define TAB_NAME_AGENDA @"AGENDA"
+#define TAB_NAME_HOTEL  @"HOTEL"
+
 @interface MEAwayDayController ()
 
-+ (MEAgendaController *)initAgendaController;
-+ (MEAgendaController *)initHotelController;
++ (UIViewController *)initAgendaController;
++ (UIViewController *)initHotelController;
 
 @end
 
@@ -49,13 +52,18 @@
     return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
-+ (MEAgendaController *)initAgendaController {
++ (UIViewController *)initAgendaController {   
     MEAgendaController *controller = [[MEAgendaController alloc] init];
-    return controller;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [controller release];
+    navController.tabBarItem.title = TAB_NAME_AGENDA;
+
+    return navController;
 }
 
-+ (MEHotelController *)initHotelController {
++ (UIViewController *)initHotelController {
     MEHotelController *controller = [[MEHotelController alloc] init];
+    controller.tabBarItem.title = TAB_NAME_HOTEL;
     return controller;
 }
 
