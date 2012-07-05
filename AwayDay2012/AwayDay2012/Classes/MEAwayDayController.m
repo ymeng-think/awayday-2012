@@ -20,22 +20,24 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        UIViewController *agendaController = [[MEAgendaController alloc] init];
+        UIViewController *hotelController = [[MEHotelController alloc] init];
+        UIViewController *locationController = [[MELocationController alloc] init];
+        
+        NSArray *controllers = [[NSArray alloc] initWithObjects:agendaController, hotelController, locationController, nil];
+        self.viewControllers = controllers;
+        
+        [controllers release];
+        [agendaController release];
+        [hotelController release];
+        [locationController release];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    agendaController = [[MEAgendaController alloc] init];
-    hotelController = [[MEHotelController alloc] init];
-    locationController = [[MELocationController alloc] init];
-    
-    NSArray *controllers = [[NSArray alloc] initWithObjects:agendaController, hotelController, locationController, nil];
-    self.viewControllers = controllers;
-    
-    [controllers release];
+	// Do any additional setup after loading the view.   
 }
 
 - (void)viewDidUnload {
@@ -45,14 +47,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return UIInterfaceOrientationIsPortrait(interfaceOrientation);
-}
-
-- (void)dealloc {
-    [agendaController release];
-    [hotelController release];
-    [locationController release];
-    
-    [super dealloc];
 }
 
 @end
