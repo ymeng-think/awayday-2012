@@ -9,7 +9,6 @@
 #import "MEAwayDayController.h"
 #import "MEAgendaController.h"
 #import "MEHotelController.h"
-#import "MELocationController.h"
 
 @interface MEAwayDayController ()
 
@@ -25,15 +24,13 @@
     if (self) {
         UIViewController *agendaController = [[self class] initAgendaController];
         UIViewController *hotelController = [[self class] initHotelController];
-        UIViewController *locationController = [[MELocationController alloc] init];
         
-        NSArray *controllers = [[NSArray alloc] initWithObjects:agendaController, hotelController, locationController, nil];
+        NSArray *controllers = [[NSArray alloc] initWithObjects:agendaController, hotelController, nil];
         self.viewControllers = controllers;
         
         [controllers release];
         [agendaController release];
         [hotelController release];
-        [locationController release];
     }
     return self;
 }

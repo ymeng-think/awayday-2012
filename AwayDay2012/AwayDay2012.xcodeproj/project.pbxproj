@@ -22,7 +22,6 @@
 		6F98787A158F404E00030835 /* MEAwayDayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F987879158F404E00030835 /* MEAwayDayController.m */; };
 		6F987889158F44D500030835 /* MEAgendaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F987888158F44D500030835 /* MEAgendaController.m */; };
 		6F98788C158F44E800030835 /* MEHotelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F98788B158F44E800030835 /* MEHotelController.m */; };
-		6F98788F158F450A00030835 /* MELocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F98788E158F450A00030835 /* MELocationController.m */; };
 		6FD7AE6B159D63CD008B5347 /* schedule-cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FD7AE6A159D63CD008B5347 /* schedule-cell.xib */; };
 		6FD7AE6E159D63F4008B5347 /* MEScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD7AE6D159D63F4008B5347 /* MEScheduleCell.m */; };
 		6FD7AE75159D794E008B5347 /* MHNibTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD7AE74159D794E008B5347 /* MHNibTableViewCell.m */; };
@@ -57,8 +56,6 @@
 		6F987888158F44D500030835 /* MEAgendaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaController.m; sourceTree = "<group>"; };
 		6F98788A158F44E800030835 /* MEHotelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHotelController.h; sourceTree = "<group>"; };
 		6F98788B158F44E800030835 /* MEHotelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHotelController.m; sourceTree = "<group>"; };
-		6F98788D158F450A00030835 /* MELocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELocationController.h; sourceTree = "<group>"; };
-		6F98788E158F450A00030835 /* MELocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELocationController.m; sourceTree = "<group>"; };
 		6FD7AE6A159D63CD008B5347 /* schedule-cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "schedule-cell.xib"; sourceTree = "<group>"; };
 		6FD7AE6C159D63F4008B5347 /* MEScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEScheduleCell.h; sourceTree = "<group>"; };
 		6FD7AE6D159D63F4008B5347 /* MEScheduleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEScheduleCell.m; sourceTree = "<group>"; };
@@ -150,8 +147,6 @@
 				6F987879158F404E00030835 /* MEAwayDayController.m */,
 				6F98788A158F44E800030835 /* MEHotelController.h */,
 				6F98788B158F44E800030835 /* MEHotelController.m */,
-				6F98788D158F450A00030835 /* MELocationController.h */,
-				6F98788E158F450A00030835 /* MELocationController.m */,
 				6F70C60315A31036004AA6B1 /* MEAgendaLoader.h */,
 				6F70C60415A31036004AA6B1 /* MEAgendaLoader.m */,
 			);
@@ -271,7 +266,6 @@
 				6F98787A158F404E00030835 /* MEAwayDayController.m in Sources */,
 				6F987889158F44D500030835 /* MEAgendaController.m in Sources */,
 				6F98788C158F44E800030835 /* MEHotelController.m in Sources */,
-				6F98788F158F450A00030835 /* MELocationController.m in Sources */,
 				6F682F0E15900EF300B24AAE /* MEAgendaView.m in Sources */,
 				6F682F1715903FE800B24AAE /* MEAgenda.m in Sources */,
 				6F682F1F1590972700B24AAE /* MESchedule.m in Sources */,

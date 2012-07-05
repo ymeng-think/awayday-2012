@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class MEAgendaController, MEHotelController, MELocationController;
-
 @interface MEAwayDayController : UITabBarController
 
 @end
