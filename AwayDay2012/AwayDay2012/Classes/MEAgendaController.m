@@ -12,10 +12,12 @@
 #import "MEAgendaLoader.h"
 #import "MESchedule.h"
 #import "MEScheduleCell.h"
+#import "MEScheduleExposingController.h"
 
 @interface MEAgendaController ()
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index;
+- (void)exposeSchedule;
 
 @end
 
@@ -96,6 +98,23 @@
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index {
     return index >= 0 && index < agendaList.count;
+}
+
+- (void)agenda:(MEAgendaView *)agendaView exposeScheduleAtIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex {
+    if (![self isValidIndexOfAgendaList:agendaIndex]) {
+        return;
+    }
+    
+    MEAgenda *agenda = [agendaList agendaAtIndex:agendaIndex];
+    MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
+    
+    [self exposeSchedule];
+}
+
+- (void)exposeSchedule {
+    UIViewController *controller = [[MEScheduleExposingController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+    [controller release];
 }
 
 @end

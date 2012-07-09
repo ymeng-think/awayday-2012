@@ -18,9 +18,12 @@
 - (void)agenda:(MEAgendaView *)agendaView cell:(MEScheduleCell *)cell atScheduleIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex;
 - (MEDate)agenda:(MEAgendaView *)agendaView dateAtIndex:(NSInteger)index;
 
+@optional
+- (void)agenda:(MEAgendaView *)agendaView exposeScheduleAtIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex;
+
 @end
 
-@interface MEAgendaView : UIView <UITableViewDataSource> {
+@interface MEAgendaView : UIView <UITableViewDataSource, UITableViewDelegate> {
     UITableView *plan;
     
     id<NSObject, MEAgendaDelegate> delegate;

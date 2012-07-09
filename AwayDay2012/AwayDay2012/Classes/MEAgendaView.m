@@ -30,6 +30,7 @@
 - (void)addPlanView {
     plan = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     plan.dataSource = self;
+    plan.delegate = self;
     
     [self addSubview:plan];
 }
@@ -89,6 +90,15 @@
     }
     
     return [NSString stringWithFormat:@"%i / %i / %i", date.year, date.month, date.day];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    if (!delegate || 
+        ![delegate respondsToSelector:@selector(agenda:exposeScheduleAtIndex:inAgenda:)]) {
+        return;
+    }    
+    
+    [delegate agenda:self exposeScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
 }
 
 @end

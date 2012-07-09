@@ -25,12 +25,15 @@
 		6FD7AE6B159D63CD008B5347 /* schedule-cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FD7AE6A159D63CD008B5347 /* schedule-cell.xib */; };
 		6FD7AE6E159D63F4008B5347 /* MEScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD7AE6D159D63F4008B5347 /* MEScheduleCell.m */; };
 		6FD7AE75159D794E008B5347 /* MHNibTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD7AE74159D794E008B5347 /* MHNibTableViewCell.m */; };
+		6FF0E9D815AA9BA0002FE722 /* MEScheduleExposingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F67DA2115A555DF00860964 /* MEScheduleExposingController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6F6150CB159C2A3300F77E80 /* MEAgendaList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaList.h; sourceTree = "<group>"; };
 		6F6150CC159C2A3300F77E80 /* MEAgendaList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaList.m; sourceTree = "<group>"; };
 		6F6150CF159C2C5C00F77E80 /* MEDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEDate.h; sourceTree = "<group>"; };
+		6F67DA2015A555DF00860964 /* MEScheduleExposingController.h */ = {isa = PBXFileReference; path = MEScheduleExposingController.h; sourceTree = "<group>"; };
+		6F67DA2115A555DF00860964 /* MEScheduleExposingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MEScheduleExposingController.m; sourceTree = "<group>"; };
 		6F682F0C15900EF300B24AAE /* MEAgendaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaView.h; sourceTree = "<group>"; };
 		6F682F0D15900EF300B24AAE /* MEAgendaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaView.m; sourceTree = "<group>"; };
 		6F682F1515903FE800B24AAE /* MEAgenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgenda.h; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				6F987879158F404E00030835 /* MEAwayDayController.m */,
 				6F98788A158F44E800030835 /* MEHotelController.h */,
 				6F98788B158F44E800030835 /* MEHotelController.m */,
+				6F67DA2015A555DF00860964 /* MEScheduleExposingController.h */,
+				6F67DA2115A555DF00860964 /* MEScheduleExposingController.m */,
 				6F70C60315A31036004AA6B1 /* MEAgendaLoader.h */,
 				6F70C60415A31036004AA6B1 /* MEAgendaLoader.m */,
 			);
@@ -261,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FF0E9D815AA9BA0002FE722 /* MEScheduleExposingController.m in Sources */,
 				6F987873158F3EDE00030835 /* main.m in Sources */,
 				6F987874158F3EDE00030835 /* MEAppDelegate.m in Sources */,
 				6F98787A158F404E00030835 /* MEAwayDayController.m in Sources */,
