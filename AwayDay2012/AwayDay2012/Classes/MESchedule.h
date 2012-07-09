@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MEDate.h"
 
 @interface MESchedule : NSObject {
     NSString *title;
@@ -14,12 +15,14 @@
     
     CGFloat from;
     CGFloat to;
+    MEDate scheduledOn;
 }
 
 @property (nonatomic, retain, readonly) NSString *title;
 @property (nonatomic, retain) NSString *comment;
-@property (nonatomic) CGFloat from;
-@property (nonatomic) CGFloat to;
+@property (nonatomic, readonly) CGFloat from;
+@property (nonatomic, readonly) CGFloat to;
+@property (nonatomic) MEDate scheduledOn;
 
 + (id)schedule:(NSString *)title from:(CGFloat)from to:(CGFloat)to;
 

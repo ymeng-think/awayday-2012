@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MEScheduleExposingController : UIViewController
+@class MESchedule;
+
+@interface MEScheduleExposingController : UIViewController {
+    MESchedule *schedule;
+}
+
+- (void)exposeSchedule:(MESchedule *)schedule;
 
 @end

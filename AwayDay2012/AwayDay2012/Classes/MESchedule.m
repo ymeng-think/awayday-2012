@@ -10,7 +10,7 @@
 
 @implementation MESchedule
 
-@synthesize title, comment, from, to;
+@synthesize title, comment, from, to, scheduledOn;
 
 + (id)schedule:(NSString *)title from:(CGFloat)from to:(CGFloat)to {
     MESchedule *schedule = [[[MESchedule alloc] init] autorelease];

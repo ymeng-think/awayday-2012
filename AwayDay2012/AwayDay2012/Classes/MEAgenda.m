@@ -27,6 +27,7 @@
 }
 
 - (void)addSchedule:(MESchedule *)schedule {
+    schedule.scheduledOn = self->date;
     [scheduleList addObject:schedule];
 }
 

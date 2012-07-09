@@ -7,12 +7,20 @@
 //
 
 #import "MEScheduleExposingController.h"
+#import "MEScheduleView.h"
 
 @interface MEScheduleExposingController ()
 
 @end
 
 @implementation MEScheduleExposingController
+
+- (void)loadView {
+    UIView *view = [MEScheduleView loadFromNib];
+    NSLog(@"loaded view is %@", view);
+    self.view = view;
+    [view release];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +34,16 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)exposeSchedule:(MESchedule *)_schedule {
+    self->schedule = [_schedule retain];
+}
+
+- (void)dealloc {
+    [self->schedule release];
+    
+    [super dealloc];
 }
 
 @end

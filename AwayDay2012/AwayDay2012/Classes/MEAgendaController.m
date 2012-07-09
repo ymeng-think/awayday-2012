@@ -17,7 +17,7 @@
 @interface MEAgendaController ()
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index;
-- (void)exposeSchedule;
+- (void)exposeSchedule:(MESchedule *)schedule;
 
 @end
 
@@ -108,11 +108,12 @@
     MEAgenda *agenda = [agendaList agendaAtIndex:agendaIndex];
     MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
     
-    [self exposeSchedule];
+    [self exposeSchedule:schedule];
 }
 
-- (void)exposeSchedule {
-    UIViewController *controller = [[MEScheduleExposingController alloc] init];
+- (void)exposeSchedule:(MESchedule *)schedule {
+    MEScheduleExposingController *controller = [[MEScheduleExposingController alloc] init];
+    [controller exposeSchedule:schedule];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
 }
