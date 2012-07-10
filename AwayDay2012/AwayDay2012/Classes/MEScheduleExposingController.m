@@ -34,6 +34,7 @@
     scheduleView.scheduledOn = self->schedule.scheduledOn;
     scheduleView.from = self->schedule.from;
     scheduleView.to = self->schedule.to;
+    scheduleView.description = self->schedule.comment;
 }
 
 - (void)viewDidUnload {
