@@ -17,7 +17,7 @@
 @implementation MEScheduleExposingController
 
 - (void)loadView {
-    UIView *view = [MEScheduleView loadFromNib];
+    UIView *view = [[MEScheduleView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     self.view = view;
     [view release];
 }

@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MENibView.h"
 #import "MEDate.h"
 
-@interface MEScheduleView : MENibView {
+@interface MEScheduleView : UIView {
     NSString *title;
     MEDate scheduledOn;
     CGFloat from;
@@ -18,6 +17,7 @@
     NSString *description;
 }
 
+@property (nonatomic, retain) IBOutlet UIView *view;
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel *dateLabel;
 @property (nonatomic, retain) IBOutlet UILabel *fromLabel;

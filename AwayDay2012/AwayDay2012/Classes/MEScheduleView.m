@@ -9,6 +9,8 @@
 #import "MEScheduleView.h"
 #import "METimeFormat.h"
 
+#define RESOURCE_NAME @"schedule-detail"
+
 @interface MEScheduleView ()
 
 + (void)fixHeightForContent:(UILabel *)label;
@@ -17,15 +19,23 @@
 
 @implementation MEScheduleView
 
-@synthesize titleLabel, dateLabel, fromLabel, toLabel, descriptionLabel;
+@synthesize view, titleLabel, dateLabel, fromLabel, toLabel, descriptionLabel;
 @synthesize title, scheduledOn, from, to, description;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [[NSBundle mainBundle] loadNibNamed:RESOURCE_NAME owner:self options:nil];
+        [self addSubview:self.view];
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [[NSBundle mainBundle] loadNibNamed:RESOURCE_NAME owner:self options:nil];
+    [self addSubview:self.view];
 }
 
 - (void)layoutSubviews {
@@ -73,6 +83,7 @@
 }
 
 - (void)dealloc {
+    [view release];
     [titleLabel release];
     [dateLabel release];
     [fromLabel release];
@@ -83,10 +94,6 @@
     [self->description release];
     
     [super dealloc];
-}
-
-+ (NSString *)nibName {
-    return @"schedule-detail";
 }
 
 + (void)fixHeightForContent:(UILabel *)label {

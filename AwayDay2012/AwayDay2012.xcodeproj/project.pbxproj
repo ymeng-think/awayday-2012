@@ -28,7 +28,6 @@
 		6FF0E9D815AA9BA0002FE722 /* MEScheduleExposingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F67DA2115A555DF00860964 /* MEScheduleExposingController.m */; };
 		6FF0E9DF15AAA2DD002FE722 /* schedule-detail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FF0E9DE15AAA2DD002FE722 /* schedule-detail.xib */; };
 		6FF0E9E315AAA40D002FE722 /* MEScheduleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0E9E215AAA40D002FE722 /* MEScheduleView.m */; };
-		6FF0E9E615AACE9C002FE722 /* MENibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0E9E515AACE9C002FE722 /* MENibView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,8 +69,6 @@
 		6FF0E9DE15AAA2DD002FE722 /* schedule-detail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "schedule-detail.xib"; sourceTree = "<group>"; };
 		6FF0E9E115AAA40D002FE722 /* MEScheduleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEScheduleView.h; sourceTree = "<group>"; };
 		6FF0E9E215AAA40D002FE722 /* MEScheduleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEScheduleView.m; sourceTree = "<group>"; };
-		6FF0E9E415AACE9C002FE722 /* MENibView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MENibView.h; sourceTree = "<group>"; };
-		6FF0E9E515AACE9C002FE722 /* MENibView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MENibView.m; sourceTree = "<group>"; };
 		6FF0E9E715AAF74E002FE722 /* METimeFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = METimeFormat.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,8 +173,6 @@
 				6FF0E9E215AAA40D002FE722 /* MEScheduleView.m */,
 				6FD7AE73159D794E008B5347 /* MHNibTableViewCell.h */,
 				6FD7AE74159D794E008B5347 /* MHNibTableViewCell.m */,
-				6FF0E9E415AACE9C002FE722 /* MENibView.h */,
-				6FF0E9E515AACE9C002FE722 /* MENibView.m */,
 				6FF0E9E715AAF74E002FE722 /* METimeFormat.h */,
 			);
 			name = Views;
@@ -296,7 +291,6 @@
 				6FD7AE75159D794E008B5347 /* MHNibTableViewCell.m in Sources */,
 				6F70C60515A31036004AA6B1 /* MEAgendaLoader.m in Sources */,
 				6FF0E9E315AAA40D002FE722 /* MEScheduleView.m in Sources */,
-				6FF0E9E615AACE9C002FE722 /* MENibView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
