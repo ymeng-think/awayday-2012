@@ -9,6 +9,7 @@
 #import "MEAwayDayController.h"
 #import "MEAgendaController.h"
 #import "MEHotelController.h"
+#import "MENavigationController.h"
 
 #define TAB_NAME_AGENDA @"AGENDA"
 #define TAB_NAME_HOTEL  @"HOTEL"

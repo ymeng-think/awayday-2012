@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F11714D15AC44860066179D /* MENavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F11714C15AC44860066179D /* MENavigationController.m */; };
+		6F11714F15AC451A0066179D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F11714E15AC451A0066179D /* QuartzCore.framework */; };
 		6F6150CD159C2A3300F77E80 /* MEAgendaList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6150CC159C2A3300F77E80 /* MEAgendaList.m */; };
 		6F682F0E15900EF300B24AAE /* MEAgendaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F0D15900EF300B24AAE /* MEAgendaView.m */; };
 		6F682F1715903FE800B24AAE /* MEAgenda.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F1615903FE800B24AAE /* MEAgenda.m */; };
@@ -31,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F11714B15AC44860066179D /* MENavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MENavigationController.h; sourceTree = "<group>"; };
+		6F11714C15AC44860066179D /* MENavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MENavigationController.m; sourceTree = "<group>"; };
+		6F11714E15AC451A0066179D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6F6150CB159C2A3300F77E80 /* MEAgendaList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaList.h; sourceTree = "<group>"; };
 		6F6150CC159C2A3300F77E80 /* MEAgendaList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaList.m; sourceTree = "<group>"; };
 		6F6150CF159C2C5C00F77E80 /* MEDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEDate.h; sourceTree = "<group>"; };
@@ -77,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F11714F15AC451A0066179D /* QuartzCore.framework in Frameworks */,
 				6F987854158F3DBE00030835 /* UIKit.framework in Frameworks */,
 				6F987856158F3DBE00030835 /* Foundation.framework in Frameworks */,
 				6F987858158F3DBE00030835 /* CoreGraphics.framework in Frameworks */,
@@ -109,6 +115,7 @@
 				6F987853158F3DBE00030835 /* UIKit.framework */,
 				6F987855158F3DBE00030835 /* Foundation.framework */,
 				6F987857158F3DBE00030835 /* CoreGraphics.framework */,
+				6F11714E15AC451A0066179D /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,6 +165,8 @@
 				6F98788B158F44E800030835 /* MEHotelController.m */,
 				6F67DA2015A555DF00860964 /* MEScheduleExposingController.h */,
 				6F67DA2115A555DF00860964 /* MEScheduleExposingController.m */,
+				6F11714B15AC44860066179D /* MENavigationController.h */,
+				6F11714C15AC44860066179D /* MENavigationController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -291,6 +300,7 @@
 				6FD7AE75159D794E008B5347 /* MHNibTableViewCell.m in Sources */,
 				6F70C60515A31036004AA6B1 /* MEAgendaLoader.m in Sources */,
 				6FF0E9E315AAA40D002FE722 /* MEScheduleView.m in Sources */,
+				6F11714D15AC44860066179D /* MENavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
