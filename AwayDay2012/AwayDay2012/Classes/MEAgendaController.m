@@ -14,6 +14,8 @@
 #import "MEScheduleCell.h"
 #import "MEScheduleExposingController.h"
 
+#define WINDOW_NAME @"Awayday 2012"
+
 @interface MEAgendaController ()
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index;
@@ -29,6 +31,8 @@
         MEAgendaLoader *agendaLoader = [[MEAgendaLoader alloc] init];
         agendaList = [[agendaLoader loadFromFile:@"agenda"] retain];
         [agendaLoader release];
+        
+        self.title = WINDOW_NAME;
     }
     return self;
 }

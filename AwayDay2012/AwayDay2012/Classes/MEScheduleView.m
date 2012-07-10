@@ -48,7 +48,6 @@
 - (void)setScheduledOn:(MEDate)_scheduledOn {
     self->scheduledOn = MEDateCopy(_scheduledOn);
     
-    NSLog(@"set date is %@", NSStringFromMEDate(self->scheduledOn));
     dateLabel.text = NSStringFromMEDate(self->scheduledOn);
 }
 
