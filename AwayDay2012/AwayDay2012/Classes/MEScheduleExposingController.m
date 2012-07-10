@@ -7,6 +7,7 @@
 //
 
 #import "MEScheduleExposingController.h"
+#import "MESchedule.h"
 #import "MEScheduleView.h"
 
 @interface MEScheduleExposingController ()
@@ -17,14 +18,22 @@
 
 - (void)loadView {
     UIView *view = [MEScheduleView loadFromNib];
-    NSLog(@"loaded view is %@", view);
     self.view = view;
     [view release];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    if (!self->schedule) {
+        return;
+    }
+    
+    MEScheduleView *scheduleView = (MEScheduleView *)self.view;
+    scheduleView.title = self->schedule.title;
+    scheduleView.scheduledOn = self->schedule.scheduledOn;
+    scheduleView.from = self->schedule.from;
+    scheduleView.to = self->schedule.to;
 }
 
 - (void)viewDidUnload {

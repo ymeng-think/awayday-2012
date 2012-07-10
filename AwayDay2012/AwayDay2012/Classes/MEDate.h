@@ -21,9 +21,19 @@ MEDateMake(NSInteger year, NSInteger month, NSInteger day)
     return date;
 }
 
+CG_INLINE MEDate
+MEDateCopy(MEDate date) {
+    return MEDateMake(date.year, date.month, date.day);
+}
+
 #define MEDATE_INVALID MEDateMake(0, 0, 0)
 
 CG_INLINE BOOL
 MEDateIsValid(MEDate date) {
     return date.year > 0 && date.month > 0 && date.day > 0;
+}
+
+CG_INLINE NSString *
+NSStringFromMEDate(MEDate date) {
+    return [NSString stringWithFormat:@"%i / %i / %i", date.year, date.month, date.day];
 }

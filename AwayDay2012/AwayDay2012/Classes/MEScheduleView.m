@@ -7,8 +7,12 @@
 //
 
 #import "MEScheduleView.h"
+#import "METimeFormat.h"
 
 @implementation MEScheduleView
+
+@synthesize titleLabel, dateLabel, fromLabel, toLabel, descriptionLabel;
+@synthesize title, scheduledOn, from, to, description;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -16,6 +20,36 @@
         // Initialization code
     }
     return self;
+}
+
+- (void)setTitle:(NSString *)_title {
+    if (self->title == _title) {
+        return;
+    }
+    
+    [self->title release];
+    self->title = [_title retain];
+    
+    titleLabel.text = self->title;
+}
+
+- (void)setFrom:(CGFloat)_from {
+    self->from = _from;
+    
+    fromLabel.text = FloatToTimeString(self->from);
+}
+
+- (void)setTo:(CGFloat)_to {
+    self->to = _to;
+    
+    toLabel.text = FloatToTimeString(self->to);
+}
+
+- (void)setScheduledOn:(MEDate)_scheduledOn {
+    self->scheduledOn = MEDateCopy(_scheduledOn);
+    
+    NSLog(@"set date is %@", NSStringFromMEDate(self->scheduledOn));
+    dateLabel.text = NSStringFromMEDate(self->scheduledOn);
 }
 
 

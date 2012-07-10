@@ -7,10 +7,9 @@
 //
 
 #import "MEScheduleCell.h"
+#import "METimeFormat.h"
 
 @interface MEScheduleCell ()
-
-+ (NSString *)convertToTimeFormat:(CGFloat)f;
 
 @end
 
@@ -48,13 +47,13 @@
 - (void)setFrom:(CGFloat)_from {
     self->from = _from;
     
-    fromLabel.text = [MEScheduleCell convertToTimeFormat:self->from];
+    fromLabel.text = FloatToTimeString(self->from);
 }
 
 - (void)setTo:(CGFloat)_to {
     self->to = _to;
     
-    toLabel.text = [MEScheduleCell convertToTimeFormat:self->to];
+    toLabel.text = FloatToTimeString(self->to);
 }
 
 - (void)dealloc {
@@ -67,10 +66,6 @@
     [self->comment release];
         
     [super dealloc];
-}
-
-+ (NSString *)convertToTimeFormat:(CGFloat)f {
-    return [[NSString stringWithFormat:@"%.2f", f] stringByReplacingOccurrencesOfString:@"." withString:@":"];
 }
 
 @end

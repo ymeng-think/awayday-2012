@@ -89,7 +89,7 @@
         return nil;
     }
     
-    return [NSString stringWithFormat:@"%i / %i / %i", date.year, date.month, date.day];
+    return NSStringFromMEDate(date);
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {

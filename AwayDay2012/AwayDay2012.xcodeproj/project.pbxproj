@@ -72,6 +72,7 @@
 		6FF0E9E215AAA40D002FE722 /* MEScheduleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEScheduleView.m; sourceTree = "<group>"; };
 		6FF0E9E415AACE9C002FE722 /* MENibView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MENibView.h; sourceTree = "<group>"; };
 		6FF0E9E515AACE9C002FE722 /* MENibView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MENibView.m; sourceTree = "<group>"; };
+		6FF0E9E715AAF74E002FE722 /* METimeFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = METimeFormat.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +178,7 @@
 				6FD7AE74159D794E008B5347 /* MHNibTableViewCell.m */,
 				6FF0E9E415AACE9C002FE722 /* MENibView.h */,
 				6FF0E9E515AACE9C002FE722 /* MENibView.m */,
+				6FF0E9E715AAF74E002FE722 /* METimeFormat.h */,
 			);
 			name = Views;
 			sourceTree = "<group>";
