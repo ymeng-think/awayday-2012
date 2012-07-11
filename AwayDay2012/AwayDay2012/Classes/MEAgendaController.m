@@ -14,13 +14,16 @@
 #import "MEScheduleCell.h"
 #import "MEScheduleExposingController.h"
 
-#define WINDOW_NAME @"Awayday 2012"
+#define WINDOW_NAME             @"Awayday 2012"
+#define FOLLOWING_BUTTON_TITLE  @"Follow"
 
 @interface MEAgendaController ()
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index;
 - (void)exposeSchedule:(MESchedule *)schedule;
 - (void)loadAgendaListFromFile:(NSString *)fileName;
+- (void)addScheduleFollowing;
+- (void)willFollow;
 
 @end
 
@@ -30,6 +33,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self loadAgendaListFromFile:@"agenda"];
+        [self addScheduleFollowing];
         
         self.title = WINDOW_NAME;
     }
@@ -62,6 +66,15 @@
     MEAgendaLoader *agendaLoader = [[MEAgendaLoader alloc] init];
     agendaList = [[agendaLoader loadFromFile:fileName] retain];
     [agendaLoader release];
+}
+
+- (void)addScheduleFollowing {
+    UIBarButtonItem *followingButton = [[UIBarButtonItem alloc] initWithTitle:FOLLOWING_BUTTON_TITLE
+                                                                        style:UIBarButtonItemStylePlain
+                                                                       target:self 
+                                                                       action:@selector(willFollow)];
+    self.navigationItem.rightBarButtonItem = followingButton;
+    [followingButton release];
 }
 
 - (void)dealloc {
@@ -125,6 +138,13 @@
     [controller exposeSchedule:schedule];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
+}
+
+#pragma mark -
+#pragma mark Delegation for Following Schedule Button
+
+- (void)willFollow {
+    NSLog(@"will follow schedule");
 }
 
 @end
