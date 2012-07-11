@@ -7,6 +7,7 @@
 //
 
 #import "MEAppDelegate.h"
+#import "MEAgendaController.h"
 #import "MEAwayDayController.h"
 
 @implementation MEAppDelegate
@@ -25,8 +26,14 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    MEAwayDayController *rootController = [[MEAwayDayController alloc] init];
+    // MEAwayDayController *rootController = [[MEAwayDayController alloc] init];
+    // self.window.rootViewController = rootController;
+    // [rootController release];
+    
+    MEAgendaController *agendaController = [[MEAgendaController alloc] init];
+    UINavigationController *rootController = [[UINavigationController alloc] initWithRootViewController:agendaController];
     self.window.rootViewController = rootController;
+    [agendaController release];
     [rootController release];
     
     [self.window makeKeyAndVisible];
