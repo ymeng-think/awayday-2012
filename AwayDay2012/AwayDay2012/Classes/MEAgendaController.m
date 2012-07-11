@@ -20,6 +20,7 @@
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index;
 - (void)exposeSchedule:(MESchedule *)schedule;
+- (void)loadAgendaListFromFile:(NSString *)fileName;
 
 @end
 
@@ -28,9 +29,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        MEAgendaLoader *agendaLoader = [[MEAgendaLoader alloc] init];
-        agendaList = [[agendaLoader loadFromFile:@"agenda"] retain];
-        [agendaLoader release];
+        [self loadAgendaListFromFile:@"agenda"];
         
         self.title = WINDOW_NAME;
     }
@@ -57,6 +56,12 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)loadAgendaListFromFile:(NSString *)fileName {
+    MEAgendaLoader *agendaLoader = [[MEAgendaLoader alloc] init];
+    agendaList = [[agendaLoader loadFromFile:fileName] retain];
+    [agendaLoader release];
 }
 
 - (void)dealloc {
