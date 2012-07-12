@@ -14,12 +14,15 @@
     NSString *comment;
     CGFloat from;
     CGFloat to;
+    
+    UITableViewCellAccessoryType originalAccessoryType;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel *commentLabel;
 @property (nonatomic, retain) IBOutlet UILabel *fromLabel;
 @property (nonatomic, retain) IBOutlet UILabel *toLabel;
+@property (nonatomic, retain) IBOutlet UIImageView *indicator;
 
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *comment;

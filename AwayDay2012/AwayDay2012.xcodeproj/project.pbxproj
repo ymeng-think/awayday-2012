@@ -13,6 +13,10 @@
 		6F682F0E15900EF300B24AAE /* MEAgendaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F0D15900EF300B24AAE /* MEAgendaView.m */; };
 		6F682F1715903FE800B24AAE /* MEAgenda.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F1615903FE800B24AAE /* MEAgenda.m */; };
 		6F682F1F1590972700B24AAE /* MESchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F1E1590972700B24AAE /* MESchedule.m */; };
+		6F6895CD15AEAC1F004815A0 /* not-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6895CC15AEAC1F004815A0 /* not-selected.png */; };
+		6F6895D015AEC560004815A0 /* selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6895CE15AEC560004815A0 /* selected.png */; };
+		6F6895D115AEC560004815A0 /* selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6895CF15AEC560004815A0 /* selected@2x.png */; };
+		6F6895D315AEC5DF004815A0 /* not-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6895D215AEC5DF004815A0 /* not-selected@2x.png */; };
 		6F70C60515A31036004AA6B1 /* MEAgendaLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F70C60415A31036004AA6B1 /* MEAgendaLoader.m */; };
 		6F70C60815A314F1004AA6B1 /* agenda.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F70C60715A314F1004AA6B1 /* agenda.txt */; };
 		6F987854158F3DBE00030835 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987853158F3DBE00030835 /* UIKit.framework */; };
@@ -47,6 +51,10 @@
 		6F682F1615903FE800B24AAE /* MEAgenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgenda.m; sourceTree = "<group>"; };
 		6F682F1D1590972700B24AAE /* MESchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESchedule.h; sourceTree = "<group>"; };
 		6F682F1E1590972700B24AAE /* MESchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESchedule.m; sourceTree = "<group>"; };
+		6F6895CC15AEAC1F004815A0 /* not-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "not-selected.png"; sourceTree = "<group>"; };
+		6F6895CE15AEC560004815A0 /* selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected.png; sourceTree = "<group>"; };
+		6F6895CF15AEC560004815A0 /* selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selected@2x.png"; sourceTree = "<group>"; };
+		6F6895D215AEC5DF004815A0 /* not-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "not-selected@2x.png"; sourceTree = "<group>"; };
 		6F70C60315A31036004AA6B1 /* MEAgendaLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaLoader.h; sourceTree = "<group>"; };
 		6F70C60415A31036004AA6B1 /* MEAgendaLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaLoader.m; sourceTree = "<group>"; };
 		6F70C60715A314F1004AA6B1 /* agenda.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agenda.txt; sourceTree = "<group>"; };
@@ -92,6 +100,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F6895CA15AEABF0004815A0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6F6895CE15AEC560004815A0 /* selected.png */,
+				6F6895CF15AEC560004815A0 /* selected@2x.png */,
+				6F6895CC15AEAC1F004815A0 /* not-selected.png */,
+				6F6895D215AEC5DF004815A0 /* not-selected@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		6F987844158F3DBE00030835 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +224,7 @@
 		6FD7AE63159D6282008B5347 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6F6895CA15AEABF0004815A0 /* Images */,
 				6FD7AE64159D62BF008B5347 /* Xibs */,
 				6F70C60715A314F1004AA6B1 /* agenda.txt */,
 			);
@@ -276,6 +296,10 @@
 				6FD7AE6B159D63CD008B5347 /* schedule-cell.xib in Resources */,
 				6F70C60815A314F1004AA6B1 /* agenda.txt in Resources */,
 				6FF0E9DF15AAA2DD002FE722 /* schedule-detail.xib in Resources */,
+				6F6895CD15AEAC1F004815A0 /* not-selected.png in Resources */,
+				6F6895D015AEC560004815A0 /* selected.png in Resources */,
+				6F6895D115AEC560004815A0 /* selected@2x.png in Resources */,
+				6F6895D315AEC5DF004815A0 /* not-selected@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

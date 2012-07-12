@@ -15,7 +15,7 @@
 #import "MEScheduleExposingController.h"
 
 #define WINDOW_NAME             @"Awayday 2012"
-#define FOLLOWING_BUTTON_TITLE  @"Follow"
+#define FOLLOWING_BUTTON_TITLE  @"Favorite"
 
 @interface MEAgendaController ()
 
@@ -23,7 +23,7 @@
 - (void)exposeSchedule:(MESchedule *)schedule;
 - (void)loadAgendaListFromFile:(NSString *)fileName;
 - (void)addScheduleFollowing;
-- (void)willFollow;
+- (void)addSessionToFavorite;
 
 @end
 
@@ -41,11 +41,10 @@
 }
 
 - (void)loadView {
-    MEAgendaView *agendaView = [[MEAgendaView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    agendaView = [[MEAgendaView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     agendaView.delegate = self;
     
     self.view = agendaView;
-    [agendaView release];
 }
 
 - (void)viewDidLoad {
@@ -72,13 +71,14 @@
     UIBarButtonItem *followingButton = [[UIBarButtonItem alloc] initWithTitle:FOLLOWING_BUTTON_TITLE
                                                                         style:UIBarButtonItemStylePlain
                                                                        target:self 
-                                                                       action:@selector(willFollow)];
+                                                                       action:@selector(addSessionToFavorite)];
     self.navigationItem.rightBarButtonItem = followingButton;
     [followingButton release];
 }
 
 - (void)dealloc {
     [agendaList release];
+    [agendaView release];
     
     [super dealloc];
 }
@@ -143,8 +143,8 @@
 #pragma mark -
 #pragma mark Delegation for Following Schedule Button
 
-- (void)willFollow {
-    NSLog(@"will follow schedule");
+- (void)addSessionToFavorite {
+    [agendaView startToSelectFavoriteSession];
 }
 
 @end

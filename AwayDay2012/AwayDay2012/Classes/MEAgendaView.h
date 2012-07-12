@@ -31,4 +31,6 @@
 
 @property (nonatomic, retain) id<NSObject, MEAgendaDelegate> delegate;
 
+- (void)startToSelectFavoriteSession;
+
 @end
