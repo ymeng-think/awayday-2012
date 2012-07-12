@@ -55,6 +55,7 @@
 		6F6895CE15AEC560004815A0 /* selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected.png; sourceTree = "<group>"; };
 		6F6895CF15AEC560004815A0 /* selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selected@2x.png"; sourceTree = "<group>"; };
 		6F6895D215AEC5DF004815A0 /* not-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "not-selected@2x.png"; sourceTree = "<group>"; };
+		6F6895D415AEE3B0004815A0 /* MEColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEColor.h; sourceTree = "<group>"; };
 		6F70C60315A31036004AA6B1 /* MEAgendaLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaLoader.h; sourceTree = "<group>"; };
 		6F70C60415A31036004AA6B1 /* MEAgendaLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaLoader.m; sourceTree = "<group>"; };
 		6F70C60715A314F1004AA6B1 /* agenda.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agenda.txt; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 				6F987870158F3EDE00030835 /* main.m */,
 				6F987871158F3EDE00030835 /* MEAppDelegate.h */,
 				6F987872158F3EDE00030835 /* MEAppDelegate.m */,
+				6F6895D415AEE3B0004815A0 /* MEColor.h */,
 				6F6150CF159C2C5C00F77E80 /* MEDate.h */,
 			);
 			path = Classes;

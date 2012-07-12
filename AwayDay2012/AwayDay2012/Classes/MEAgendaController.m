@@ -10,20 +10,24 @@
 #import "MEAgenda.h"
 #import "MEAgendaList.h"
 #import "MEAgendaLoader.h"
+#import "MEColor.h"
 #import "MESchedule.h"
 #import "MEScheduleCell.h"
 #import "MEScheduleExposingController.h"
 
-#define WINDOW_NAME             @"Awayday 2012"
-#define FOLLOWING_BUTTON_TITLE  @"Favorite"
+#define WINDOW_NAME            @"Awayday 2012"
+#define FAVORITE_BUTTON_TITLE  @"Favorite"
+#define DONE_BUTTON_TITLE      @"Done"
 
 @interface MEAgendaController ()
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index;
 - (void)exposeSchedule:(MESchedule *)schedule;
 - (void)loadAgendaListFromFile:(NSString *)fileName;
-- (void)addScheduleFollowing;
 - (void)addSessionToFavorite;
+- (void)confirmFavoriteSession;
+- (UIBarButtonItem *)favoriteButton;
+- (UIBarButtonItem *)doneButton;
 
 @end
 
@@ -33,8 +37,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self loadAgendaListFromFile:@"agenda"];
-        [self addScheduleFollowing];
-        
+
+        self.navigationItem.rightBarButtonItem = [self favoriteButton];
         self.title = WINDOW_NAME;
     }
     return self;
@@ -67,18 +71,32 @@
     [agendaLoader release];
 }
 
-- (void)addScheduleFollowing {
-    UIBarButtonItem *followingButton = [[UIBarButtonItem alloc] initWithTitle:FOLLOWING_BUTTON_TITLE
-                                                                        style:UIBarButtonItemStylePlain
-                                                                       target:self 
-                                                                       action:@selector(addSessionToFavorite)];
-    self.navigationItem.rightBarButtonItem = followingButton;
-    [followingButton release];
+- (UIBarButtonItem *)favoriteButton {
+    if (!favoriteButton) {
+        favoriteButton = [[UIBarButtonItem alloc] initWithTitle:FAVORITE_BUTTON_TITLE
+                                                          style:UIBarButtonItemStylePlain
+                                                         target:self 
+                                                         action:@selector(addSessionToFavorite)];
+    }
+    return favoriteButton;
+}
+
+- (UIBarButtonItem *)doneButton {
+    if (!doneButton) {
+        doneButton = [[UIBarButtonItem alloc] initWithTitle:DONE_BUTTON_TITLE
+                                                      style:UIBarButtonItemStylePlain
+                                                     target:self 
+                                                     action:@selector(confirmFavoriteSession)];
+        doneButton.tintColor = UIColorFromRGB(0xC84131);
+    }
+    return doneButton;
 }
 
 - (void)dealloc {
     [agendaList release];
     [agendaView release];
+    [favoriteButton release];
+    [doneButton release];
     
     [super dealloc];
 }
@@ -144,7 +162,15 @@
 #pragma mark Delegation for Following Schedule Button
 
 - (void)addSessionToFavorite {
+    self.navigationItem.rightBarButtonItem = [self doneButton];
+
     [agendaView startToSelectFavoriteSession];
+}
+
+- (void)confirmFavoriteSession {
+    self.navigationItem.rightBarButtonItem = [self favoriteButton];
+    
+    [agendaView confirmFavoriteSession];
 }
 
 @end

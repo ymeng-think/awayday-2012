@@ -11,13 +11,8 @@
 
 #define EDITING_HORIZONTAL_OFFSET 35
 #define X_OF_CONTENT_VIEW         10
-#define SELECTION_INDICATOR_TAG   1
 
 @interface MEScheduleCell ()
-
-- (void)exchangeAccessoryType:(BOOL)isEditing;
-- (void)offsetContentView:(BOOL)isEditing;
-- (void)exchangeIndicatorShown:(BOOL)isEditing;
 
 @end
 
@@ -76,47 +71,37 @@
     const CGFloat OFFSET_ANIMATION_DURATION = 0.18;
     BOOL isEditing = ((UITableView *)self.superview).isEditing;
     
-    [self exchangeAccessoryType:isEditing];
-    
-	[super layoutSubviews];
-    [UIView animateWithDuration:OFFSET_ANIMATION_DURATION
-                     animations:^{ 
-                         [self offsetContentView:isEditing]; 
-                     } 
-                     completion:^ (BOOL finished){ 
-                         if (finished) { 
-                             [self exchangeIndicatorShown:isEditing]; 
-                         }
-                     }
-     ];
-}
-
-- (void)exchangeAccessoryType:(BOOL)isEditing {
     if (isEditing) {
-        originalAccessoryType = self.accessoryType;
+        [super layoutSubviews];
         self.accessoryType = UITableViewCellAccessoryNone;
-    } else {
-        self.accessoryType = originalAccessoryType;
-    }
-}
-
-- (void)offsetContentView:(BOOL)isEditing {
-    if (isEditing) {
-		CGRect contentFrame = self.contentView.frame;
-		contentFrame.origin.x += EDITING_HORIZONTAL_OFFSET;
-		self.contentView.frame = contentFrame;
-	} else {
-		CGRect contentFrame = self.contentView.frame;
-		contentFrame.origin.x = X_OF_CONTENT_VIEW;
-		self.contentView.frame = contentFrame;
-	}
-}
-
-- (void)exchangeIndicatorShown:(BOOL)isEditing {
-    if (isEditing) {
-        indicator.hidden = NO;
+        [UIView animateWithDuration:OFFSET_ANIMATION_DURATION
+                         animations:^{ 
+                             CGRect contentFrame = self.contentView.frame;
+                             contentFrame.origin.x += EDITING_HORIZONTAL_OFFSET;
+                             self.contentView.frame = contentFrame;
+                         } 
+                         completion:^ (BOOL finished){ 
+                             if (finished) { 
+                                 indicator.hidden = NO;
+                             }
+                         }
+         ];
     } else {
         indicator.hidden = YES;
+        [UIView animateWithDuration:OFFSET_ANIMATION_DURATION
+                         animations:^{
+                             [super layoutSubviews];
+                             
+                             CGRect contentFrame = self.contentView.frame;
+                             contentFrame.origin.x = X_OF_CONTENT_VIEW;
+                             self.contentView.frame = contentFrame;
+                         } 
+                         completion:^ (BOOL finished){ 
+                             if (finished) { 
+                                 self.accessoryType = self->originalAccessoryType;
+                             }
+                         }
+         ];
     }
 }
 

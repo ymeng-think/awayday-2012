@@ -14,6 +14,8 @@
 @interface MEAgendaController : UIViewController <MEAgendaDelegate> {
     MEAgendaList *agendaList;
     MEAgendaView *agendaView;
+    
+    UIBarButtonItem *favoriteButton, *doneButton;
 }
 
 @end

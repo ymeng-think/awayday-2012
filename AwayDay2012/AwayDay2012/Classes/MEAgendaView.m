@@ -29,7 +29,6 @@
 
 - (void)addPlanView {
     plan = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    plan.rowHeight = 45.0;
     plan.dataSource = self;
     plan.delegate = self;
     
@@ -42,6 +41,10 @@
 
 - (void)startToSelectFavoriteSession {
     [plan setEditing:YES animated:YES];
+}
+
+- (void)confirmFavoriteSession {
+    [plan setEditing:NO animated:YES];
 }
 
 - (void)dealloc {
