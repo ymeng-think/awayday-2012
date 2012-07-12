@@ -69,8 +69,6 @@
     if (cell == nil) {
         cell = [MEScheduleCell cellForTable:tableView withOwner:nil];
     }
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (delegate) {
         [delegate agenda:self cell:cell atScheduleIndex:[indexPath row] inAgenda:[indexPath section]];
