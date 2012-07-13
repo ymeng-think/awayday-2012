@@ -14,6 +14,7 @@
     NSString *comment;
     CGFloat from;
     CGFloat to;
+    BOOL canSelect;
     
     UITableViewCellAccessoryType originalAccessoryType;
 }
@@ -28,5 +29,6 @@
 @property (nonatomic, retain) NSString *comment;
 @property (nonatomic) CGFloat from;
 @property (nonatomic) CGFloat to;
+@property (nonatomic) BOOL canSelect;
 
 @end

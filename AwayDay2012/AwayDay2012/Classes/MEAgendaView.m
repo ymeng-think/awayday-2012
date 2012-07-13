@@ -108,10 +108,6 @@
     [delegate agenda:self exposeScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!tableView.isEditing) {
         return;

@@ -24,6 +24,7 @@
 #define KEY_PREFIX_SCHEDULE_COMMENT @"comment"
 #define KEY_PREFIX_SCHEDULE_FROM    @"from"
 #define KEY_PREFIX_SCHEDULE_TO      @"to"
+#define KEY_PREFIX_IS_SESSION       @"issession"
 
 typedef struct {
     NSString *key;
@@ -45,6 +46,7 @@ typedef struct {
 - (void)parseAgendaFromString:(NSString *)line andAddToList:(MEAgendaList *)list;
 - (void)buildScheduleFromLastInfoAndAddToAgenda:(MEAgenda *)agenda;
 - (void)parseScheduleInfoFromString:(NSString *)line;
+- (BOOL)extractSessionValueFrom:(NSDictionary *)info;
 
 @end
 
@@ -134,9 +136,11 @@ typedef struct {
     CGFloat from = [((NSNumber *)[info objectForKey:KEY_PREFIX_SCHEDULE_FROM]) floatValue];
     CGFloat to = [((NSNumber *)[info objectForKey:KEY_PREFIX_SCHEDULE_TO]) floatValue];
     NSString *comment = [info objectForKey:KEY_PREFIX_SCHEDULE_COMMENT];
+    BOOL isSession = [self extractSessionValueFrom:info];
     
     MESchedule *schedule = [MESchedule schedule:title from:from to:to];
     schedule.comment = comment;
+    schedule.isSession = isSession;
     return schedule;
 }
 
@@ -174,7 +178,7 @@ typedef struct {
     
     lastAgenda = [[MEAgenda alloc] initOnDate:[self parseToDate:line]];
 }
-
+    
 - (void)buildScheduleFromLastInfoAndAddToAgenda:(MEAgenda *)agenda {
     if (lastScheduleInfo) {
         [agenda addSchedule:[self createScheduleAccordingTo:lastScheduleInfo]];
@@ -190,6 +194,14 @@ typedef struct {
     }
     MEKeyValue parsed = [self breakLineToKeyValue:line];
     [lastScheduleInfo setObject:parsed.value forKey:[parsed.key lowercaseString]];
+}
+
+- (BOOL)extractSessionValueFrom:(NSDictionary *)info {
+    NSString *value = [info objectForKey:KEY_PREFIX_IS_SESSION];
+    if (!value) {
+        return NO;
+    }
+    return [value boolValue];
 }
 
 - (void)dealloc {

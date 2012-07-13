@@ -127,6 +127,7 @@
     cell.comment = schedule.comment;
     cell.from = schedule.from;
     cell.to = schedule.to;
+    cell.canSelect = schedule.isSession;
 }
 
 - (MEDate)agenda:(MEAgendaView *)agendaView dateAtIndex:(NSInteger)index {

@@ -23,7 +23,7 @@
 @implementation MEScheduleCell
 
 @synthesize titleLabel, commentLabel, fromLabel, toLabel, indicator;
-@synthesize title, comment, from, to;
+@synthesize title, comment, from, to, canSelect;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -70,7 +70,9 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     
-    indicator.image = selected ? [UIImage imageNamed:IMAGE_SELECTED] : [UIImage imageNamed:IMAGE_NOT_SELECTED];
+    if (!indicator.hidden) {
+        indicator.image = selected ? [UIImage imageNamed:IMAGE_SELECTED] : [UIImage imageNamed:IMAGE_NOT_SELECTED];
+    }
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
@@ -110,7 +112,9 @@
     
     BOOL isEditing = ((UITableView *)self.superview).isEditing;
     if (isEditing) {
-        indicator.hidden = NO;
+        if (canSelect) {
+            indicator.hidden = NO;
+        }
     } else {
         self.accessoryType = self->originalAccessoryType;
     }

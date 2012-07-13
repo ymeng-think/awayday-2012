@@ -34,14 +34,30 @@ Schedule
 Date: 2012/09/18
 #------------------------------------------------------------------------------------------------------------------
 Schedule
-    Title: Heading to Airport
-    Comment: Beijing, Xi'an, Shanghai group take bus to local airport
-    From: 12
-    To: 13.30
+    Title: How to Plan a Refactor
+    Comment: Coach you about how to plan a effective refactor when build project.
+    From: 13
+    To: 14
+    IsSession: YES
     
 Schedule
-    Title: Fly to Chengdu
-    Comment: Check in and fly to Chengdu, time may will be adjusted
-    From: 13.3
-    To: 16
+    Title: Something about Ming Chao
+    Comment: Share knowlege about Ming Chao
+    From: 14
+    To: 15
+    IsSession: YES
+    
+Schedule
+    Title: Fruit Time
+    Comment: Fruit Time
+    From: 15
+    To: 15.3
+    IsSession: NO
+    
+Schedule
+    Title: Refactor Practice
+    Comment: Action in refactor practice.
+    From: 15.3
+    To: 16.3
+    IsSession: YES
 

@@ -10,11 +10,11 @@
 
 @implementation MESchedule
 
-@synthesize title, comment, from, to, scheduledOn;
+@synthesize title, comment, from, to, scheduledOn, isSession;
 
 + (id)schedule:(NSString *)title from:(CGFloat)from to:(CGFloat)to {
     MESchedule *schedule = [[[MESchedule alloc] init] autorelease];
-    schedule->title = title;
+    schedule->title = [title retain];
     schedule->from = from;
     schedule->to = to;
     
