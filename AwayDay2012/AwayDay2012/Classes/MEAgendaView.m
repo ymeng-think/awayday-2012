@@ -31,6 +31,7 @@
     plan = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     plan.dataSource = self;
     plan.delegate = self;
+    plan.allowsMultipleSelectionDuringEditing = YES;
     
     [self addSubview:plan];
 }
@@ -105,6 +106,26 @@
     }    
     
     [delegate agenda:self exposeScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!tableView.isEditing) {
+        return;
+    }
+    
+    NSLog(@"select row %i in section %i", [indexPath row], [indexPath section]);
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!tableView.isEditing) {
+        return;
+    }
+    
+    NSLog(@"DEselect row %i in section %i", [indexPath row], [indexPath section]);
 }
 
 @end

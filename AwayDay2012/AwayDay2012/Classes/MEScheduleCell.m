@@ -9,10 +9,14 @@
 #import "MEScheduleCell.h"
 #import "METimeFormat.h"
 
-#define EDITING_HORIZONTAL_OFFSET 35
-#define X_OF_CONTENT_VIEW         10
+#define X_OF_EDITING_HORIZONTAL   40
+#define X_OF_INIT_HORIZONTAL      10
+#define IMAGE_SELECTED            @"selected.png"
+#define IMAGE_NOT_SELECTED        @"not-selected.png"
 
 @interface MEScheduleCell ()
+
+- (void)exchangeIndicatorShown:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context;
 
 @end
 
@@ -63,45 +67,52 @@
     toLabel.text = FloatToTimeString(self->to);
 }
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    indicator.image = selected ? [UIImage imageNamed:IMAGE_SELECTED] : [UIImage imageNamed:IMAGE_NOT_SELECTED];
+}
+
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
     [self setNeedsLayout];
 }
 
 - (void)layoutSubviews {
-    const CGFloat OFFSET_ANIMATION_DURATION = 0.18;
     BOOL isEditing = ((UITableView *)self.superview).isEditing;
     
-    if (isEditing) {
-        [super layoutSubviews];
+    [UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(exchangeIndicatorShown:finished:context:)];
+    
+	[super layoutSubviews];
+    
+    CGRect contentFrame = self.contentView.frame;
+    
+	if (isEditing) {
+		contentFrame.origin.x = X_OF_EDITING_HORIZONTAL;
+		self.contentView.frame = contentFrame;
         self.accessoryType = UITableViewCellAccessoryNone;
-        [UIView animateWithDuration:OFFSET_ANIMATION_DURATION
-                         animations:^{ 
-                             CGRect contentFrame = self.contentView.frame;
-                             contentFrame.origin.x += EDITING_HORIZONTAL_OFFSET;
-                             self.contentView.frame = contentFrame;
-                         } 
-                         completion:^ (BOOL finished){ 
-                             if (finished) { 
-                                 indicator.hidden = NO;
-                             }
-                         }
-         ];
-    } else {
+        
+	} else {
+		contentFrame.origin.x = X_OF_INIT_HORIZONTAL;
+		self.contentView.frame = contentFrame;
         indicator.hidden = YES;
-        [UIView animateWithDuration:OFFSET_ANIMATION_DURATION
-                         animations:^{
-                             [super layoutSubviews];
-                             
-                             CGRect contentFrame = self.contentView.frame;
-                             contentFrame.origin.x = X_OF_CONTENT_VIEW;
-                             self.contentView.frame = contentFrame;
-                         } 
-                         completion:^ (BOOL finished){ 
-                             if (finished) { 
-                                 self.accessoryType = self->originalAccessoryType;
-                             }
-                         }
-         ];
+	}
+    
+	[UIView commitAnimations];
+}
+
+- (void)exchangeIndicatorShown:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
+    if (![finished boolValue]) {
+        return;
+    }
+    
+    BOOL isEditing = ((UITableView *)self.superview).isEditing;
+    if (isEditing) {
+        indicator.hidden = NO;
+    } else {
+        self.accessoryType = self->originalAccessoryType;
     }
 }
 
