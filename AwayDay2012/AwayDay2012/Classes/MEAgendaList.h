@@ -15,9 +15,10 @@
     NSMutableArray *list;
 }
 
-@property (nonatomic, readonly) NSUInteger count;
+@property (nonatomic, readonly) NSInteger count;
 
 - (void)add:(MEAgenda *)agenda;
 - (MEAgenda *)agendaAtIndex:(NSInteger)index;
+- (MEAgendaList *)onlySessionList;
 
 @end

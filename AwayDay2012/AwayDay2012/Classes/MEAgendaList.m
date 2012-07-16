@@ -8,6 +8,13 @@
 
 #import "MEAgendaList.h"
 #import "MEAgenda.h"
+#import "MESchedule.h"
+
+@interface MEAgendaList ()
+
+- (void)onlyCopySessionFrom:(MEAgenda *)from to:(MEAgenda *)to;
+
+@end
 
 @implementation MEAgendaList 
 
@@ -24,12 +31,36 @@
     [list addObject:agenda];
 }
 
-- (NSUInteger)count {
+- (NSInteger)count {
     return self->list.count;
 }
 
 - (MEAgenda *)agendaAtIndex:(NSInteger)index {
     return [self->list objectAtIndex:index];
+}
+
+- (MEAgendaList *)onlySessionList {
+    MEAgendaList *sessionList = [[[MEAgendaList alloc] init] autorelease];
+    
+    for (MEAgenda *agenda in self->list) {
+        if (agenda.sessionCount > 0) {
+            MEAgenda *sessionAgenda = [[MEAgenda alloc] initOnDate:agenda.date];
+            [self onlyCopySessionFrom:agenda to:sessionAgenda];
+            [sessionList add:sessionAgenda];
+            [sessionAgenda release];
+        }
+    }
+    
+    return sessionList;
+}
+
+- (void)onlyCopySessionFrom:(MEAgenda *)from to:(MEAgenda *)to {
+    for (NSInteger i = 0; i < from.scheduleCount; i++) {
+        MESchedule *schedule = [from scheduleAt:i];
+        if (schedule.isSession) {
+            [to addSchedule:schedule];
+        }
+    }
 }
 
 - (void)dealloc {

@@ -21,6 +21,7 @@
 - (id)initOnDate:(MEDate)date;
 - (void)addSchedule:(MESchedule *)schedule;
 - (NSInteger)scheduleCount;
+- (NSInteger)sessionCount;
 - (MESchedule *)scheduleAt:(NSInteger)index;
 - (BOOL)onSameDate:(MEDate)date;
 

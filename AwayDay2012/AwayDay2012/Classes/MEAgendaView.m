@@ -42,10 +42,12 @@
 
 - (void)startToSelectFavoriteSession {
     [plan setEditing:YES animated:YES];
+    [plan reloadData];
 }
 
 - (void)confirmFavoriteSession {
     [plan setEditing:NO animated:YES];
+    [plan reloadData];
 }
 
 - (void)dealloc {

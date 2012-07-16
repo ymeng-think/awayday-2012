@@ -28,6 +28,7 @@
 - (void)confirmFavoriteSession;
 - (UIBarButtonItem *)favoriteButton;
 - (UIBarButtonItem *)doneButton;
+- (void)setAgendaList:(MEAgendaList *)_agendaList;
 
 @end
 
@@ -67,7 +68,8 @@
 
 - (void)loadAgendaListFromFile:(NSString *)fileName {
     MEAgendaLoader *agendaLoader = [[MEAgendaLoader alloc] init];
-    agendaList = [[agendaLoader loadFromFile:fileName] retain];
+    allAgendaList = [[agendaLoader loadFromFile:fileName] retain];
+    agendaList = [allAgendaList retain];
     [agendaLoader release];
 }
 
@@ -92,7 +94,17 @@
     return doneButton;
 }
 
+- (void)setAgendaList:(MEAgendaList *)_agendaList {
+    if (self->agendaList == _agendaList) {
+        return;
+    }
+    
+    [self->agendaList release];
+    self->agendaList = [_agendaList retain];
+}
+
 - (void)dealloc {
+    [allAgendaList release];
     [agendaList release];
     [agendaView release];
     [favoriteButton release];
@@ -105,7 +117,7 @@
 #pragma mark Delegation for Agenda View
 
 - (NSInteger)numberOfAgenda:(MEAgendaView *)agendaView {
-    return [agendaList count];
+    return agendaList.count;
 }
 
 - (NSInteger)agenda:(MEAgendaView *)agendaView scheduleNumInAgenda:(NSInteger)index {
@@ -165,12 +177,14 @@
 - (void)addSessionToFavorite {
     self.navigationItem.rightBarButtonItem = [self doneButton];
 
+    [self setAgendaList:[allAgendaList onlySessionList]];
     [agendaView startToSelectFavoriteSession];
 }
 
 - (void)confirmFavoriteSession {
     self.navigationItem.rightBarButtonItem = [self favoriteButton];
     
+    [self setAgendaList:allAgendaList];
     [agendaView confirmFavoriteSession];
 }
 

@@ -35,6 +35,16 @@
     return scheduleList.count;
 }
 
+- (NSInteger)sessionCount {
+    NSInteger sessionCount = 0;
+    for (MESchedule *schedule in scheduleList) {
+        if (schedule.isSession) {
+            sessionCount++;
+        }
+    }
+    return sessionCount;
+}
+
 - (MESchedule *)scheduleAt:(NSInteger)index {
     if (index >= [self scheduleCount]) {
         return nil;
