@@ -16,8 +16,8 @@
 
 @interface MEAwayDayController ()
 
-+ (UIViewController *)initAgendaController;
-+ (UIViewController *)initHotelController;
++ (UIViewController *)agendaController;
++ (UIViewController *)hotelController;
 
 @end
 
@@ -26,15 +26,13 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        UIViewController *agendaController = [[self class] initAgendaController];
-        UIViewController *hotelController = [[self class] initHotelController];
+        UIViewController *agendaController = [MEAwayDayController agendaController];
+        UIViewController *hotelController = [MEAwayDayController hotelController];
         
         NSArray *controllers = [[NSArray alloc] initWithObjects:agendaController, hotelController, nil];
         self.viewControllers = controllers;
         
         [controllers release];
-        [agendaController release];
-        [hotelController release];
     }
     return self;
 }
@@ -53,17 +51,17 @@
     return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
-+ (UIViewController *)initAgendaController {   
++ (UIViewController *)agendaController {   
     MEAgendaController *controller = [[MEAgendaController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
     [controller release];
     navController.tabBarItem.title = TAB_NAME_AGENDA;
 
-    return navController;
+    return [navController autorelease];
 }
 
-+ (UIViewController *)initHotelController {
-    MEHotelController *controller = [[MEHotelController alloc] init];
++ (UIViewController *)hotelController {
+    MEHotelController *controller = [[[MEHotelController alloc] init] autorelease];
     controller.tabBarItem.title = TAB_NAME_HOTEL;
     return controller;
 }
