@@ -23,7 +23,7 @@
 @implementation MEScheduleCell
 
 @synthesize titleLabel, commentLabel, fromLabel, toLabel, indicator;
-@synthesize title, comment, from, to, canSelect;
+@synthesize title, comment, from, to;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -112,9 +112,7 @@
     
     BOOL isEditing = ((UITableView *)self.superview).isEditing;
     if (isEditing) {
-        if (canSelect) {
-            indicator.hidden = NO;
-        }
+        indicator.hidden = NO;
     } else {
         self.accessoryType = self->originalAccessoryType;
     }
