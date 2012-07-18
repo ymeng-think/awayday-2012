@@ -20,6 +20,8 @@
 
 @optional
 - (void)agenda:(MEAgendaView *)agendaView exposeScheduleAtIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex;
+- (void)agenda:(MEAgendaView *)agendaView didSelectScheduleAtIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex;
+- (void)agenda:(MEAgendaView *)agendaView didDeselectScheduleAtIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex;
 
 @end
 

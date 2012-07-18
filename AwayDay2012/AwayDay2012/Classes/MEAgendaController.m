@@ -11,6 +11,7 @@
 #import "MEAgendaList.h"
 #import "MEAgendaLoader.h"
 #import "MEColor.h"
+#import "MESessionList.h"
 #import "MESchedule.h"
 #import "MEScheduleCell.h"
 #import "MEScheduleExposingController.h"
@@ -38,6 +39,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self loadAgendaListFromFile:@"agenda"];
+        self->favoriteSessionList = [[MESessionList alloc] init];
 
         self.navigationItem.rightBarButtonItem = [self favoriteButton];
         self.title = WINDOW_NAME;
@@ -139,6 +141,7 @@
     cell.comment = schedule.comment;
     cell.from = schedule.from;
     cell.to = schedule.to;
+    [cell setSelected:[favoriteSessionList containsSession:schedule.title on:schedule.scheduledOn] animated:NO];
 }
 
 - (MEDate)agenda:(MEAgendaView *)agendaView dateAtIndex:(NSInteger)index {
@@ -168,6 +171,20 @@
     [controller exposeSchedule:schedule];
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];
+}
+
+- (void)agenda:(MEAgendaView *)agendaView didSelectScheduleAtIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex {
+    MEAgenda *agenda = [agendaList agendaAtIndex:agendaIndex];
+    MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
+
+    [self->favoriteSessionList addSession:schedule];
+}
+
+- (void)agenda:(MEAgendaView *)agendaView didDeselectScheduleAtIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex {
+    MEAgenda *agenda = [agendaList agendaAtIndex:agendaIndex];
+    MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
+    
+    [self->favoriteSessionList removeSession:schedule];
 }
 
 #pragma mark -

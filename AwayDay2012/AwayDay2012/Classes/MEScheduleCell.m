@@ -67,21 +67,13 @@
     toLabel.text = FloatToTimeString(self->to);
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-    if (!indicator.hidden) {
-        indicator.image = selected ? [UIImage imageNamed:IMAGE_SELECTED] : [UIImage imageNamed:IMAGE_NOT_SELECTED];
-    }
-}
-
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
     [self setNeedsLayout];
 }
 
 - (void)layoutSubviews {
     BOOL isEditing = ((UITableView *)self.superview).isEditing;
-    
+
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDelegate:self];
@@ -103,6 +95,8 @@
 	}
     
 	[UIView commitAnimations];
+    
+    indicator.image = self.isSelected ? [UIImage imageNamed:IMAGE_SELECTED] : [UIImage imageNamed:IMAGE_NOT_SELECTED];
 }
 
 - (void)exchangeIndicatorShown:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {

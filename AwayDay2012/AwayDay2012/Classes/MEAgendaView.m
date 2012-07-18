@@ -84,6 +84,9 @@
     if (delegate) {
         [delegate agenda:self cell:cell atScheduleIndex:[indexPath row] inAgenda:[indexPath section]];
     }
+    if (cell.isSelected) {
+        [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    }
     
     return cell;
 }
@@ -115,7 +118,12 @@
         return;
     }
     
-    NSLog(@"select row %i in section %i", [indexPath row], [indexPath section]);
+    if (!delegate ||
+        ![delegate respondsToSelector:@selector(agenda:didSelectScheduleAtIndex:inAgenda:)]) {
+        return;
+    }
+    
+    [delegate agenda:self didSelectScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -123,7 +131,12 @@
         return;
     }
     
-    NSLog(@"DEselect row %i in section %i", [indexPath row], [indexPath section]);
+    if (!delegate ||
+        ![delegate respondsToSelector:@selector(agenda:didDeselectScheduleAtIndex:inAgenda:)]) {
+        return;
+    }
+    
+    [delegate agenda:self didDeselectScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
 }
 
 @end

@@ -37,3 +37,8 @@ CG_INLINE NSString *
 NSStringFromMEDate(MEDate date) {
     return [NSString stringWithFormat:@"%i / %i / %i", date.year, date.month, date.day];
 }
+
+CG_INLINE BOOL
+MEDateEqual(MEDate d1, MEDate d2) {
+    return d1.year == d2.year && d1.month == d2.month && d1.day == d2.day;
+}
