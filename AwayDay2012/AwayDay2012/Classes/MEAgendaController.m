@@ -29,7 +29,7 @@
 - (void)confirmFavoriteSession;
 - (UIBarButtonItem *)favoriteButton;
 - (UIBarButtonItem *)doneButton;
-- (void)setAgendaList:(MEAgendaList *)_agendaList;
+- (void)setCurrentAgendaList:(MEAgendaList *)_agendaList;
 
 @end
 
@@ -71,7 +71,7 @@
 - (void)loadAgendaListFromFile:(NSString *)fileName {
     MEAgendaLoader *agendaLoader = [[MEAgendaLoader alloc] init];
     allAgendaList = [[agendaLoader loadFromFile:fileName] retain];
-    agendaList = [allAgendaList retain];
+    currentAgendaList = [allAgendaList retain];
     [agendaLoader release];
 }
 
@@ -96,18 +96,18 @@
     return doneButton;
 }
 
-- (void)setAgendaList:(MEAgendaList *)_agendaList {
-    if (self->agendaList == _agendaList) {
+- (void)setCurrentAgendaList:(MEAgendaList *)_agendaList {
+    if (self->currentAgendaList == _agendaList) {
         return;
     }
     
-    [self->agendaList release];
-    self->agendaList = [_agendaList retain];
+    [self->currentAgendaList release];
+    self->currentAgendaList = [_agendaList retain];
 }
 
 - (void)dealloc {
     [allAgendaList release];
-    [agendaList release];
+    [currentAgendaList release];
     [agendaView release];
     [favoriteButton release];
     [doneButton release];
@@ -119,14 +119,14 @@
 #pragma mark Delegation for Agenda View
 
 - (NSInteger)numberOfAgenda:(MEAgendaView *)agendaView {
-    return agendaList.count;
+    return currentAgendaList.count;
 }
 
 - (NSInteger)agenda:(MEAgendaView *)agendaView scheduleNumInAgenda:(NSInteger)index {
     if (![self isValidIndexOfAgendaList:index]) {
         return 0;
     }
-    return [agendaList agendaAtIndex:index].scheduleCount;
+    return [currentAgendaList agendaAtIndex:index].scheduleCount;
 }
 
 - (void)agenda:(MEAgendaView *)agendaView cell:(MEScheduleCell *)cell atScheduleIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex {
@@ -134,7 +134,7 @@
         return;
     }
     
-    MEAgenda *agenda = [agendaList agendaAtIndex:agendaIndex];
+    MEAgenda *agenda = [currentAgendaList agendaAtIndex:agendaIndex];
     MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
     
     cell.title = schedule.title;
@@ -148,11 +148,11 @@
     if (![self isValidIndexOfAgendaList:index]) {
         return MEDATE_INVALID;
     }
-    return [agendaList agendaAtIndex:index].date;
+    return [currentAgendaList agendaAtIndex:index].date;
 }
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index {
-    return index >= 0 && index < agendaList.count;
+    return index >= 0 && index < currentAgendaList.count;
 }
 
 - (void)agenda:(MEAgendaView *)agendaView exposeScheduleAtIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex {
@@ -160,7 +160,7 @@
         return;
     }
     
-    MEAgenda *agenda = [agendaList agendaAtIndex:agendaIndex];
+    MEAgenda *agenda = [currentAgendaList agendaAtIndex:agendaIndex];
     MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
     
     [self exposeSchedule:schedule];
@@ -174,14 +174,14 @@
 }
 
 - (void)agenda:(MEAgendaView *)agendaView didSelectScheduleAtIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex {
-    MEAgenda *agenda = [agendaList agendaAtIndex:agendaIndex];
+    MEAgenda *agenda = [currentAgendaList agendaAtIndex:agendaIndex];
     MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
 
     [self->favoriteSessionList addSession:schedule];
 }
 
 - (void)agenda:(MEAgendaView *)agendaView didDeselectScheduleAtIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex {
-    MEAgenda *agenda = [agendaList agendaAtIndex:agendaIndex];
+    MEAgenda *agenda = [currentAgendaList agendaAtIndex:agendaIndex];
     MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
     
     [self->favoriteSessionList removeSession:schedule];
@@ -193,14 +193,14 @@
 - (void)addSessionToFavorite {
     self.navigationItem.rightBarButtonItem = [self doneButton];
 
-    [self setAgendaList:[allAgendaList onlySessionList]];
+    [self setCurrentAgendaList:[allAgendaList onlySessionList]];
     [agendaView startToSelectFavoriteSession];
 }
 
 - (void)confirmFavoriteSession {
     self.navigationItem.rightBarButtonItem = [self favoriteButton];
     
-    [self setAgendaList:allAgendaList];
+    [self setCurrentAgendaList:allAgendaList];
     [agendaView confirmFavoriteSession];
 }
 

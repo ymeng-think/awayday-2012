@@ -13,7 +13,7 @@
 
 @interface MEAgendaController : UIViewController <MEAgendaDelegate> {
     MEAgendaList *allAgendaList;
-    MEAgendaList *agendaList;
+    MEAgendaList *currentAgendaList;
     MESessionList *favoriteSessionList;
     MEAgendaView *agendaView;
     
