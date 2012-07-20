@@ -25,11 +25,12 @@
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index;
 - (void)exposeSchedule:(MESchedule *)schedule;
 - (void)loadAgendaListFromFile:(NSString *)fileName;
-- (void)addSessionToFavorite;
-- (void)confirmFavoriteSession;
 - (UIBarButtonItem *)favoriteButton;
 - (UIBarButtonItem *)doneButton;
 - (void)setCurrentAgendaList:(MEAgendaList *)_agendaList;
+
+- (void)prepareToAddSessionToFavorite;
+- (void)confirmAddedFavoriteSession;
 
 @end
 
@@ -80,7 +81,7 @@
         favoriteButton = [[UIBarButtonItem alloc] initWithTitle:FAVORITE_BUTTON_TITLE
                                                           style:UIBarButtonItemStylePlain
                                                          target:self 
-                                                         action:@selector(addSessionToFavorite)];
+                                                         action:@selector(prepareToAddSessionToFavorite)];
     }
     return favoriteButton;
 }
@@ -90,7 +91,7 @@
         doneButton = [[UIBarButtonItem alloc] initWithTitle:DONE_BUTTON_TITLE
                                                       style:UIBarButtonItemStylePlain
                                                      target:self 
-                                                     action:@selector(confirmFavoriteSession)];
+                                                     action:@selector(confirmAddedFavoriteSession)];
         doneButton.tintColor = UIColorFromRGB(0xC84131);
     }
     return doneButton;
@@ -190,14 +191,14 @@
 #pragma mark -
 #pragma mark Delegation for Following Schedule Button
 
-- (void)addSessionToFavorite {
+- (void)prepareToAddSessionToFavorite {
     self.navigationItem.rightBarButtonItem = [self doneButton];
 
     [self setCurrentAgendaList:[allAgendaList onlySessionList]];
     [agendaView startToSelectFavoriteSession];
 }
 
-- (void)confirmFavoriteSession {
+- (void)confirmAddedFavoriteSession {
     self.navigationItem.rightBarButtonItem = [self favoriteButton];
     
     [self setCurrentAgendaList:allAgendaList];
