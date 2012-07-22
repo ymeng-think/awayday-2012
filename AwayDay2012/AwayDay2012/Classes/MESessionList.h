@@ -12,11 +12,11 @@
 @class MESchedule;
 
 @interface MESessionList : NSObject {
-    NSMutableArray *list;
+    NSMutableDictionary *dict;
 }
 
-- (void)addSession:(MESchedule *)schedule;
-- (void)removeSession:(MESchedule *)schedule;
-- (BOOL)containsSession:(NSString *)title on:(MEDate)date;
+- (void)addSession:(NSString *)name on:(MEDate)date;
+- (void)removeSession:(NSString *)name on:(MEDate)date;
+- (BOOL)containsSession:(NSString *)name on:(MEDate)date;
 
 @end

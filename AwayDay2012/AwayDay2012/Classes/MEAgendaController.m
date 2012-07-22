@@ -19,6 +19,7 @@
 #define WINDOW_NAME            @"Awayday 2012"
 #define FAVORITE_BUTTON_TITLE  @"Favorite"
 #define DONE_BUTTON_TITLE      @"Done"
+#define DATA_ARCHIVE_FILE      @"data.archive"
 
 @interface MEAgendaController ()
 
@@ -31,6 +32,7 @@
 
 - (void)prepareToAddSessionToFavorite;
 - (void)confirmAddedFavoriteSession;
+- (void)saveFavoriteSession;
 
 @end
 
@@ -56,8 +58,11 @@
 }
 
 - (void)viewDidLoad {
+    NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsDir = [dirPaths objectAtIndex:0];
+    dataFilePath = [[NSString alloc] initWithString:[docsDir stringByAppendingPathComponent:DATA_ARCHIVE_FILE]];
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload {
@@ -112,6 +117,7 @@
     [agendaView release];
     [favoriteButton release];
     [doneButton release];
+    [dataFilePath release];
     
     [super dealloc];
 }
@@ -178,14 +184,14 @@
     MEAgenda *agenda = [currentAgendaList agendaAtIndex:agendaIndex];
     MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
 
-    [self->favoriteSessionList addSession:schedule];
+    [self->favoriteSessionList addSession:schedule.title on:schedule.scheduledOn];
 }
 
 - (void)agenda:(MEAgendaView *)agendaView didDeselectScheduleAtIndex:(NSInteger)scheduleIndex inAgenda:(NSInteger)agendaIndex {
     MEAgenda *agenda = [currentAgendaList agendaAtIndex:agendaIndex];
     MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
     
-    [self->favoriteSessionList removeSession:schedule];
+    [self->favoriteSessionList removeSession:schedule.title on:schedule.scheduledOn];
 }
 
 #pragma mark -
@@ -203,6 +209,14 @@
     
     [self setCurrentAgendaList:allAgendaList];
     [agendaView confirmFavoriteSession];
+    
+    [self saveFavoriteSession];
+}
+
+- (void)saveFavoriteSession {
+    NSParameterAssert(dataFilePath);
+    
+//    [NSKeyedArchiver archiveRootObject:favoriteSessionList toFile:dataFilePath];
 }
 
 @end

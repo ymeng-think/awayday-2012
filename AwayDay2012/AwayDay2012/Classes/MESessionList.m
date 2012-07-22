@@ -7,40 +7,70 @@
 //
 
 #import "MESessionList.h"
+#import "MEDate.h"
 #import "MESchedule.h"
+
+@interface MESessionList ()
+
++ (NSString *)date2Key:(MEDate)date;
+
+@end
 
 @implementation MESessionList
 
 - (id)init {
     self = [super init];
     if (self) {
-        self->list = [[NSMutableArray alloc] init];
+        self->dict = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
-- (void)addSession:(MESchedule *)schedule {
-    NSAssert(schedule != nil, @"Schedule object should NOT be nil.");
-    NSAssert(schedule.isSession, @"Schedule object should be a session.");
-    
-    [self->list addObject:schedule];
-}
-
-- (void)removeSession:(MESchedule *)schedule {
-    [self->list removeObject:schedule];
-}
-
-- (BOOL)containsSession:(NSString *)title on:(MEDate)date {
-    for (MESchedule *schedule in self->list) {
-        if (MEDateEqual(schedule.scheduledOn, date) && [schedule.title isEqualToString:title]) {
-            return YES;
-        }
+- (void)addSession:(NSString *)name on:(MEDate)date {
+    NSString *key = [[self class] date2Key:date];
+    if (![dict valueForKey:key]) {
+        NSMutableSet *sessionList = [[NSMutableSet alloc] init];
+        [dict setValue:sessionList forKey:key];
+        [sessionList release];
     }
-    return NO;
+    
+    NSMutableSet *sessionList = [dict objectForKey:key];
+    [sessionList addObject:name];
+}
+
+- (void)removeSession:(NSString *)name on:(MEDate)date {
+    if (![self containsSession:name on:date]) {
+        return;
+    }
+    
+    NSString *key = [[self class] date2Key:date];
+    NSMutableSet *sessionList = [dict objectForKey:key];
+    [sessionList removeObject:name];
+    if (sessionList.count == 0) {
+        [dict removeObjectForKey:key];
+    }
+}
+
+- (BOOL)containsSession:(NSString *)name on:(MEDate)date {
+    NSString *key = [[self class] date2Key:date];
+    if (![dict valueForKey:key]) {
+        return NO;
+    }
+    
+    NSMutableSet *sessionList = [dict objectForKey:key];
+    if (![sessionList containsObject:name]) {
+        return NO;
+    }
+    
+    return YES;
+}
+
++ (NSString *)date2Key:(MEDate)date {
+    return NSStringFromMEDate(date);
 }
 
 - (void)dealloc {
-    [self->list release];
+    [self->dict release];
     
     [super dealloc];
 }
