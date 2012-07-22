@@ -7,6 +7,7 @@
 //
 
 #import "MEDiscussionController.h"
+#import "MEDiscussionView.h"
 
 @interface MEDiscussionController ()
 
@@ -20,6 +21,12 @@
 
     }
     return self;
+}
+
+- (void)loadView {
+    UIView *view = [[MEDiscussionView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
+    self.view = view;
+    [view release];
 }
 
 - (void)viewDidLoad {
