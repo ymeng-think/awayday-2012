@@ -7,7 +7,7 @@
 //
 
 #import "MEDiscussionView.h"
-#import "MEHeadPortraitCell.h"
+#import "MELecturerCell.h"
 
 #define RESOURCE_NAME @"discussion"
 
@@ -36,7 +36,7 @@
     headPortraitList = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     headPortraitList.backgroundColor = [UIColor clearColor];
     headPortraitList.separatorStyle = UITableViewCellSeparatorStyleNone;
-    headPortraitList.rowHeight = 80.0;
+    headPortraitList.rowHeight = 92.0;
     headPortraitList.dataSource = self;
 
     
@@ -64,11 +64,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *kCellIdentifier = @"HeadPortraitCellIdentifier";
     
-    MEHeadPortraitCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    MELecturerCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     if (cell == nil) {
-        cell = [[MEHeadPortraitCell alloc] initWithReuseIdentifier:kCellIdentifier];
+        cell = [[MELecturerCell alloc] initWithReuseIdentifier:kCellIdentifier];
     }
-    cell.textLabel.text = @"hello";
     
     return cell;
 }

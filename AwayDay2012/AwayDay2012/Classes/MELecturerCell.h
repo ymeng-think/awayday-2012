@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MEHeadPortraitCell : UITableViewCell
+@interface MELecturerCell : UITableViewCell
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 

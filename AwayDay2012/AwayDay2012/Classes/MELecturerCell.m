@@ -6,11 +6,12 @@
 //  Copyright (c) 2012 ThoughtWorks. All rights reserved.
 //
 
-#import "MEHeadPortraitCell.h"
+#import "MELecturerCell.h"
+#import "MEHeadPortrait.h"
 
 #define HEAD_PORTRAIT_NUM   4
 
-@interface MEHeadPortraitCell ()
+@interface MELecturerCell ()
 
 - (void)addHeadPortaitImageViews;
 
@@ -18,7 +19,7 @@
 
 static CGSize kHeadPortraitSize;
 
-@implementation MEHeadPortraitCell
+@implementation MELecturerCell
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
@@ -32,7 +33,9 @@ static CGSize kHeadPortraitSize;
 
 - (void)addHeadPortaitImageViews {
     for (NSInteger i = 0; i < HEAD_PORTRAIT_NUM; i++) {
-        UIImageView *headPortraitView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jie.xiong.png"]];
+        MEHeadPortrait *headPortraitView = [[MEHeadPortrait alloc] initWithFrame:CGRectMake(0, 0, kHeadPortraitSize.width, kHeadPortraitSize.height)];
+        headPortraitView.portrait.image = [UIImage imageNamed:@"jie.xiong.png"];
+        headPortraitView.name.text = @"Jie.Xiong";
         [self.contentView addSubview:headPortraitView];
         [headPortraitView release];
     }
@@ -45,10 +48,9 @@ static CGSize kHeadPortraitSize;
     CGFloat x = paddingX;
     CGFloat y = paddingY;
     for (NSInteger i = 0; i < HEAD_PORTRAIT_NUM; i++) {
-        UIImageView *headPortraitView = [self.contentView.subviews objectAtIndex:i];
+        MEHeadPortrait *headPortraitView = [self.contentView.subviews objectAtIndex:i];
         CGRect newFrame = headPortraitView.frame;
         newFrame.origin = CGPointMake(x, y);
-        newFrame.size = kHeadPortraitSize;
         headPortraitView.frame = newFrame;
         
         x += kHeadPortraitSize.width + paddingX;
@@ -56,7 +58,7 @@ static CGSize kHeadPortraitSize;
 }
 
 + (void)initialize {
-    kHeadPortraitSize = CGSizeMake(57, 57);
+    kHeadPortraitSize = CGSizeMake(57, 92);
 }
 
 @end
