@@ -216,7 +216,7 @@
 - (void)saveFavoriteSession {
     NSParameterAssert(dataFilePath);
     
-//    [NSKeyedArchiver archiveRootObject:favoriteSessionList toFile:dataFilePath];
+    [favoriteSessionList writeToFile:dataFilePath];
 }
 
 @end

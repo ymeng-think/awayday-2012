@@ -29,12 +29,12 @@
 - (void)addSession:(NSString *)name on:(MEDate)date {
     NSString *key = [[self class] date2Key:date];
     if (![dict valueForKey:key]) {
-        NSMutableSet *sessionList = [[NSMutableSet alloc] init];
+        NSMutableArray *sessionList = [[NSMutableArray alloc] init];
         [dict setValue:sessionList forKey:key];
         [sessionList release];
     }
     
-    NSMutableSet *sessionList = [dict objectForKey:key];
+    NSMutableArray *sessionList = [dict objectForKey:key];
     [sessionList addObject:name];
 }
 
@@ -44,7 +44,7 @@
     }
     
     NSString *key = [[self class] date2Key:date];
-    NSMutableSet *sessionList = [dict objectForKey:key];
+    NSMutableArray *sessionList = [dict objectForKey:key];
     [sessionList removeObject:name];
     if (sessionList.count == 0) {
         [dict removeObjectForKey:key];
@@ -57,7 +57,7 @@
         return NO;
     }
     
-    NSMutableSet *sessionList = [dict objectForKey:key];
+    NSMutableArray *sessionList = [dict objectForKey:key];
     if (![sessionList containsObject:name]) {
         return NO;
     }
@@ -65,8 +65,12 @@
     return YES;
 }
 
+- (void)writeToFile:(NSString *)filePath {
+    [dict writeToFile:filePath atomically:YES];
+}
+
 + (NSString *)date2Key:(MEDate)date {
-    return NSStringFromMEDate(date);
+    return [NSString stringWithFormat:@"%4i/%02i/%02i", date.year, date.month, date.day];
 }
 
 - (void)dealloc {
