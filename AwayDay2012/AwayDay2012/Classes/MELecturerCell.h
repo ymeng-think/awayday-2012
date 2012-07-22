@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#define HEAD_PORTRAIT_NUM   4
+
 @interface MELecturerCell : UITableViewCell
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
+- (void)setLecturers:(NSArray *)nameList;
 
 @end

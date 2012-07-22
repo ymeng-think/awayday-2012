@@ -9,8 +9,6 @@
 #import "MELecturerCell.h"
 #import "MEHeadPortrait.h"
 
-#define HEAD_PORTRAIT_NUM   4
-
 @interface MELecturerCell ()
 
 - (void)addHeadPortaitImageViews;
@@ -34,7 +32,6 @@ static CGSize kHeadPortraitSize;
 - (void)addHeadPortaitImageViews {
     for (NSInteger i = 0; i < HEAD_PORTRAIT_NUM; i++) {
         MEHeadPortrait *headPortraitView = [[MEHeadPortrait alloc] initWithFrame:CGRectMake(0, 0, kHeadPortraitSize.width, kHeadPortraitSize.height)];
-        [headPortraitView setLecture:@"jie.xiong"];
         [self.contentView addSubview:headPortraitView];
         [headPortraitView release];
     }
@@ -53,6 +50,17 @@ static CGSize kHeadPortraitSize;
         headPortraitView.frame = newFrame;
         
         x += kHeadPortraitSize.width + paddingX;
+    }
+}
+
+- (void)setLecturers:(NSArray *)nameList {
+    NSParameterAssert(nameList != nil);
+    NSParameterAssert(nameList.count <= HEAD_PORTRAIT_NUM);
+    
+    for (NSInteger i = 0; i < nameList.count; i++) {
+        MEHeadPortrait *headPortraitView = [self.contentView.subviews objectAtIndex:i];
+        NSString *lecturerName = [nameList objectAtIndex:i];
+        [headPortraitView setLecture:lecturerName];
     }
 }
 

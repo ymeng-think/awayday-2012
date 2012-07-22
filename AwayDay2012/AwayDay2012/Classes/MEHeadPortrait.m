@@ -32,12 +32,13 @@
     NSString *imageName = [NSString stringWithFormat:@"%@.png", lectureName];
     self.portrait.image = [UIImage imageNamed:imageName];
     self.name.text = [[self class] capitalizeName:lectureName];
+    self.name.hidden = NO;
 }
 
 - (void)dealloc {
-    [self.name release];
-    [self.portrait release];
-    [self.view release];
+    [name release];
+    [portrait release];
+    [view release];
     
     [super dealloc];
 }

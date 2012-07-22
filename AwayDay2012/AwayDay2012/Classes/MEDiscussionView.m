@@ -14,12 +14,13 @@
 @interface MEDiscussionView ()
 
 - (void)addHeadPortraitListForLecturer;
+- (NSArray *)subLecturerListFrom:(NSInteger)from to:(NSInteger)to;
 
 @end
 
 @implementation MEDiscussionView
 
-@synthesize view;
+@synthesize view, lecturerList;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -48,8 +49,9 @@
 }
 
 - (void)dealloc {
-    [self.view release];
+    [view release];
     [self->headPortraitList release];
+    [lecturerList release];
     
     [super dealloc];
 }
@@ -58,7 +60,10 @@
 #pragma mark TableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    if (!lecturerList) {
+        return 0;
+    }
+    return (lecturerList.count + (HEAD_PORTRAIT_NUM - 1)) / HEAD_PORTRAIT_NUM;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -66,10 +71,24 @@
     
     MELecturerCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     if (cell == nil) {
-        cell = [[MELecturerCell alloc] initWithReuseIdentifier:kCellIdentifier];
+        cell = [[[MELecturerCell alloc] initWithReuseIdentifier:kCellIdentifier] autorelease];
     }
+    NSInteger from = [indexPath row] * HEAD_PORTRAIT_NUM;
+    NSInteger to = from + HEAD_PORTRAIT_NUM > lecturerList.count ? lecturerList.count : from + HEAD_PORTRAIT_NUM;
+    [cell setLecturers:[self subLecturerListFrom:from to:to]];
     
     return cell;
+}
+
+- (NSArray *)subLecturerListFrom:(NSInteger)from to:(NSInteger)to {
+    NSInteger capacity = to - from;
+    NSMutableArray *subList = [[[NSMutableArray alloc] initWithCapacity:capacity] autorelease];
+    for (NSInteger i = from; i < to; i++) {
+        NSString *lecturerName = [lecturerList objectAtIndex:i];
+        [subList addObject:lecturerName];
+    }
+    
+    return subList;
 }
 
 @end

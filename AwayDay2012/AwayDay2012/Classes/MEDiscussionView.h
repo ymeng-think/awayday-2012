@@ -13,5 +13,6 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIView *view;
+@property (nonatomic, retain) NSArray *lecturerList;
 
 @end

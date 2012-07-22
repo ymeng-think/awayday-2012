@@ -36,7 +36,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self loadLecturerNameList:LECTURER_FILE_NAME];
-    NSLog(@"name list contains: %@", lecturerNameList);
+    ((MEDiscussionView *)self.view).lecturerList = lecturerNameList;
     
     [super viewWillAppear:animated];
 }
