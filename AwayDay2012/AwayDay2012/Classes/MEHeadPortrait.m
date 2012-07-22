@@ -22,6 +22,12 @@
     return self;
 }
 
+- (void)setLecture:(NSString *)lectureName {
+    NSString *imageName = [NSString stringWithFormat:@"%@.png", lectureName];
+    self.portrait.image = [UIImage imageNamed:imageName];
+    self.name.text = lectureName;
+}
+
 - (void)dealloc {
     [self.name release];
     [self.portrait release];

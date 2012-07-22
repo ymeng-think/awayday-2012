@@ -34,8 +34,7 @@ static CGSize kHeadPortraitSize;
 - (void)addHeadPortaitImageViews {
     for (NSInteger i = 0; i < HEAD_PORTRAIT_NUM; i++) {
         MEHeadPortrait *headPortraitView = [[MEHeadPortrait alloc] initWithFrame:CGRectMake(0, 0, kHeadPortraitSize.width, kHeadPortraitSize.height)];
-        headPortraitView.portrait.image = [UIImage imageNamed:@"jie.xiong.png"];
-        headPortraitView.name.text = @"Jie.Xiong";
+        [headPortraitView setLecture:@"jie.xiong"];
         [self.contentView addSubview:headPortraitView];
         [headPortraitView release];
     }
