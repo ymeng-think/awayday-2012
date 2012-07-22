@@ -10,8 +10,6 @@
 		6F11714D15AC44860066179D /* MENavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F11714C15AC44860066179D /* MENavigationController.m */; };
 		6F11714F15AC451A0066179D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F11714E15AC451A0066179D /* QuartzCore.framework */; };
 		6F478F9E15BBA098003E86C3 /* discussion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F478F9D15BBA098003E86C3 /* discussion.xib */; };
-		6F478FA315BBA21E003E86C3 /* disucssion-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FA115BBA21E003E86C3 /* disucssion-background.png */; };
-		6F478FA415BBA21E003E86C3 /* discussion-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FA215BBA21E003E86C3 /* discussion-background@2x.png */; };
 		6F478FA715BBA263003E86C3 /* MEDiscussionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F478FA615BBA263003E86C3 /* MEDiscussionView.m */; };
 		6F478FAE15BBAB73003E86C3 /* MELecturerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F478FAD15BBAB73003E86C3 /* MELecturerCell.m */; };
 		6F478FB215BBD293003E86C3 /* jie.xiong.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FB015BBD293003E86C3 /* jie.xiong.png */; };
@@ -51,11 +49,9 @@
 		6F11714C15AC44860066179D /* MENavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MENavigationController.m; sourceTree = "<group>"; };
 		6F11714E15AC451A0066179D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6F478F9D15BBA098003E86C3 /* discussion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = discussion.xib; sourceTree = "<group>"; };
-		6F478FA115BBA21E003E86C3 /* disucssion-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disucssion-background.png"; sourceTree = "<group>"; };
-		6F478FA215BBA21E003E86C3 /* discussion-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discussion-background@2x.png"; sourceTree = "<group>"; };
 		6F478FA515BBA263003E86C3 /* MEDiscussionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEDiscussionView.h; sourceTree = "<group>"; };
 		6F478FA615BBA263003E86C3 /* MEDiscussionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEDiscussionView.m; sourceTree = "<group>"; };
-		6F478FAC15BBAB72003E86C3 /* MELecturerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; path = MELecturerCell.h; sourceTree = "<group>"; };
+		6F478FAC15BBAB72003E86C3 /* MELecturerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELecturerCell.h; sourceTree = "<group>"; };
 		6F478FAD15BBAB73003E86C3 /* MELecturerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELecturerCell.m; sourceTree = "<group>"; };
 		6F478FB015BBD293003E86C3 /* jie.xiong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jie.xiong.png; sourceTree = "<group>"; };
 		6F478FB115BBD293003E86C3 /* jie.xiong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jie.xiong@2x.png"; sourceTree = "<group>"; };
@@ -140,8 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				6F478FAF15BBD1B8003E86C3 /* lecturers */,
-				6F478FA115BBA21E003E86C3 /* disucssion-background.png */,
-				6F478FA215BBA21E003E86C3 /* discussion-background@2x.png */,
 			);
 			name = discussion;
 			sourceTree = "<group>";
@@ -365,8 +359,6 @@
 				6F6895D115AEC560004815A0 /* selected@2x.png in Resources */,
 				6F6895D315AEC5DF004815A0 /* not-selected@2x.png in Resources */,
 				6F478F9E15BBA098003E86C3 /* discussion.xib in Resources */,
-				6F478FA315BBA21E003E86C3 /* disucssion-background.png in Resources */,
-				6F478FA415BBA21E003E86C3 /* discussion-background@2x.png in Resources */,
 				6F478FB215BBD293003E86C3 /* jie.xiong.png in Resources */,
 				6F478FB315BBD293003E86C3 /* jie.xiong@2x.png in Resources */,
 				6F478FBA15BBDB5F003E86C3 /* head-portrait.xib in Resources */,
