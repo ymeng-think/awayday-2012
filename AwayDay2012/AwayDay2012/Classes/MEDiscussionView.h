@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MEDiscussionView : UIView
+@interface MEDiscussionView : UIView <UITableViewDataSource> {
+    UITableView *headPortraitList;
+}
 
 @property (nonatomic, retain) IBOutlet UIView *view;
 

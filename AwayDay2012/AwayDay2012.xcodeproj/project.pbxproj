@@ -13,6 +13,7 @@
 		6F478FA315BBA21E003E86C3 /* disucssion-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FA115BBA21E003E86C3 /* disucssion-background.png */; };
 		6F478FA415BBA21E003E86C3 /* discussion-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FA215BBA21E003E86C3 /* discussion-background@2x.png */; };
 		6F478FA715BBA263003E86C3 /* MEDiscussionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F478FA615BBA263003E86C3 /* MEDiscussionView.m */; };
+		6F478FAE15BBAB73003E86C3 /* MEHeadPortraitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F478FAD15BBAB73003E86C3 /* MEHeadPortraitCell.m */; };
 		6F6150CD159C2A3300F77E80 /* MEAgendaList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6150CC159C2A3300F77E80 /* MEAgendaList.m */; };
 		6F6307B715B4618D00C08B16 /* MESessionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6307B615B4618D00C08B16 /* MESessionList.m */; };
 		6F682F0E15900EF300B24AAE /* MEAgendaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F0D15900EF300B24AAE /* MEAgendaView.m */; };
@@ -50,6 +51,8 @@
 		6F478FA215BBA21E003E86C3 /* discussion-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discussion-background@2x.png"; sourceTree = "<group>"; };
 		6F478FA515BBA263003E86C3 /* MEDiscussionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEDiscussionView.h; sourceTree = "<group>"; };
 		6F478FA615BBA263003E86C3 /* MEDiscussionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEDiscussionView.m; sourceTree = "<group>"; };
+		6F478FAC15BBAB72003E86C3 /* MEHeadPortraitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHeadPortraitCell.h; sourceTree = "<group>"; };
+		6F478FAD15BBAB73003E86C3 /* MEHeadPortraitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHeadPortraitCell.m; sourceTree = "<group>"; };
 		6F6150CB159C2A3300F77E80 /* MEAgendaList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaList.h; sourceTree = "<group>"; };
 		6F6150CC159C2A3300F77E80 /* MEAgendaList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaList.m; sourceTree = "<group>"; };
 		6F6150CF159C2C5C00F77E80 /* MEDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEDate.h; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 				6F682F0D15900EF300B24AAE /* MEAgendaView.m */,
 				6F478FA515BBA263003E86C3 /* MEDiscussionView.h */,
 				6F478FA615BBA263003E86C3 /* MEDiscussionView.m */,
+				6F478FAC15BBAB72003E86C3 /* MEHeadPortraitCell.h */,
+				6F478FAD15BBAB73003E86C3 /* MEHeadPortraitCell.m */,
 				6FD7AE6C159D63F4008B5347 /* MEScheduleCell.h */,
 				6FD7AE6D159D63F4008B5347 /* MEScheduleCell.m */,
 				6FF0E9E115AAA40D002FE722 /* MEScheduleView.h */,
@@ -367,6 +372,7 @@
 				6F11714D15AC44860066179D /* MENavigationController.m in Sources */,
 				6F6307B715B4618D00C08B16 /* MESessionList.m in Sources */,
 				6F478FA715BBA263003E86C3 /* MEDiscussionView.m in Sources */,
+				6F478FAE15BBAB73003E86C3 /* MEHeadPortraitCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,8 +7,15 @@
 //
 
 #import "MEDiscussionView.h"
+#import "MEHeadPortraitCell.h"
 
 #define RESOURCE_NAME @"discussion"
+
+@interface MEDiscussionView ()
+
+- (void)addHeadPortraitListForLecturer;
+
+@end
 
 @implementation MEDiscussionView
 
@@ -19,14 +26,51 @@
     if (self) {
         [[NSBundle mainBundle] loadNibNamed:RESOURCE_NAME owner:self options:nil];
         [self addSubview:self.view];
+
+        [self addHeadPortraitListForLecturer];
     }
     return self;
 }
 
+- (void)addHeadPortraitListForLecturer {
+    headPortraitList = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    headPortraitList.backgroundColor = [UIColor clearColor];
+    headPortraitList.separatorStyle = UITableViewCellSeparatorStyleNone;
+    headPortraitList.rowHeight = 80.0;
+    headPortraitList.dataSource = self;
+
+    
+    [self addSubview:headPortraitList];
+}
+
+- (void)layoutSubviews {
+    headPortraitList.frame = self.frame;
+}
+
 - (void)dealloc {
     [self.view release];
+    [self->headPortraitList release];
     
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark TableView
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *kCellIdentifier = @"HeadPortraitCellIdentifier";
+    
+    MEHeadPortraitCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    if (cell == nil) {
+        cell = [[MEHeadPortraitCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellIdentifier];
+    }
+    cell.textLabel.text = @"hello";
+    
+    return cell;
 }
 
 @end
