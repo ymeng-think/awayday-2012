@@ -8,8 +8,13 @@
 
 #import "MEDiscussionController.h"
 #import "MEDiscussionView.h"
+#import "MELecturerListLoader.h"
+
+#define LECTURER_FILE_NAME  @"lecturer"
 
 @interface MEDiscussionController ()
+
+- (void)loadLecturerNameList:(NSString *)fileName;
 
 @end
 
@@ -29,6 +34,13 @@
     [view release];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self loadLecturerNameList:LECTURER_FILE_NAME];
+    NSLog(@"name list contains: %@", lecturerNameList);
+    
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -41,6 +53,18 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)loadLecturerNameList:(NSString *)fileName {
+    MELecturerListLoader *loader = [[MELecturerListLoader alloc] init];
+    self->lecturerNameList = [[loader loadFromFile:fileName] retain];
+    [loader release];
+}
+
+- (void)dealloc {
+    [self->lecturerNameList release];
+    
+    [super dealloc];
 }
 
 @end

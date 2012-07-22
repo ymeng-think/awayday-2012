@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "METextFileLoader.h"
 
 @class MEAgendaList;
 
 @class MEAgendaList, MEAgenda;
 
-@interface MEAgendaLoader : NSObject {
+@interface MEAgendaLoader : NSObject <METextFileParser> {
     MEAgendaList *agendaList;    
     MEAgenda *lastAgenda;
     NSMutableDictionary *lastScheduleInfo;

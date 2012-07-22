@@ -16,6 +16,13 @@
 		6F478FB315BBD293003E86C3 /* jie.xiong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FB115BBD293003E86C3 /* jie.xiong@2x.png */; };
 		6F478FBA15BBDB5F003E86C3 /* head-portrait.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FB915BBDB5F003E86C3 /* head-portrait.xib */; };
 		6F478FBD15BBDC2D003E86C3 /* MEHeadPortrait.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F478FBC15BBDC2D003E86C3 /* MEHeadPortrait.m */; };
+		6F478FC915BBED44003E86C3 /* marina.bisson.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FC815BBED44003E86C3 /* marina.bisson.png */; };
+		6F478FCB15BBED55003E86C3 /* marina.bisson@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FCA15BBED55003E86C3 /* marina.bisson@2x.png */; };
+		6F478FCE15BBED6E003E86C3 /* hao.xu.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FCC15BBED6E003E86C3 /* hao.xu.png */; };
+		6F478FCF15BBED6E003E86C3 /* hao.xu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FCD15BBED6E003E86C3 /* hao.xu@2x.png */; };
+		6F478FD115BBED8C003E86C3 /* lecturer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F478FD015BBED8B003E86C3 /* lecturer.txt */; };
+		6F478FD415BBEE1C003E86C3 /* MELecturerListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F478FD315BBEE1C003E86C3 /* MELecturerListLoader.m */; };
+		6F478FD715BBEE85003E86C3 /* METextFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F478FD615BBEE85003E86C3 /* METextFileLoader.m */; };
 		6F6150CD159C2A3300F77E80 /* MEAgendaList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6150CC159C2A3300F77E80 /* MEAgendaList.m */; };
 		6F6307B715B4618D00C08B16 /* MESessionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6307B615B4618D00C08B16 /* MESessionList.m */; };
 		6F682F0E15900EF300B24AAE /* MEAgendaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F682F0D15900EF300B24AAE /* MEAgendaView.m */; };
@@ -58,6 +65,15 @@
 		6F478FB915BBDB5F003E86C3 /* head-portrait.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "head-portrait.xib"; sourceTree = "<group>"; };
 		6F478FBB15BBDC2C003E86C3 /* MEHeadPortrait.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEHeadPortrait.h; sourceTree = "<group>"; };
 		6F478FBC15BBDC2D003E86C3 /* MEHeadPortrait.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEHeadPortrait.m; sourceTree = "<group>"; };
+		6F478FC815BBED44003E86C3 /* marina.bisson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marina.bisson.png; sourceTree = "<group>"; };
+		6F478FCA15BBED55003E86C3 /* marina.bisson@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marina.bisson@2x.png"; sourceTree = "<group>"; };
+		6F478FCC15BBED6E003E86C3 /* hao.xu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hao.xu.png; sourceTree = "<group>"; };
+		6F478FCD15BBED6E003E86C3 /* hao.xu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hao.xu@2x.png"; sourceTree = "<group>"; };
+		6F478FD015BBED8B003E86C3 /* lecturer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lecturer.txt; sourceTree = "<group>"; };
+		6F478FD215BBEE1C003E86C3 /* MELecturerListLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MELecturerListLoader.h; sourceTree = "<group>"; };
+		6F478FD315BBEE1C003E86C3 /* MELecturerListLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MELecturerListLoader.m; sourceTree = "<group>"; };
+		6F478FD515BBEE84003E86C3 /* METextFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = METextFileLoader.h; sourceTree = "<group>"; };
+		6F478FD615BBEE85003E86C3 /* METextFileLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = METextFileLoader.m; sourceTree = "<group>"; };
 		6F6150CB159C2A3300F77E80 /* MEAgendaList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaList.h; sourceTree = "<group>"; };
 		6F6150CC159C2A3300F77E80 /* MEAgendaList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaList.m; sourceTree = "<group>"; };
 		6F6150CF159C2C5C00F77E80 /* MEDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEDate.h; sourceTree = "<group>"; };
@@ -143,6 +159,10 @@
 		6F478FAF15BBD1B8003E86C3 /* lecturers */ = {
 			isa = PBXGroup;
 			children = (
+				6F478FCC15BBED6E003E86C3 /* hao.xu.png */,
+				6F478FCD15BBED6E003E86C3 /* hao.xu@2x.png */,
+				6F478FC815BBED44003E86C3 /* marina.bisson.png */,
+				6F478FCA15BBED55003E86C3 /* marina.bisson@2x.png */,
 				6F478FB015BBD293003E86C3 /* jie.xiong.png */,
 				6F478FB115BBD293003E86C3 /* jie.xiong@2x.png */,
 			);
@@ -269,10 +289,14 @@
 				6F6150CC159C2A3300F77E80 /* MEAgendaList.m */,
 				6F70C60315A31036004AA6B1 /* MEAgendaLoader.h */,
 				6F70C60415A31036004AA6B1 /* MEAgendaLoader.m */,
+				6F478FD215BBEE1C003E86C3 /* MELecturerListLoader.h */,
+				6F478FD315BBEE1C003E86C3 /* MELecturerListLoader.m */,
 				6F6307B515B4618D00C08B16 /* MESessionList.h */,
 				6F6307B615B4618D00C08B16 /* MESessionList.m */,
 				6F682F1D1590972700B24AAE /* MESchedule.h */,
 				6F682F1E1590972700B24AAE /* MESchedule.m */,
+				6F478FD515BBEE84003E86C3 /* METextFileLoader.h */,
+				6F478FD615BBEE85003E86C3 /* METextFileLoader.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -283,6 +307,7 @@
 				6F6895CA15AEABF0004815A0 /* Images */,
 				6FD7AE64159D62BF008B5347 /* Xibs */,
 				6F70C60715A314F1004AA6B1 /* agenda.txt */,
+				6F478FD015BBED8B003E86C3 /* lecturer.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -362,6 +387,11 @@
 				6F478FB215BBD293003E86C3 /* jie.xiong.png in Resources */,
 				6F478FB315BBD293003E86C3 /* jie.xiong@2x.png in Resources */,
 				6F478FBA15BBDB5F003E86C3 /* head-portrait.xib in Resources */,
+				6F478FC915BBED44003E86C3 /* marina.bisson.png in Resources */,
+				6F478FCB15BBED55003E86C3 /* marina.bisson@2x.png in Resources */,
+				6F478FCE15BBED6E003E86C3 /* hao.xu.png in Resources */,
+				6F478FCF15BBED6E003E86C3 /* hao.xu@2x.png in Resources */,
+				6F478FD115BBED8C003E86C3 /* lecturer.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +421,8 @@
 				6F478FA715BBA263003E86C3 /* MEDiscussionView.m in Sources */,
 				6F478FAE15BBAB73003E86C3 /* MELecturerCell.m in Sources */,
 				6F478FBD15BBDC2D003E86C3 /* MEHeadPortrait.m in Sources */,
+				6F478FD415BBEE1C003E86C3 /* MELecturerListLoader.m in Sources */,
+				6F478FD715BBEE85003E86C3 /* METextFileLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

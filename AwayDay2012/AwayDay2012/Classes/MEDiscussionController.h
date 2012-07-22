@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MEDiscussionController : UIViewController
+@interface MEDiscussionController : UIViewController {
+    NSArray *lecturerNameList;
+}
 
 @end

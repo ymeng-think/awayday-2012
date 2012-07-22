@@ -20,6 +20,7 @@
 #define FAVORITE_BUTTON_TITLE  @"Favorite"
 #define DONE_BUTTON_TITLE      @"Done"
 #define DATA_ARCHIVE_FILE      @"data.archive"
+#define AGENDA_FILE_NAME       @"agenda"
 
 @interface MEAgendaController ()
 
@@ -43,7 +44,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self loadAgendaListFromFile:@"agenda"];
+        [self loadAgendaListFromFile:AGENDA_FILE_NAME];
         self->favoriteSessionList = [[MESessionList alloc] init];
 
         self.navigationItem.rightBarButtonItem = [self favoriteButton];
