@@ -16,7 +16,6 @@
     MEAgendaList *currentAgendaList;
     MESessionList *favoriteSessionList;
     MEAgendaView *agendaView;
-    NSString *dataFilePath;
     
     UIBarButtonItem *favoriteButton, *doneButton;
 }

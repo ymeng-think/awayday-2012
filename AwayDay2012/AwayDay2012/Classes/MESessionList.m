@@ -66,7 +66,12 @@
 }
 
 - (void)writeToFile:(NSString *)filePath {
-    [dict writeToFile:filePath atomically:YES];
+    [self->dict writeToFile:filePath atomically:YES];
+}
+
+- (void)reloadFromFile:(NSString *)filePath {
+    [self->dict release];
+    self->dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
 }
 
 + (NSString *)date2Key:(MEDate)date {

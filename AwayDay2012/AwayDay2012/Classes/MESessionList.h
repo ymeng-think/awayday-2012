@@ -20,5 +20,6 @@
 - (BOOL)containsSession:(NSString *)name on:(MEDate)date;
 
 - (void)writeToFile:(NSString *)filePath;
+- (void)reloadFromFile:(NSString *)filePath;
 
 @end

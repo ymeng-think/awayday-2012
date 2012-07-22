@@ -32,7 +32,9 @@
 
 - (void)prepareToAddSessionToFavorite;
 - (void)confirmAddedFavoriteSession;
-- (void)saveFavoriteSession;
+- (void)saveFavoriteSessions;
+
+- (NSString *)archivedDataFilePath;
 
 @end
 
@@ -58,16 +60,13 @@
 }
 
 - (void)viewDidLoad {
-    NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docsDir = [dirPaths objectAtIndex:0];
-    dataFilePath = [[NSString alloc] initWithString:[docsDir stringByAppendingPathComponent:DATA_ARCHIVE_FILE]];
+    NSString *dataFilePath = [self archivedDataFilePath];
+    NSFileManager *fileManager =[NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:dataFilePath]) {
+        [favoriteSessionList reloadFromFile:dataFilePath];
+    }
     
     [super viewDidLoad];
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -111,13 +110,18 @@
     self->currentAgendaList = [_agendaList retain];
 }
 
+- (NSString *)archivedDataFilePath {
+    NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsDir = [dirPaths objectAtIndex:0];
+    return [docsDir stringByAppendingPathComponent:DATA_ARCHIVE_FILE];
+}
+
 - (void)dealloc {
     [allAgendaList release];
     [currentAgendaList release];
     [agendaView release];
     [favoriteButton release];
     [doneButton release];
-    [dataFilePath release];
     
     [super dealloc];
 }
@@ -210,12 +214,11 @@
     [self setCurrentAgendaList:allAgendaList];
     [agendaView confirmFavoriteSession];
     
-    [self saveFavoriteSession];
+    [self saveFavoriteSessions];
 }
 
-- (void)saveFavoriteSession {
-    NSParameterAssert(dataFilePath);
-    
+- (void)saveFavoriteSessions {
+    NSString *dataFilePath = [self archivedDataFilePath];
     [favoriteSessionList writeToFile:dataFilePath];
 }
 
