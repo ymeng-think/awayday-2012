@@ -10,6 +10,12 @@
 
 #define RESOURCE_NAME @"head-portrait"
 
+@interface MEHeadPortrait()
+
++ (NSString *)capitalizeName:(NSString *)theName;
+
+@end
+
 @implementation MEHeadPortrait
 @synthesize view, name, portrait;
 
@@ -25,7 +31,7 @@
 - (void)setLecture:(NSString *)lectureName {
     NSString *imageName = [NSString stringWithFormat:@"%@.png", lectureName];
     self.portrait.image = [UIImage imageNamed:imageName];
-    self.name.text = lectureName;
+    self.name.text = [[self class] capitalizeName:lectureName];
 }
 
 - (void)dealloc {
@@ -34,6 +40,25 @@
     [self.view release];
     
     [super dealloc];
+}
+
++ (NSString *)capitalizeName:(NSString *)theName {
+    static NSString *kNameSeparator = @".";
+    
+    NSArray *parts = [theName componentsSeparatedByString:kNameSeparator];
+    NSMutableString *capitalized = [NSMutableString stringWithCapacity:theName.length];
+    for (NSInteger i = 0; i < parts.count; i++) {
+        NSString *input = [parts objectAtIndex:i];
+        NSString *firstChar = [input substringToIndex:1];
+        [capitalized appendString:[firstChar uppercaseString]];
+        [capitalized appendString:[input substringFromIndex:1]];
+        
+        if (i < parts.count - 1) {
+            [capitalized appendString:kNameSeparator];
+        }
+    }
+    
+    return [NSString stringWithString:capitalized];
 }
 
 @end
