@@ -58,7 +58,7 @@
 #pragma mark TableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -66,7 +66,7 @@
     
     MEHeadPortraitCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     if (cell == nil) {
-        cell = [[MEHeadPortraitCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellIdentifier];
+        cell = [[MEHeadPortraitCell alloc] initWithReuseIdentifier:kCellIdentifier];
     }
     cell.textLabel.text = @"hello";
     

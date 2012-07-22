@@ -10,4 +10,6 @@
 
 @interface MEHeadPortraitCell : UITableViewCell
 
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
+
 @end
