@@ -44,9 +44,6 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self loadAgendaListFromFile:AGENDA_FILE_NAME];
-        self->favoriteSessionList = [[MESessionList alloc] init];
-
         self.navigationItem.rightBarButtonItem = [self favoriteButton];
         self.title = WINDOW_NAME;
     }
@@ -58,6 +55,13 @@
     agendaView.delegate = self;
     
     self.view = agendaView;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self loadAgendaListFromFile:AGENDA_FILE_NAME];
+    self->favoriteSessionList = [[MESessionList alloc] init];
+    
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidLoad {
