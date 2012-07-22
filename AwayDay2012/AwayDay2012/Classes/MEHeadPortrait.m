@@ -7,12 +7,15 @@
 //
 
 #import "MEHeadPortrait.h"
+#import <QuartzCore/QuartzCore.h>
 
-#define RESOURCE_NAME @"head-portrait"
+#define RESOURCE_NAME           @"head-portrait"
+#define PORTRAIT_BORDER_WIDTH   4
 
 @interface MEHeadPortrait()
 
 + (NSString *)capitalizeName:(NSString *)theName;
+- (void)drawPortraitBorder;
 
 @end
 
@@ -24,6 +27,7 @@
     if (self) {
         [[NSBundle mainBundle] loadNibNamed:RESOURCE_NAME owner:self options:nil];
         [self addSubview:self.view];
+        [self drawPortraitBorder];
     }
     return self;
 }
@@ -31,8 +35,15 @@
 - (void)setLecture:(NSString *)lectureName {
     NSString *imageName = [NSString stringWithFormat:@"%@.png", lectureName];
     self.portrait.image = [UIImage imageNamed:imageName];
+    self.portrait.hidden = NO;
     self.name.text = [[self class] capitalizeName:lectureName];
     self.name.hidden = NO;
+}
+
+- (void)drawPortraitBorder {
+    CALayer *portraitLayer = [self.portrait layer];
+    portraitLayer.borderWidth = PORTRAIT_BORDER_WIDTH;
+    portraitLayer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 - (void)dealloc {
