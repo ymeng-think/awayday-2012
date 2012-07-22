@@ -8,11 +8,11 @@
 
 #import "MEAwayDayController.h"
 #import "MEAgendaController.h"
-#import "MEHotelController.h"
+#import "MEDiscussionController.h"
 #import "MENavigationController.h"
 
 #define TAB_NAME_AGENDA @"AGENDA"
-#define TAB_NAME_HOTEL  @"HOTEL"
+#define TAB_NAME_HOTEL  @"DISCUSSION"
 
 @interface MEAwayDayController ()
 
@@ -61,7 +61,7 @@
 }
 
 + (UIViewController *)hotelController {
-    MEHotelController *controller = [[[MEHotelController alloc] init] autorelease];
+    MEDiscussionController *controller = [[[MEDiscussionController alloc] init] autorelease];
     controller.tabBarItem.title = TAB_NAME_HOTEL;
     return controller;
 }

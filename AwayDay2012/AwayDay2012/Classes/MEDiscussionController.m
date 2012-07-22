@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 ThoughtWorks. All rights reserved.
 //
 
-#import "MEHotelController.h"
+#import "MEDiscussionController.h"
 
-@interface MEHotelController ()
+@interface MEDiscussionController ()
 
 @end
 
-@implementation MEHotelController
+@implementation MEDiscussionController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,7 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor greenColor];
 }
 
 - (void)viewDidUnload {

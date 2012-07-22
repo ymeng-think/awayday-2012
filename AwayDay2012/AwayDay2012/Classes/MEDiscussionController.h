@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MEHotelController : UIViewController
+@interface MEDiscussionController : UIViewController
 
 @end
