@@ -14,6 +14,6 @@
 @property (nonatomic, retain) IBOutlet UILabel *name;
 @property (nonatomic, retain) IBOutlet UIImageView *portrait;
 
-- (void)setLecture:(NSString *)lectureName;
+- (void)setLecture:(NSString *)lecturerName;
 
 @end

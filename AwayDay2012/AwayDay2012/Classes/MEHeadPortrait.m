@@ -11,11 +11,13 @@
 
 #define RESOURCE_NAME           @"head-portrait"
 #define PORTRAIT_BORDER_WIDTH   4
+#define IMAGE_WHO               @"who.png"
 
 @interface MEHeadPortrait()
 
 + (NSString *)capitalizeName:(NSString *)theName;
 - (void)drawPortraitBorder;
+- (UIImage *)lecturerHeadPortrait:(NSString *)lecturerName;
 
 @end
 
@@ -32,11 +34,10 @@
     return self;
 }
 
-- (void)setLecture:(NSString *)lectureName {
-    NSString *imageName = [NSString stringWithFormat:@"%@.png", lectureName];
-    self.portrait.image = [UIImage imageNamed:imageName];
+- (void)setLecture:(NSString *)lecturerName {
+    self.portrait.image = [self lecturerHeadPortrait:lecturerName];
     self.portrait.hidden = NO;
-    self.name.text = [[self class] capitalizeName:lectureName];
+    self.name.text = [[self class] capitalizeName:lecturerName];
     self.name.hidden = NO;
 }
 
@@ -44,6 +45,15 @@
     CALayer *portraitLayer = [self.portrait layer];
     portraitLayer.borderWidth = PORTRAIT_BORDER_WIDTH;
     portraitLayer.borderColor = [UIColor whiteColor].CGColor;
+}
+
+- (UIImage *)lecturerHeadPortrait:(NSString *)lecturerName {
+    NSString *imageName = [NSString stringWithFormat:@"%@.png", lecturerName];
+    UIImage *image = [UIImage imageNamed:imageName];
+    if (!image) {
+        image = [UIImage imageNamed:IMAGE_WHO];
+    }
+    return image;
 }
 
 - (void)dealloc {
