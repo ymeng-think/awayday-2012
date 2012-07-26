@@ -6,17 +6,17 @@
 //  Copyright (c) 2012 ThoughtWorks. All rights reserved.
 //
 
-#import "MESessionList.h"
+#import "MEFavoriteSessionList.h"
 #import "MEDate.h"
 #import "MESchedule.h"
 
-@interface MESessionList ()
+@interface MEFavoriteSessionList ()
 
 + (NSString *)date2Key:(MEDate)date;
 
 @end
 
-@implementation MESessionList
+@implementation MEFavoriteSessionList
 
 - (id)init {
     self = [super init];

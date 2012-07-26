@@ -8,6 +8,7 @@
 
 #import "MEAgendaList.h"
 #import "MEAgenda.h"
+#import "MESession.h"
 #import "MESchedule.h"
 
 @interface MEAgendaList ()
@@ -57,7 +58,7 @@
 - (void)onlyCopySessionFrom:(MEAgenda *)from to:(MEAgenda *)to {
     for (NSInteger i = 0; i < from.scheduleCount; i++) {
         MESchedule *schedule = [from scheduleAt:i];
-        if (schedule.isSession) {
+        if ([schedule isKindOfClass:[MESession class]]) {
             [to addSchedule:schedule];
         }
     }

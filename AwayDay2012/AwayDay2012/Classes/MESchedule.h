@@ -20,12 +20,11 @@
 }
 
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, retain) NSString *comment;
+@property (nonatomic, copy) NSString *comment;
 @property (nonatomic, readonly) CGFloat from;
 @property (nonatomic, readonly) CGFloat to;
 @property (nonatomic) MEDate scheduledOn;
-@property (nonatomic) BOOL isSession;
 
-+ (id)schedule:(NSString *)title from:(CGFloat)from to:(CGFloat)to;
+- initWithTitle:(NSString *)title from:(CGFloat)from to:(CGFloat)to;
 
 @end

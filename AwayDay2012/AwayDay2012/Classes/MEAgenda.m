@@ -8,6 +8,7 @@
 
 #import "MEAgenda.h"
 #import "MESchedule.h"
+#import "MESession.h"
 
 @interface MEAgenda ()
 
@@ -38,7 +39,8 @@
 - (NSInteger)sessionCount {
     NSInteger sessionCount = 0;
     for (MESchedule *schedule in scheduleList) {
-        if (schedule.isSession) {
+        if ([schedule isKindOfClass:[MESession class]]) {
+            
             sessionCount++;
         }
     }

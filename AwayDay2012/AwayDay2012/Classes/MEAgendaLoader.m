@@ -10,6 +10,7 @@
 #import "MEAgenda.h"
 #import "MEAgendaList.h"
 #import "MEDate.h"
+#import "MESession.h"
 #import "MESchedule.h"
 
 #define KEY_VALUE_SEPARATOR         @":"
@@ -22,6 +23,7 @@
 #define KEY_PREFIX_SCHEDULE_FROM    @"from"
 #define KEY_PREFIX_SCHEDULE_TO      @"to"
 #define KEY_PREFIX_IS_SESSION       @"issession"
+#define KEY_PREFIX_LECTURER         @"lecturer"
 
 typedef struct {
     NSString *key;
@@ -108,10 +110,15 @@ typedef struct {
     CGFloat to = [((NSNumber *)[info objectForKey:KEY_PREFIX_SCHEDULE_TO]) floatValue];
     NSString *comment = [info objectForKey:KEY_PREFIX_SCHEDULE_COMMENT];
     BOOL isSession = [self extractSessionValueFrom:info];
+    NSString *lecturer = [info objectForKey:KEY_PREFIX_LECTURER];
     
-    MESchedule *schedule = [MESchedule schedule:title from:from to:to];
+    MESchedule *schedule = nil;
+    if (isSession) {
+        schedule = [[MESession alloc] initWithTitle:title lecturer:lecturer from:from to:to];
+    } else {
+        schedule = [[[MESchedule alloc] initWithTitle:title from:from to:to] autorelease];
+    }
     schedule.comment = comment;
-    schedule.isSession = isSession;
     return schedule;
 }
 

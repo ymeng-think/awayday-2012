@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MEAgendaView.h"
 
-@class MEAgendaList, MESessionList;
+@class MEAgendaList, MEFavoriteSessionList;
 
 @interface MEAgendaController : UIViewController <MEAgendaDelegate> {
     MEAgendaList *allAgendaList;
     MEAgendaList *currentAgendaList;
-    MESessionList *favoriteSessionList;
+    MEFavoriteSessionList *favoriteSessionList;
     MEAgendaView *agendaView;
     
     UIBarButtonItem *favoriteButton, *doneButton;

@@ -11,7 +11,7 @@
 #import "MEAgendaList.h"
 #import "MEAgendaLoader.h"
 #import "MEColor.h"
-#import "MESessionList.h"
+#import "MEFavoriteSessionList.h"
 #import "MESchedule.h"
 #import "MEScheduleCell.h"
 #import "MEScheduleExposingController.h"
@@ -59,7 +59,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self loadAgendaListFromFile:AGENDA_FILE_NAME];
-    self->favoriteSessionList = [[MESessionList alloc] init];
+    self->favoriteSessionList = [[MEFavoriteSessionList alloc] init];
     
     [super viewWillAppear:animated];
 }

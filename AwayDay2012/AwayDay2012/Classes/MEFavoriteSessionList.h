@@ -11,7 +11,7 @@
 
 @class MESchedule;
 
-@interface MESessionList : NSObject {
+@interface MEFavoriteSessionList : NSObject {
     NSMutableDictionary *dict;
 }
 
