@@ -22,8 +22,8 @@
 
 @implementation MEScheduleCell
 
-@synthesize titleLabel, commentLabel, fromLabel, toLabel, indicator;
-@synthesize title, comment, from, to;
+@synthesize titleLabel, lecturerLabel, fromLabel, toLabel, indicator;
+@synthesize title, lecturer, from, to;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -44,15 +44,16 @@
     titleLabel.text = self->title;
 }
 
-- (void)setComment:(NSString *)_comment {
-    if (self->comment == _comment) {
+- (void)setLecturer:(NSString *)_lecturer {
+    if (self->lecturer == _lecturer) {
         return;
     }
     
-    [self->comment release];
-    self->comment = [_comment retain];
+    [self->lecturer release];
+    self->lecturer = [_lecturer retain];
     
-    commentLabel.text = self->comment;
+    lecturerLabel.text = self->lecturer ? [NSString stringWithFormat:@"by %@", self->lecturer] : @"";
+    lecturerLabel.hidden = self->lecturer ? NO : YES;
 }
 
 - (void)setFrom:(CGFloat)_from {
@@ -114,13 +115,13 @@
 
 - (void)dealloc {
     [titleLabel release];
-    [commentLabel release];
+    [lecturerLabel release];
     [fromLabel release];
     [toLabel release];
     [indicator release];
     
     [self->title release];
-    [self->comment release];
+    [self->lecturer release];
         
     [super dealloc];
 }

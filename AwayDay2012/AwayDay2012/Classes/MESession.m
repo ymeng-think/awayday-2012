@@ -14,9 +14,15 @@
 - initWithTitle:(NSString *)_title lecturer:(NSString *)_lecturer from:(CGFloat)_from to:(CGFloat)_to {
     self = [super initWithTitle:_title from:_from to:_to];
     if (self) {
-        self->lecturer = _lecturer;
+        self->lecturer = [_lecturer retain];
     }
     return self;
+}
+
+- (void)dealloc {
+    [self->lecturer release];
+    
+    [super dealloc];
 }
 
 @end

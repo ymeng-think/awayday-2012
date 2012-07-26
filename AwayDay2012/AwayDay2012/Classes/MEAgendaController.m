@@ -15,6 +15,7 @@
 #import "MESchedule.h"
 #import "MEScheduleCell.h"
 #import "MEScheduleExposingController.h"
+#import "MESession.h"
 
 #define WINDOW_NAME            @"Awayday 2012"
 #define FAVORITE_BUTTON_TITLE  @"Favorite"
@@ -154,9 +155,9 @@
     MESchedule *schedule = [agenda scheduleAt:scheduleIndex];
     
     cell.title = schedule.title;
-    cell.comment = schedule.comment;
     cell.from = schedule.from;
     cell.to = schedule.to;
+    cell.lecturer = [schedule isKindOfClass:[MESession class]] ? ((MESession *)schedule).lecturer : nil;
     [cell setSelected:[favoriteSessionList containsSession:schedule.title on:schedule.scheduledOn] animated:NO];
 }
 
