@@ -104,35 +104,16 @@
     return NSStringFromMEDate(date);
 }
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    if (!delegate || 
-        ![delegate respondsToSelector:@selector(agenda:exposeScheduleAtIndex:inAgenda:)]) {
-        return;
-    }    
-    
-    [delegate agenda:self exposeScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (!tableView.isEditing) {
-        return;
+    if (tableView.isEditing) {
+        [delegate agenda:self didSelectScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
+    } else {
+        [delegate agenda:self exposeScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
     }
-    
-    if (!delegate ||
-        ![delegate respondsToSelector:@selector(agenda:didSelectScheduleAtIndex:inAgenda:)]) {
-        return;
-    }
-    
-    [delegate agenda:self didSelectScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!tableView.isEditing) {
-        return;
-    }
-    
-    if (!delegate ||
-        ![delegate respondsToSelector:@selector(agenda:didDeselectScheduleAtIndex:inAgenda:)]) {
         return;
     }
     
