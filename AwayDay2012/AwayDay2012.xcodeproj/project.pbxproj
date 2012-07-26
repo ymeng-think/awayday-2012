@@ -36,6 +36,8 @@
 		6F6895D315AEC5DF004815A0 /* not-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F6895D215AEC5DF004815A0 /* not-selected@2x.png */; };
 		6F70C60515A31036004AA6B1 /* MEAgendaLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F70C60415A31036004AA6B1 /* MEAgendaLoader.m */; };
 		6F70C60815A314F1004AA6B1 /* agenda.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F70C60715A314F1004AA6B1 /* agenda.txt */; };
+		6F848D3315C1628B00B9F37E /* schedule-cell-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F848D3115C1628B00B9F37E /* schedule-cell-background.png */; };
+		6F848D3415C1628B00B9F37E /* schedule-cell-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F848D3215C1628B00B9F37E /* schedule-cell-background@2x.png */; };
 		6F987854158F3DBE00030835 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987853158F3DBE00030835 /* UIKit.framework */; };
 		6F987856158F3DBE00030835 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987855158F3DBE00030835 /* Foundation.framework */; };
 		6F987858158F3DBE00030835 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987857158F3DBE00030835 /* CoreGraphics.framework */; };
@@ -99,6 +101,8 @@
 		6F70C60315A31036004AA6B1 /* MEAgendaLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaLoader.h; sourceTree = "<group>"; };
 		6F70C60415A31036004AA6B1 /* MEAgendaLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaLoader.m; sourceTree = "<group>"; };
 		6F70C60715A314F1004AA6B1 /* agenda.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agenda.txt; sourceTree = "<group>"; };
+		6F848D3115C1628B00B9F37E /* schedule-cell-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule-cell-background.png"; sourceTree = "<group>"; };
+		6F848D3215C1628B00B9F37E /* schedule-cell-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule-cell-background@2x.png"; sourceTree = "<group>"; };
 		6F98784F158F3DBE00030835 /* AwayDay2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwayDay2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F987853158F3DBE00030835 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6F987855158F3DBE00030835 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -144,6 +148,8 @@
 		6F478F9F15BBA1D2003E86C3 /* agenda */ = {
 			isa = PBXGroup;
 			children = (
+				6F848D3115C1628B00B9F37E /* schedule-cell-background.png */,
+				6F848D3215C1628B00B9F37E /* schedule-cell-background@2x.png */,
 				6F6895CE15AEC560004815A0 /* selected.png */,
 				6F6895CF15AEC560004815A0 /* selected@2x.png */,
 				6F6895CC15AEAC1F004815A0 /* not-selected.png */,
@@ -400,6 +406,8 @@
 				6F478FD115BBED8C003E86C3 /* lecturer.txt in Resources */,
 				6F30967F15BD5F82006E1BE4 /* who.png in Resources */,
 				6F30968015BD5F82006E1BE4 /* who@2x.png in Resources */,
+				6F848D3315C1628B00B9F37E /* schedule-cell-background.png in Resources */,
+				6F848D3415C1628B00B9F37E /* schedule-cell-background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,8 @@
 #import "MEAgendaView.h"
 #import "MEScheduleCell.h"
 
+#define ROW_HEIGHT  41.0
+
 @interface MEAgendaView ()
 
 - (void)addPlanView;
@@ -28,10 +30,12 @@
 }
 
 - (void)addPlanView {
-    plan = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    plan = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    plan.separatorStyle = UITableViewCellSelectionStyleNone;
+    plan.rowHeight = ROW_HEIGHT;
+    plan.allowsMultipleSelectionDuringEditing = YES;
     plan.dataSource = self;
     plan.delegate = self;
-    plan.allowsMultipleSelectionDuringEditing = YES;
     
     [self addSubview:plan];
 }
@@ -107,17 +111,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView.isEditing) {
         [delegate agenda:self didSelectScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
+        [plan reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:NO];
     } else {
         [delegate agenda:self exposeScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (!tableView.isEditing) {
-        return;
+    if (tableView.isEditing) {
+        [delegate agenda:self didDeselectScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
+        [plan reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:NO];
     }
-    
-    [delegate agenda:self didDeselectScheduleAtIndex:[indexPath row] inAgenda:[indexPath section]];
 }
 
 @end

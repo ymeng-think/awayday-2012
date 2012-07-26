@@ -9,8 +9,8 @@
 #import "MEScheduleCell.h"
 #import "METimeFormat.h"
 
-#define X_OF_EDITING_HORIZONTAL   40
-#define X_OF_INIT_HORIZONTAL      10
+#define X_OF_EDITING_HORIZONTAL   30
+#define X_OF_INIT_HORIZONTAL      0
 #define IMAGE_SELECTED            @"selected.png"
 #define IMAGE_NOT_SELECTED        @"not-selected.png"
 
