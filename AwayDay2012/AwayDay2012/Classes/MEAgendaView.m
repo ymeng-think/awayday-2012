@@ -7,9 +7,11 @@
 //
 
 #import "MEAgendaView.h"
+#import "MEAgendaSectionHeader.h"
 #import "MEScheduleCell.h"
 
-#define ROW_HEIGHT  46.0
+#define ROW_HEIGHT              46.0
+#define SECTION_HEADER_HEIGHT   38.0
 
 @interface MEAgendaView ()
 
@@ -33,6 +35,7 @@
     plan = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     plan.separatorStyle = UITableViewCellSelectionStyleNone;
     plan.rowHeight = ROW_HEIGHT;
+    plan.sectionHeaderHeight = SECTION_HEADER_HEIGHT;
     plan.allowsMultipleSelectionDuringEditing = YES;
     plan.dataSource = self;
     plan.delegate = self;
@@ -97,17 +100,13 @@
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (!delegate) {
-        return nil;
-    }
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    CGFloat width = [UIScreen mainScreen].applicationFrame.size.width;
+    MEAgendaSectionHeader *header = [[MEAgendaSectionHeader alloc] initWithFrame:CGRectMake(0, 0, width, SECTION_HEADER_HEIGHT)];
     
-    MEDate date = [delegate agenda:self dateAtIndex:section];
-    if (!MEDateIsValid(date)) {
-        return nil;
-    }
-    
-    return NSStringFromMEDate(date);
+    [header setDate:[delegate agenda:self dateAtIndex:section]];
+
+    return [header autorelease];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
