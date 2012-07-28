@@ -88,9 +88,11 @@
     if (delegate) {
         [delegate agenda:self cell:cell atScheduleIndex:[indexPath row] inAgenda:[indexPath section]];
     }
+
     if (cell.isSelected) {
         [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
+    cell.favoriteIndicator.hidden = !cell.isSelected;
     
     return cell;
 }

@@ -21,7 +21,8 @@
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel *lecturerLabel;
 @property (nonatomic, retain) IBOutlet UILabel *timeIntervalLabel;
-@property (nonatomic, retain) IBOutlet UIImageView *indicator;
+@property (nonatomic, retain) IBOutlet UIImageView *selectionIndicator;
+@property (nonatomic, retain) IBOutlet UIImageView *favoriteIndicator;
 
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *lecturer;

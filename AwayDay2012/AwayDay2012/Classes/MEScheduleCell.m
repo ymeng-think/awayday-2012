@@ -12,8 +12,8 @@
 #import "METimeFormat.h"
 #import "UILabelExtension.h"
 
-#define X_OF_EDITING_HORIZONTAL   30
-#define X_OF_INIT_HORIZONTAL      0
+#define X_IN_EDITING_MODE         10
+#define X_IN_INITIALIZATION_MODE  0
 #define IMAGE_SELECTED            @"selected.png"
 #define IMAGE_NOT_SELECTED        @"not-selected.png"
 #define COLOR_FOR_TITLE           UIColorFromRGB(0x000000)
@@ -28,7 +28,7 @@
 
 @implementation MEScheduleCell
 
-@synthesize titleLabel, lecturerLabel, timeIntervalLabel, indicator;
+@synthesize titleLabel, lecturerLabel, timeIntervalLabel, selectionIndicator, favoriteIndicator;
 @synthesize title, lecturer, from, to;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -95,19 +95,19 @@
     CGRect contentFrame = self.contentView.frame;
     
 	if (isEditing) {
-		contentFrame.origin.x = X_OF_EDITING_HORIZONTAL;
+		contentFrame.origin.x = X_IN_EDITING_MODE;
 		self.contentView.frame = contentFrame;
         self.accessoryType = UITableViewCellAccessoryNone;
-        
+        favoriteIndicator.hidden = YES;
 	} else {
-		contentFrame.origin.x = X_OF_INIT_HORIZONTAL;
+		contentFrame.origin.x = X_IN_INITIALIZATION_MODE;
 		self.contentView.frame = contentFrame;
-        indicator.hidden = YES;
+        selectionIndicator.hidden = YES;
 	}
     
 	[UIView commitAnimations];
     
-    indicator.image = self.isSelected ? [UIImage imageNamed:IMAGE_SELECTED] : [UIImage imageNamed:IMAGE_NOT_SELECTED];
+    selectionIndicator.image = self.isSelected ? [UIImage imageNamed:IMAGE_SELECTED] : [UIImage imageNamed:IMAGE_NOT_SELECTED];
 }
 
 - (void)exchangeIndicatorShown:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context {
@@ -117,7 +117,7 @@
     
     BOOL isEditing = ((UITableView *)self.superview).isEditing;
     if (isEditing) {
-        indicator.hidden = NO;
+        selectionIndicator.hidden = NO;
     } else {
         self.accessoryType = self->originalAccessoryType;
     }
@@ -127,7 +127,8 @@
     [titleLabel release];
     [lecturerLabel release];
     [timeIntervalLabel release];
-    [indicator release];
+    [selectionIndicator release];
+    [favoriteIndicator release];
     
     [self->title release];
     [self->lecturer release];
