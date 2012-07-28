@@ -16,7 +16,8 @@
 #define X_OF_INIT_HORIZONTAL      0
 #define IMAGE_SELECTED            @"selected.png"
 #define IMAGE_NOT_SELECTED        @"not-selected.png"
-#define COLOR_FOR_TITLE           UIColorFromRGB(0x333333)
+#define COLOR_FOR_TITLE           UIColorFromRGB(0x000000)
+#define COLOR_FOR_TIME_INTERVAL   UIColorFromRGB(0x787878)
 
 @interface MEScheduleCell ()
 
@@ -26,7 +27,7 @@
 
 @implementation MEScheduleCell
 
-@synthesize titleLabel, lecturerLabel, fromLabel, toLabel, indicator;
+@synthesize titleLabel, lecturerLabel, timeIntervalLabel, indicator;
 @synthesize title, lecturer, from, to;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -63,13 +64,13 @@
 - (void)setFrom:(CGFloat)_from {
     self->from = _from;
     
-    fromLabel.text = FloatToTimeString(self->from);
+    timeIntervalLabel.text = TimeIntervalString(self->from, self->to);
 }
 
 - (void)setTo:(CGFloat)_to {
     self->to = _to;
     
-    toLabel.text = FloatToTimeString(self->to);
+    timeIntervalLabel.text = TimeIntervalString(self->from, self->to);
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
@@ -80,7 +81,7 @@
     BOOL isEditing = ((UITableView *)self.superview).isEditing;
     
     [titleLabel withColor:COLOR_FOR_TITLE font:MEFONT_CENTURY_GOTHIC size:14];
-//    [fromLabel blackTextWithFont:[MEFontLibrary sharedLibrary].centuryGothicSmallFont];
+    [timeIntervalLabel withColor:COLOR_FOR_TIME_INTERVAL font:MEFONT_CENTURY_GOTHIC size:11];
 //    [toLabel blackTextWithFont:[MEFontLibrary sharedLibrary].centuryGothicSmallFont];
 //    [lecturerLabel blackTextWithFont:[MEFontLibrary sharedLibrary].centuryGothicSmallFont];
 
@@ -125,8 +126,7 @@
 - (void)dealloc {
     [titleLabel release];
     [lecturerLabel release];
-    [fromLabel release];
-    [toLabel release];
+    [timeIntervalLabel release];
     [indicator release];
     
     [self->title release];

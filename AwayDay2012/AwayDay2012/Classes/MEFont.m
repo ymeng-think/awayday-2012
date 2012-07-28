@@ -29,7 +29,7 @@ static MEFont *gSharedInstance;
 }
 
 - (UIFont *)fontWithName:(NSString *)name size:(CGFloat)size {
-    NSString *key = [[NSString alloc] initWithFormat:@"%@, @g", name, size];
+    NSString *key = [[NSString alloc] initWithFormat:@"%@, %g", name, size];
     
     UIFont *font = [fontLib objectForKey:key];
     if (!font) {
