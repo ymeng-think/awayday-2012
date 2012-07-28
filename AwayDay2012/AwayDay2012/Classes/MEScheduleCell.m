@@ -18,6 +18,7 @@
 #define IMAGE_NOT_SELECTED        @"not-selected.png"
 #define COLOR_FOR_TITLE           UIColorFromRGB(0x000000)
 #define COLOR_FOR_TIME_INTERVAL   UIColorFromRGB(0x787878)
+#define COLOR_FOR_LECTURER        UIColorFromRGB(0x787878)
 
 @interface MEScheduleCell ()
 
@@ -82,8 +83,7 @@
     
     [titleLabel withColor:COLOR_FOR_TITLE font:MEFONT_CENTURY_GOTHIC size:14];
     [timeIntervalLabel withColor:COLOR_FOR_TIME_INTERVAL font:MEFONT_CENTURY_GOTHIC size:11];
-//    [toLabel blackTextWithFont:[MEFontLibrary sharedLibrary].centuryGothicSmallFont];
-//    [lecturerLabel blackTextWithFont:[MEFontLibrary sharedLibrary].centuryGothicSmallFont];
+    [lecturerLabel withColor:COLOR_FOR_LECTURER font:MEFONT_CENTURY_GOTHIC size:11];
 
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationBeginsFromCurrentState:YES];
