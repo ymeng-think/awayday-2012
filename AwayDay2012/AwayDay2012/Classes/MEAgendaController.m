@@ -27,10 +27,11 @@
 
 - (BOOL)isValidIndexOfAgendaList:(NSInteger)index;
 - (void)exposeSchedule:(MESchedule *)schedule;
-- (void)loadAgendaListFromFile:(NSString *)fileName;
 - (UIBarButtonItem *)favoriteButton;
 - (UIBarButtonItem *)doneButton;
 - (void)setCurrentAgendaList:(MEAgendaList *)_agendaList;
+- (void)buildAgendaList;
+- (void)buildFavoriteSessionList;
 
 - (void)prepareToAddSessionToFavorite;
 - (void)confirmAddedFavoriteSession;
@@ -59,15 +60,9 @@
 }
 
 - (void)viewDidLoad {
-    [self loadAgendaListFromFile:AGENDA_FILE_NAME];
-    
-    NSString *dataFilePath = [self archivedDataFilePath];
-    NSFileManager *fileManager =[NSFileManager defaultManager];
-    if ([fileManager fileExistsAtPath:dataFilePath]) {
-        favoriteSessionList = [[MEFavoriteSessionList alloc] initWithContentsOfFile:dataFilePath];
-    } else {
-        favoriteSessionList = [[MEFavoriteSessionList alloc] init];
-    }
+    [self buildAgendaList];
+    currentAgendaList = [allAgendaList retain];
+    [self buildFavoriteSessionList];
     
     [super viewDidLoad];
 }
@@ -76,10 +71,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)loadAgendaListFromFile:(NSString *)fileName {
+- (void)buildAgendaList {
     MEAgendaLoader *agendaLoader = [[MEAgendaLoader alloc] init];
-    allAgendaList = [[agendaLoader loadFromFile:fileName] retain];
-    currentAgendaList = [allAgendaList retain];
+    allAgendaList = [[agendaLoader loadFromFile:AGENDA_FILE_NAME] retain];
     [agendaLoader release];
 }
 
@@ -117,6 +111,16 @@
     NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docsDir = [dirPaths objectAtIndex:0];
     return [docsDir stringByAppendingPathComponent:DATA_ARCHIVE_FILE];
+}
+
+- (void)buildFavoriteSessionList {
+    NSString *dataFilePath = [self archivedDataFilePath];
+    NSFileManager *fileManager =[NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:dataFilePath]) {
+        favoriteSessionList = [[MEFavoriteSessionList alloc] initWithContentsOfFile:dataFilePath];
+    } else {
+        favoriteSessionList = [[MEFavoriteSessionList alloc] init];
+    }
 }
 
 - (void)dealloc {
