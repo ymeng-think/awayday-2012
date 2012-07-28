@@ -9,7 +9,7 @@
 #import "MEAgendaView.h"
 #import "MEScheduleCell.h"
 
-#define ROW_HEIGHT  41.0
+#define ROW_HEIGHT  46.0
 
 @interface MEAgendaView ()
 
