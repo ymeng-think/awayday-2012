@@ -26,6 +26,14 @@
     return self;
 }
 
+- (id)initWithContentsOfFile:(NSString *)filePath {
+    self = [super init];
+    if (self) {
+        self->dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    }
+    return self;
+}
+
 - (void)addSession:(NSString *)name on:(MEDate)date {
     NSString *key = [[self class] date2Key:date];
     if (![dict valueForKey:key]) {
@@ -67,11 +75,6 @@
 
 - (void)writeToFile:(NSString *)filePath {
     [self->dict writeToFile:filePath atomically:YES];
-}
-
-- (void)reloadFromFile:(NSString *)filePath {
-    [self->dict release];
-    self->dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
 }
 
 + (NSString *)date2Key:(MEDate)date {

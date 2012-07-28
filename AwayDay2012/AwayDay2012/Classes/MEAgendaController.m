@@ -58,18 +58,15 @@
     self.view = agendaView;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self loadAgendaListFromFile:AGENDA_FILE_NAME];
-    self->favoriteSessionList = [[MEFavoriteSessionList alloc] init];
-    
-    [super viewWillAppear:animated];
-}
-
 - (void)viewDidLoad {
+    [self loadAgendaListFromFile:AGENDA_FILE_NAME];
+    
     NSString *dataFilePath = [self archivedDataFilePath];
     NSFileManager *fileManager =[NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:dataFilePath]) {
-        [favoriteSessionList reloadFromFile:dataFilePath];
+        favoriteSessionList = [[MEFavoriteSessionList alloc] initWithContentsOfFile:dataFilePath];
+    } else {
+        favoriteSessionList = [[MEFavoriteSessionList alloc] init];
     }
     
     [super viewDidLoad];
