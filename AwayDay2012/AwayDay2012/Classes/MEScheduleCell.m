@@ -7,12 +7,16 @@
 //
 
 #import "MEScheduleCell.h"
+#import "MEColor.h"
+#import "MEFont.h"
 #import "METimeFormat.h"
+#import "UILabelExtension.h"
 
 #define X_OF_EDITING_HORIZONTAL   30
 #define X_OF_INIT_HORIZONTAL      0
 #define IMAGE_SELECTED            @"selected.png"
 #define IMAGE_NOT_SELECTED        @"not-selected.png"
+#define COLOR_FOR_TITLE           UIColorFromRGB(0x333333)
 
 @interface MEScheduleCell ()
 
@@ -74,6 +78,11 @@
 
 - (void)layoutSubviews {
     BOOL isEditing = ((UITableView *)self.superview).isEditing;
+    
+    [titleLabel withColor:COLOR_FOR_TITLE font:MEFONT_CENTURY_GOTHIC size:14];
+//    [fromLabel blackTextWithFont:[MEFontLibrary sharedLibrary].centuryGothicSmallFont];
+//    [toLabel blackTextWithFont:[MEFontLibrary sharedLibrary].centuryGothicSmallFont];
+//    [lecturerLabel blackTextWithFont:[MEFontLibrary sharedLibrary].centuryGothicSmallFont];
 
     [UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationBeginsFromCurrentState:YES];

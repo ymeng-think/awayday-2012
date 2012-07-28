@@ -39,6 +39,10 @@
 		6F848D3315C1628B00B9F37E /* schedule-cell-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F848D3115C1628B00B9F37E /* schedule-cell-background.png */; };
 		6F848D3415C1628B00B9F37E /* schedule-cell-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F848D3215C1628B00B9F37E /* schedule-cell-background@2x.png */; };
 		6F848D3D15C1674A00B9F37E /* MESession.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F848D3C15C1674A00B9F37E /* MESession.m */; };
+		6F848D4915C178D700B9F37E /* UILabelExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F848D4815C178D700B9F37E /* UILabelExtension.m */; };
+		6F848D4C15C17B0B00B9F37E /* MEFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F848D4615C1777C00B9F37E /* MEFont.m */; };
+		6F848D4D15C17B0B00B9F37E /* NSStringExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F848D4B15C1794100B9F37E /* NSStringExtension.m */; };
+		6F848D5115C1818200B9F37E /* century-gothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F848D4E15C17BD100B9F37E /* century-gothic.ttf */; };
 		6F987854158F3DBE00030835 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987853158F3DBE00030835 /* UIKit.framework */; };
 		6F987856158F3DBE00030835 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987855158F3DBE00030835 /* Foundation.framework */; };
 		6F987858158F3DBE00030835 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F987857158F3DBE00030835 /* CoreGraphics.framework */; };
@@ -84,7 +88,7 @@
 		6F6150CB159C2A3300F77E80 /* MEAgendaList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEAgendaList.h; sourceTree = "<group>"; };
 		6F6150CC159C2A3300F77E80 /* MEAgendaList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEAgendaList.m; sourceTree = "<group>"; };
 		6F6150CF159C2C5C00F77E80 /* MEDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEDate.h; sourceTree = "<group>"; };
-		6F6307B515B4618D00C08B16 /* MEFavoriteSessionList.h */ = {isa = PBXFileReference; fileEncoding = 4; path = MEFavoriteSessionList.h; sourceTree = "<group>"; };
+		6F6307B515B4618D00C08B16 /* MEFavoriteSessionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEFavoriteSessionList.h; sourceTree = "<group>"; };
 		6F6307B615B4618D00C08B16 /* MEFavoriteSessionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEFavoriteSessionList.m; sourceTree = "<group>"; };
 		6F67DA2015A555DF00860964 /* MEScheduleExposingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MEScheduleExposingController.h; sourceTree = "<group>"; };
 		6F67DA2115A555DF00860964 /* MEScheduleExposingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MEScheduleExposingController.m; sourceTree = "<group>"; };
@@ -106,6 +110,13 @@
 		6F848D3215C1628B00B9F37E /* schedule-cell-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schedule-cell-background@2x.png"; sourceTree = "<group>"; };
 		6F848D3B15C1674900B9F37E /* MESession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESession.h; sourceTree = "<group>"; };
 		6F848D3C15C1674A00B9F37E /* MESession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESession.m; sourceTree = "<group>"; };
+		6F848D4515C1777C00B9F37E /* MEFont.h */ = {isa = PBXFileReference; path = MEFont.h; sourceTree = "<group>"; };
+		6F848D4615C1777C00B9F37E /* MEFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MEFont.m; sourceTree = "<group>"; };
+		6F848D4715C178D600B9F37E /* UILabelExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILabelExtension.h; sourceTree = "<group>"; };
+		6F848D4815C178D700B9F37E /* UILabelExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILabelExtension.m; sourceTree = "<group>"; };
+		6F848D4A15C1794000B9F37E /* NSStringExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSStringExtension.h; sourceTree = "<group>"; };
+		6F848D4B15C1794100B9F37E /* NSStringExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringExtension.m; sourceTree = "<group>"; };
+		6F848D4E15C17BD100B9F37E /* century-gothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "century-gothic.ttf"; sourceTree = "<group>"; };
 		6F98784F158F3DBE00030835 /* AwayDay2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwayDay2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F987853158F3DBE00030835 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6F987855158F3DBE00030835 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -193,6 +204,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		6F848D4315C1770700B9F37E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6F848D4E15C17BD100B9F37E /* century-gothic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		6F987844158F3DBE00030835 = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +271,10 @@
 				6F987872158F3EDE00030835 /* MEAppDelegate.m */,
 				6F6895D415AEE3B0004815A0 /* MEColor.h */,
 				6F6150CF159C2C5C00F77E80 /* MEDate.h */,
+				6F848D4515C1777C00B9F37E /* MEFont.h */,
+				6F848D4615C1777C00B9F37E /* MEFont.m */,
+				6F848D4A15C1794000B9F37E /* NSStringExtension.h */,
+				6F848D4B15C1794100B9F37E /* NSStringExtension.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -291,6 +314,8 @@
 				6FD7AE73159D794E008B5347 /* MHNibTableViewCell.h */,
 				6FD7AE74159D794E008B5347 /* MHNibTableViewCell.m */,
 				6FF0E9E715AAF74E002FE722 /* METimeFormat.h */,
+				6F848D4715C178D600B9F37E /* UILabelExtension.h */,
+				6F848D4815C178D700B9F37E /* UILabelExtension.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -321,6 +346,7 @@
 		6FD7AE63159D6282008B5347 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6F848D4315C1770700B9F37E /* Fonts */,
 				6F6895CA15AEABF0004815A0 /* Images */,
 				6FD7AE64159D62BF008B5347 /* Xibs */,
 				6F70C60715A314F1004AA6B1 /* agenda.txt */,
@@ -392,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F848D5115C1818200B9F37E /* century-gothic.ttf in Resources */,
 				6F98785E158F3DBE00030835 /* InfoPlist.strings in Resources */,
 				6FD7AE6B159D63CD008B5347 /* schedule-cell.xib in Resources */,
 				6F70C60815A314F1004AA6B1 /* agenda.txt in Resources */,
@@ -423,6 +450,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F848D4C15C17B0B00B9F37E /* MEFont.m in Sources */,
+				6F848D4D15C17B0B00B9F37E /* NSStringExtension.m in Sources */,
 				6FF0E9D815AA9BA0002FE722 /* MEScheduleExposingController.m in Sources */,
 				6F987873158F3EDE00030835 /* main.m in Sources */,
 				6F987874158F3EDE00030835 /* MEAppDelegate.m in Sources */,
@@ -445,6 +474,7 @@
 				6F478FD415BBEE1C003E86C3 /* MELecturerListLoader.m in Sources */,
 				6F478FD715BBEE85003E86C3 /* METextFileLoader.m in Sources */,
 				6F848D3D15C1674A00B9F37E /* MESession.m in Sources */,
+				6F848D4915C178D700B9F37E /* UILabelExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -116,10 +116,10 @@ typedef struct {
     if (isSession) {
         schedule = [[MESession alloc] initWithTitle:title lecturer:lecturer from:from to:to];
     } else {
-        schedule = [[[MESchedule alloc] initWithTitle:title from:from to:to] autorelease];
+        schedule = [[MESchedule alloc] initWithTitle:title from:from to:to];
     }
     schedule.comment = comment;
-    return schedule;
+    return [schedule autorelease];
 }
 
 - (MEKeyValue)breakLineToKeyValue:(NSString *)line {
