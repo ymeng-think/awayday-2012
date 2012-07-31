@@ -1,9 +1,14 @@
-## Mac meta-file to ignore
+## Mac meta-file
 .DS_Store
 
 ## Xcode project files
 AwayDay2012/AwayDay2012.xcodeproj/project.xcworkspace
 AwayDay2012/AwayDay2012.xcodeproj/xcuserdata
 
-## Python Environment
+## JetBrains meta-file
+.idea
+
+## Python environment and files
+*.egg-info/
+*.pyc
 Forum/python-env
