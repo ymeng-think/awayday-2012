@@ -3,7 +3,7 @@ from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 from tornado.options import define, options
 from tornado.web import Application
-from forum.center.presentation import PresentationHandler
+from forum.center.presentation import SpeechesHandler, SpeechHandler
 
 import re
 
@@ -12,7 +12,8 @@ define("port", default=8888, help="run on the given port", type=int)
 _APPS_HOST_URL = 'localhost'
 
 _handlers = [
-    (r"/presentation", PresentationHandler),
+    (r"/speeches", SpeechesHandler),
+    (r"/speech", SpeechHandler)
 ]
 
 def _extract_host(url):
