@@ -10,24 +10,17 @@
 #import "MEDate.h"
 
 @interface MEScheduleView : UIView {
-    NSString *title;
-    MEDate scheduledOn;
-    CGFloat from;
-    CGFloat to;
-    NSString *description;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIView *view;
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
-@property (nonatomic, retain) IBOutlet UILabel *dateLabel;
-@property (nonatomic, retain) IBOutlet UILabel *fromLabel;
-@property (nonatomic, retain) IBOutlet UILabel *toLabel;
+@property (nonatomic, retain) IBOutlet UILabel *datetimeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *descriptionLabel;
 
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic) MEDate scheduledOn;
-@property (nonatomic) CGFloat from;
-@property (nonatomic) CGFloat to;
-@property (nonatomic, retain) NSString *description;
+- (void)setTitle:(NSString *)title;
+- (void)setDescription:(NSString *)description;
+- (void)setDate:(MEDate)date from:(CGFloat)from to:(CGFloat)to;
+
 
 @end

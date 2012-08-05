@@ -31,9 +31,7 @@
     
     MEScheduleView *scheduleView = (MEScheduleView *)self.view;
     scheduleView.title = self->schedule.title;
-    scheduleView.scheduledOn = self->schedule.scheduledOn;
-    scheduleView.from = self->schedule.from;
-    scheduleView.to = self->schedule.to;
+    [scheduleView setDate:self->schedule.scheduledOn from:self->schedule.from to:self->schedule.to];
     scheduleView.description = self->schedule.comment;
 }
 

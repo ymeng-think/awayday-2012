@@ -18,9 +18,7 @@
 @end
 
 @implementation MEScheduleView
-
-@synthesize view, titleLabel, dateLabel, fromLabel, toLabel, descriptionLabel;
-@synthesize title, scheduledOn, from, to, description;
+@synthesize view, titleLabel, datetimeLabel, descriptionLabel;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -43,55 +41,25 @@
 }
 
 - (void)setTitle:(NSString *)_title {
-    if (self->title == _title) {
-        return;
-    }
-    
-    [self->title release];
-    self->title = [_title retain];
-    
-    titleLabel.text = self->title;
+    titleLabel.text = _title;
 }
 
-- (void)setFrom:(CGFloat)_from {
-    self->from = _from;
+- (void)setDate:(MEDate)_date from:(CGFloat)_from to:(CGFloat)_to {
+    NSString *dateStr = [NSString stringWithFormat:@"%i %@, %i", _date.day, MonthToAbbreviationString(_date.month), _date.year];
+    NSString *timeStr = TimeIntervalString(_from, _to);
     
-    fromLabel.text = FloatToTimeString(self->from);
-}
-
-- (void)setTo:(CGFloat)_to {
-    self->to = _to;
-    
-    toLabel.text = FloatToTimeString(self->to);
-}
-
-- (void)setScheduledOn:(MEDate)_scheduledOn {
-    self->scheduledOn = MEDateCopy(_scheduledOn);
-    
-    dateLabel.text = NSStringFromMEDate(self->scheduledOn);
+    datetimeLabel.text = [NSString stringWithFormat:@"%@  %@", dateStr, timeStr];
 }
 
 - (void)setDescription:(NSString *)_description {
-    if (self->description == _description) {
-        return;
-    }
-    
-    [self->description release];
-    self->description = [_description retain];
-    
-    descriptionLabel.text = self->description;
+    descriptionLabel.text = _description;
 }
 
 - (void)dealloc {
     [view release];
     [titleLabel release];
-    [dateLabel release];
-    [fromLabel release];
-    [toLabel release];
+    [datetimeLabel release];
     [descriptionLabel release];
-    
-    [self->title release];
-    [self->description release];
     
     [super dealloc];
 }

@@ -324,6 +324,8 @@
 			children = (
 				6F682F0C15900EF300B24AAE /* MEAgendaView.h */,
 				6F682F0D15900EF300B24AAE /* MEAgendaView.m */,
+				6F41E61515C38F2600C3E007 /* MEAgendaSectionHeader.h */,
+				6F41E61615C38F2600C3E007 /* MEAgendaSectionHeader.m */,
 				6F478FA515BBA263003E86C3 /* MEDiscussionView.h */,
 				6F478FA615BBA263003E86C3 /* MEDiscussionView.m */,
 				6F478FAC15BBAB72003E86C3 /* MELecturerCell.h */,
@@ -339,8 +341,6 @@
 				6FF0E9E715AAF74E002FE722 /* METimeFormat.h */,
 				6F848D4715C178D600B9F37E /* UILabelExtension.h */,
 				6F848D4815C178D700B9F37E /* UILabelExtension.m */,
-				6F41E61515C38F2600C3E007 /* MEAgendaSectionHeader.h */,
-				6F41E61615C38F2600C3E007 /* MEAgendaSectionHeader.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";

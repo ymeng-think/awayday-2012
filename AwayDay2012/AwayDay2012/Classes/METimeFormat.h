@@ -20,3 +20,10 @@ TimeIntervalString(CGFloat from, CGFloat to) {
     
     return [NSString stringWithFormat:@"%@ ~ %@", sfrom, sto];
 }
+
+CG_INLINE NSString*
+MonthToAbbreviationString(NSInteger month) {
+    static NSString *months[] = {@"Jan", @"Feb", @"Mar", @"Apr", @"May", @"Jun", @"Jul", @"Aug", @"Sep", @"Oct", @"Nov", @"Dec"};
+    
+    return months[month - 1];
+}
