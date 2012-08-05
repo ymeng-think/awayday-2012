@@ -7,9 +7,13 @@
 //
 
 #import "MEScheduleView.h"
+#import "MEColor.h"
+#import "MEFont.h"
 #import "METimeFormat.h"
+#import "UILabelExtension.h"
 
-#define RESOURCE_NAME @"schedule-detail"
+#define RESOURCE_NAME       @"schedule-detail"
+#define COLOR_FOR_LABEL     UIColorFromRGB(0x000000)
 
 @interface MEScheduleView ()
 
@@ -37,7 +41,13 @@
 }
 
 - (void)layoutSubviews {
+    [titleLabel withColor:COLOR_FOR_LABEL font:MEFONT_CENTURY_GOTHIC size:15];
+    [datetimeLabel withColor:COLOR_FOR_LABEL font:MEFONT_CENTURY_GOTHIC size:12];
+    [descriptionLabel withColor:COLOR_FOR_LABEL font:MEFONT_CENTURY_GOTHIC size:12];
+    
     [[self class] fixHeightForContent:descriptionLabel];
+    
+    [super layoutSubviews];
 }
 
 - (void)setTitle:(NSString *)_title {
