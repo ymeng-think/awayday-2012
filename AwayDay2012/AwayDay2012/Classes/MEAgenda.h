@@ -23,6 +23,5 @@
 - (NSInteger)scheduleCount;
 - (NSInteger)sessionCount;
 - (MESchedule *)scheduleAt:(NSInteger)index;
-- (BOOL)onSameDate:(MEDate)date;
 
 @end

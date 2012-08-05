@@ -10,6 +10,7 @@
 #import "MEAgenda.h"
 #import "MEAgendaList.h"
 #import "MEAgendaLoader.h"
+#import "MECalendar.h"
 #import "MEColor.h"
 #import "MEFavoriteSessionList.h"
 #import "MESchedule.h"
@@ -36,6 +37,7 @@
 - (void)prepareToAddSessionToFavorite;
 - (void)confirmAddedFavoriteSession;
 - (void)saveFavoriteSessions;
+- (void)addFavoriteSessionsToCalendar;
 
 - (NSString *)archivedDataFilePath;
 
@@ -216,17 +218,36 @@
 }
 
 - (void)confirmAddedFavoriteSession {
+    [self saveFavoriteSessions];
+    [self addFavoriteSessionsToCalendar];
+    
     self.navigationItem.rightBarButtonItem = [self favoriteButton];
     
     [self setCurrentAgendaList:allAgendaList];
     [agendaView confirmFavoriteSession];
-    
-    [self saveFavoriteSessions];
 }
 
 - (void)saveFavoriteSessions {
     NSString *dataFilePath = [self archivedDataFilePath];
     [favoriteSessionList writeToFile:dataFilePath];
+}
+
+- (void)addFavoriteSessionsToCalendar {
+    MECalendar *calendar = [MECalendar shared];
+    
+    for (NSInteger i = 0; i < currentAgendaList.count; i++) {
+        MEAgenda *agenda = [currentAgendaList agendaAtIndex:i];
+        for (NSInteger j = 0; j < agenda.scheduleCount; j++) {
+            MESchedule *schedule = [agenda scheduleAt:j];
+            if (![schedule isKindOfClass:[MESession class]]) {
+                continue;
+            }
+            if (![favoriteSessionList containsSession:schedule.title on:schedule.scheduledOn]) {
+                continue;
+            }
+            [calendar addSessionEvent:(MESession *)schedule];
+        }
+    }
 }
 
 @end

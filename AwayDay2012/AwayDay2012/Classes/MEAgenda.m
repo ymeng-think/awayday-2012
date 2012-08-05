@@ -54,12 +54,6 @@
     return [scheduleList objectAtIndex:index];
 }
 
-- (BOOL)onSameDate:(MEDate)d {
-    return self->date.year == d.year && 
-           self->date.month == d.month && 
-           self->date.day == d.day;
-}
-
 - (void)dealloc {
     [self->scheduleList release];
     
