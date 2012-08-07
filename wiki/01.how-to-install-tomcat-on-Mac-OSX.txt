@@ -1,0 +1,53 @@
+Question:
+
+Installing Tomcat 7.0.x on OS X
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Answer:
+
+Tomcat 7 is the first Apache Tomcat release to support the Servlet 3.0, JSP 2.2, and EL 2.2 specifications. Please note that Tomcat 7 requires Java 1.6 or better, 
+but that shouldn’t be a problem, if you are running OS X 10.5 or 10.6.
+
+On OS X 10.7 (Lion) however, Java is initially not installed anymore. You can find the installer on Apple’s support side here or follow this installation guide, provided by Adobe. 
+Whatever you do, when opening Terminal and running java -version, you should see something like this.
+
+java version "1.6.0_31"
+Java(TM) SE Runtime Environment (build 1.6.0_31-b04-415-11M3646)
+Java HotSpot(TM) 64-Bit Server VM (build 20.6-b01-415, mixed mode)
+
+Here are the easy to follow steps to get it up and running on your Mac
+
+    1. Download a binary distribution of the core module: apache-tomcat-7.0.27.tar.gz from here. I picked the tar.gz in Binary Distributions / Core section.
+    2. Opening/unarchiving the archive will create a folder structure something like this in you Downloads folder: (btw, this Unarchiver app is perfect for 
+		all kinds of compressed files and superior to the built-in Archive Utility.app)
+    	~/Downloads/apache-tomcat-7.0.27
+    3. Move the unarchived distribution to /usr/local
+    	sudo mkdir /usr/local
+    	sudo mv ~/Downloads/apache-tomcat-7.0.27 /usr/local
+    4. To make it easy to replace this release with future releases, we are going to create a symbolic link that we are going to use when referring to Tomcat:
+    	sudo ln -s /usr/local/apache-tomcat-7.0.27 /Library/Tomcat
+    5. Change ownership of the /Libaray/Tomcat folder hierarchy:
+    	sudo chown -R <your_username> /Library/Tomcat
+    6. Make all scripts executable:
+    	sudo chmod +x /Library/Tomcat/bin/*.sh
+
+
+Commands:
+ymeng$ /Library/Tomcat/bin/startup.sh 
+Using CATALINA_BASE:   /Library/Tomcat
+Using CATALINA_HOME:   /Library/Tomcat
+Using CATALINA_TMPDIR: /Library/Tomcat/temp
+Using JRE_HOME:        /System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
+Using CLASSPATH:       /Library/Tomcat/bin/bootstrap.jar:/Library/Tomcat/bin/tomcat-juli.jar
+
+/Library/Tomcat/bin/shutdown.sh 
+Using CATALINA_BASE:   /Library/Tomcat
+Using CATALINA_HOME:   /Library/Tomcat
+Using CATALINA_TMPDIR: /Library/Tomcat/temp
+Using JRE_HOME:        /System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
+Using CLASSPATH:       /Library/Tomcat/bin/bootstrap.jar:/Library/Tomcat/bin/tomcat-juli.jar
+
+
+
+
+
