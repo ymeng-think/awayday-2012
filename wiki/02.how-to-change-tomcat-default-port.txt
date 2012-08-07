@@ -1,0 +1,44 @@
+Question:
+
+How to change Tomcat default port ? 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Answer:
+
+Tomcat by default runs on port number 8080, However there is high chance get a port conflict with others program. Sometime we just need to change the Tomcat port number.
+Steps of changing the Tomcat Port
+
+1) Locate server.xml in {Tomcat installation folder}\conf\
+
+2) Find following similar statement
+
+ <!-- Define a non-SSL HTTP/1.1 Connector on port 8180 -->
+    <Connector port="8080" maxHttpHeaderSize="8192"
+               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
+               enableLookups="false" redirectPort="8443" acceptCount="100"
+               connectionTimeout="20000" disableUploadTimeout="true" />
+
+or
+
+    <!-- A "Connector" represents an endpoint by which requests are received
+         and responses are returned. Documentation at :
+         Java HTTP Connector: /docs/config/http.html (blocking & non-blocking)
+         Java AJP  Connector: /docs/config/ajp.html
+         APR (HTTP/AJP) Connector: /docs/apr.html
+         Define a non-SSL HTTP/1.1 Connector on port 8080
+    -->
+    <Connector port="8080" protocol="HTTP/1.1" 
+               connectionTimeout="20000" 
+               redirectPort="8443" />
+
+3) About Tomcat’s server.xml file cites it’s runs on port 8080. Change the Connector port=”8080″ port to any other port number.
+
+For example
+
+ <Connector port="8181" protocol="HTTP/1.1" 
+               connectionTimeout="20000" 
+               redirectPort="8443" />
+
+Above statement instruct Tomcat server runs on port 8181.
+
+4) Edit and save the server.xml file. Restart Tomcat. Done
