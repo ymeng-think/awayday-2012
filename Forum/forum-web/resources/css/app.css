@@ -1,0 +1,41 @@
+.type-home {
+    background: url(../images/background.png);
+}
+
+.speech-list {
+    margin: 0;
+    padding: 0 8px;
+}
+
+.speech {
+    border-top: dotted 1px gray;
+    min-height: 65px;
+}
+
+.speech.first {
+    border-top-style: none;
+}
+
+.photo-frame {
+    background: white;
+    border: solid 1px #AAAAAA;
+    float: left;
+    height: 57px;
+    margin: 3px;
+    width: 57px;
+}
+
+.photo {
+    height: 51px;
+    left: 3px;
+    position: relative;
+    top: 3px;
+    width: 51px;
+}
+
+.text-pane {
+    color: #2C53A6;
+    float: left;
+    font-size: 14px;
+    margin: 6px 3px 6px 20px;
+}
